@@ -1,4 +1,4 @@
-name: flutter_nps
+name: flutter_nps_test
 
 on: [pull_request, push]
 
@@ -6,6 +6,7 @@ jobs:
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
     with:
+      working_directory: "flutter_nps"
       coverage_excludes: "*.g.dart"
       flutter_channel: stable
       flutter_version: 2.10.0
