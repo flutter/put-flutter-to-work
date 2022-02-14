@@ -8,18 +8,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_nps/app_theme.dart';
 import 'package:flutter_nps/capture/capture.dart';
-import 'package:flutter_nps/colors.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final theme = AppTheme().theme;
     return MaterialApp(
-      theme: AppTheme().theme,
-      home: const Scaffold(
-        backgroundColor: NpsColors.colorWhite,
-        body: CapturePage(),
+      theme: theme,
+      home: Scaffold(
+        backgroundColor: theme.scaffoldBackgroundColor,
+        body: const CapturePage(),
       ),
     );
   }
