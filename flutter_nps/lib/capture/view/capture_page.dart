@@ -66,25 +66,32 @@ class CaptureView extends StatelessWidget {
               const SizedBox(height: 16),
               const CaptureScoreSelectorLabels(),
               const SizedBox(height: 32),
-              const AnswerChips(),
-              const SizedBox(height: 32),
               AnimatedOpacity(
                 duration: const Duration(milliseconds: 1500),
                 opacity: captureCubit.state.score == -1 ? 0.0 : 1.0,
-                child: ElevatedButton(
-                  onPressed: (captureCubit.state.score == -1 ||
-                          captureCubit.state.chipIndexes.isEmpty)
-                      ? null
-                      : captureCubit.submitResult,
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 72, vertical: 12),
-                    child: Text(
-                      Texts.submit,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                child: Column(
+                  children: [
+                    const AnswerChips(),
+                    const SizedBox(height: 32),
+                    ElevatedButton(
+                      onPressed: (captureCubit.state.score != -1 &&
+                              captureCubit.state.chipIndexes.isNotEmpty)
+                          ? captureCubit.submitResult
+                          : null,
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 72,
+                          vertical: 12,
+                        ),
+                        child: Text(
+                          Texts.submit,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
               ),
               const SizedBox(height: 55),
@@ -114,17 +121,17 @@ class CaptureScoreSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final captureCubit = context.watch<CaptureCubit>();
+    final captureScore = context.watch<CaptureCubit>().state.score;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: List.generate(
         5,
         (index) => AnimatedContainer(
-          duration: const Duration(milliseconds: 750),
+          duration: const Duration(milliseconds: 500),
           height: radius * 2,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: captureCubit.state.score - 1 == index
+            color: captureScore - 1 == index
                 ? NpsColors.colorSecondary
                 : NpsColors.colorGrey5,
           ),
@@ -140,7 +147,7 @@ class CaptureScoreSelector extends StatelessWidget {
               child: Text(
                 (index + 1).toString(),
                 style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                      color: captureCubit.state.score - 1 == index
+                      color: captureScore - 1 == index
                           ? NpsColors.colorWhite
                           : NpsColors.colorPrimary1,
                     ),
