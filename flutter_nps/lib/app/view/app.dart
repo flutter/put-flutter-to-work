@@ -13,13 +13,9 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme().theme;
     return MaterialApp(
-      theme: theme,
-      home: Scaffold(
-        backgroundColor: theme.scaffoldBackgroundColor,
-        body: const CapturePage(),
-      ),
+      theme: AppTheme().theme,
+      home: const CapturePage(),
     );
   }
 }
