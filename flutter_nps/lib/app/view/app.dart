@@ -6,7 +6,9 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_nps/colors.dart';
+import 'package:flutter_nps/styles.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -18,10 +20,22 @@ class App extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch(
           accentColor: NpsColors.colorSecondary,
         ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            primary: NpsColors.colorSecondary,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+            ),
+          ),
+        ),
+        textTheme: const TextTheme(
+          headline5: NpsStyles.headline5,
+          subtitle1: NpsStyles.subtitle1,
+          bodyText2: NpsStyles.link,
+        ),
       ),
       home: const Scaffold(
-        backgroundColor: Colors.transparent,
-        body: Text('Sample project'),
+        body: CapturePage(),
       ),
     );
   }
