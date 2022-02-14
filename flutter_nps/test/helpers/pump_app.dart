@@ -12,7 +12,9 @@ extension PumpApp on WidgetTester {
   Future<void> pumpApp(Widget widget) {
     return pumpWidget(
       MaterialApp(
-        home: widget,
+        home: Scaffold(
+          body: widget,
+        ),
       ),
     );
   }

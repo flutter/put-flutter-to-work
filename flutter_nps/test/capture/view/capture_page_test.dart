@@ -5,6 +5,8 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
+import 'dart:math';
+
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -45,12 +47,8 @@ void main() {
 
       for (var i = 1; i <= 5; i++) {
         expect(
-          tester
-              .widget<CircleAvatar>(
-                find.widgetWithText(CircleAvatar, i.toString()),
-              )
-              .backgroundColor,
-          NpsColors.colorGrey5,
+          find.widgetWithText(TextButton, i.toString()),
+          findsOneWidget,
         );
       }
     });
@@ -65,7 +63,7 @@ void main() {
         ),
       );
 
-      await tester.tap(find.widgetWithText(CircleAvatar, '1'));
+      await tester.tap(find.widgetWithText(TextButton, '1'));
 
       verify(() => captureCubit.selectScore(score: 1)).called(1);
     });
@@ -81,12 +79,16 @@ void main() {
         ),
       );
 
-      expect(
-        tester
-            .widget<CircleAvatar>(find.widgetWithText(CircleAvatar, '1'))
-            .backgroundColor,
-        NpsColors.colorSecondary,
-      );
+      final decoration = tester
+          .widget<AnimatedContainer>(
+            find.ancestor(
+              of: find.widgetWithText(TextButton, '1'),
+              matching: find.byType(AnimatedContainer),
+            ),
+          )
+          .decoration as BoxDecoration?;
+      expect(decoration, isNotNull);
+      expect(decoration?.color, NpsColors.colorSecondary);
     });
 
     testWidgets('unselected Chip calls addChip when tapped', (tester) async {
@@ -100,9 +102,10 @@ void main() {
         ),
       );
 
-      await tester.tap(find.widgetWithText(Chip, 'Short').first);
+      await tester.tap(find.byType(ActionChip).first);
 
-      verify(() => captureCubit.addChipIndex(index: 0)).called(1);
+      verify(() => captureCubit.addChipIndex(index: any(named: 'index')))
+          .called(1);
     });
 
     testWidgets('selected Chip calls removeChip when tapped', (tester) async {
@@ -116,9 +119,10 @@ void main() {
         ),
       );
 
-      await tester.tap(find.widgetWithText(Chip, 'Short').first);
+      await tester.tap(find.byType(ActionChip).first);
 
-      verify(() => captureCubit.removeChipIndex(index: 0)).called(1);
+      verify(() => captureCubit.removeChipIndex(index: any(named: 'index')))
+          .called(1);
     });
 
     // TODO(Jan-Stepien): Implement Need Help button test

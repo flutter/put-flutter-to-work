@@ -18,8 +18,9 @@ class App extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(
-            accentColor: NpsColors.colorSecondary,
-            backgroundColor: NpsColors.colorWhite),
+          accentColor: NpsColors.colorSecondary,
+          backgroundColor: NpsColors.colorWhite,
+        ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             primary: NpsColors.colorSecondary,

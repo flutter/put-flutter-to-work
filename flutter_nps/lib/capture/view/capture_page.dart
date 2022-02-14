@@ -142,16 +142,15 @@ class CaptureScoreSelector extends StatelessWidget {
               shape: MaterialStateProperty.all<CircleBorder>(
                 const CircleBorder(),
               ),
+              alignment: Alignment.center,
             ),
-            child: Center(
-              child: Text(
-                (index + 1).toString(),
-                style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                      color: captureScore - 1 == index
-                          ? NpsColors.colorWhite
-                          : NpsColors.colorPrimary1,
-                    ),
-              ),
+            child: Text(
+              (index + 1).toString(),
+              style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                    color: captureScore - 1 == index
+                        ? NpsColors.colorWhite
+                        : NpsColors.colorPrimary1,
+                  ),
             ),
           ),
         ),
