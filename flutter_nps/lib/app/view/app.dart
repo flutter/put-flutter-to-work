@@ -6,8 +6,7 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_nps/app_theme.dart';
-import 'package:flutter_nps/capture/capture.dart';
+import 'package:flutter_nps/flutter_nps.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);

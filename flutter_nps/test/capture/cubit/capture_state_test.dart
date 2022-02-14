@@ -1,4 +1,4 @@
-import 'package:flutter_nps/capture/cubit/capture_cubit_state.dart';
+import 'package:flutter_nps/flutter_nps.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
