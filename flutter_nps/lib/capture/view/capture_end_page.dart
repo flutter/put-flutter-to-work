@@ -25,12 +25,7 @@ class CaptureEndView extends StatelessWidget {
         children: [
           Assets.icons.checkCircle.image(),
           const SizedBox(height: 35),
-          Text(
-            Texts.thankYou,
-            style: Theme.of(context).textTheme.headline5?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
-          ),
+          Text(Texts.thankYou, style: Theme.of(context).textTheme.headline5),
           Text(
             Texts.feedbackSubmittedMessage,
             style: Theme.of(context).textTheme.subtitle1,
