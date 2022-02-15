@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_nps/capture/widget/responsive_card.dart';
+import 'package:flutter_nps/gen/assets.gen.dart';
 import 'package:flutter_nps/texts.dart';
 
 class CaptureEndPage extends StatelessWidget {
@@ -22,7 +23,7 @@ class CaptureEndView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Image(image: AssetImage('assets/icons/check-circle.png')),
+          Assets.icons.checkCircle.image(),
           const SizedBox(height: 35),
           Text(
             Texts.thankYou,
