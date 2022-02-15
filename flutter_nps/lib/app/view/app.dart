@@ -16,9 +16,8 @@ class App extends StatelessWidget {
     final theme = AppTheme().theme;
     return MaterialApp(
       theme: theme,
-      home: Scaffold(
-        backgroundColor: theme.scaffoldBackgroundColor,
-        body: const CapturePage(),
+      home: const Scaffold(
+        body: CapturePage(),
       ),
     );
   }
