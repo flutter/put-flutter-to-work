@@ -24,86 +24,89 @@ class CaptureView extends StatelessWidget {
     final captureCubit = context.watch<CaptureCubit>();
     return Center(
       child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: const [
-                  IconButton(
-                    onPressed: SystemNavigator.pop,
-                    icon: Icon(Icons.close),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 32),
-              const CircleAvatar(
-                maxRadius: 85 / 2,
-                backgroundColor: NpsColors.colorSecondary,
-              ),
-              const SizedBox(height: 32),
-              Text(
-                Texts.captureTitle,
-                style: Theme.of(context).textTheme.headline5,
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 4),
-              Text(
-                Texts.captureMessage,
-                style: Theme.of(context)
-                    .textTheme
-                    .subtitle1
-                    ?.copyWith(color: NpsColors.colorGrey2),
-              ),
-              const SizedBox(height: 32),
-              const CaptureScoreSelector(),
-              const SizedBox(height: 16),
-              const CaptureScoreSelectorLabels(),
-              const SizedBox(height: 32),
-              AnimatedOpacity(
-                duration: const Duration(milliseconds: 1500),
-                opacity: captureCubit.state.score == -1 ? 0.0 : 1.0,
-                child: Column(
-                  children: [
-                    const AnswerChips(),
-                    const SizedBox(height: 32),
-                    ElevatedButton(
-                      onPressed: (captureCubit.state.score != -1 &&
-                              captureCubit.state.chipIndexes.isNotEmpty)
-                          ? captureCubit.submitResult
-                          : null,
-                      child: const Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 72,
-                          vertical: 12,
-                        ),
-                        child: Text(
-                          Texts.submit,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: const [
+                IconButton(
+                  onPressed: SystemNavigator.pop,
+                  icon: Icon(Icons.close),
+                ),
+              ],
+            ),
+            const SizedBox(height: 32),
+            const CircleAvatar(
+              maxRadius: 85 / 2,
+              backgroundColor: NpsColors.colorSecondary,
+            ),
+            const SizedBox(height: 32),
+            Text(
+              Texts.captureTitle,
+              style: Theme.of(context)
+                  .textTheme
+                  .headline5
+                  ?.copyWith(fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 4),
+            Text(
+              Texts.captureMessage,
+              style: Theme.of(context)
+                  .textTheme
+                  .subtitle1
+                  ?.copyWith(color: NpsColors.colorGrey2),
+            ),
+            const SizedBox(height: 32),
+            const CaptureScoreSelector(),
+            const SizedBox(height: 16),
+            const CaptureScoreSelectorLabels(),
+            const SizedBox(height: 32),
+            AnimatedOpacity(
+              duration: const Duration(milliseconds: 1500),
+              opacity:
+                  captureCubit.state.score == CaptureCubitState.initial().score
+                      ? 0.0
+                      : 1.0,
+              child: Column(
+                children: [
+                  const AnswerChips(),
+                  const SizedBox(height: 32),
+                  ElevatedButton(
+                    onPressed: (captureCubit.state.score != -1 &&
+                            captureCubit.state.chipIndexes.isNotEmpty)
+                        ? captureCubit.submitResult
+                        : null,
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 72,
+                        vertical: 12,
+                      ),
+                      child: Text(
+                        Texts.submit,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              const SizedBox(height: 55),
-              // TODO(Jan-Stepien): implement Need Help button
-              TextButton(
-                onPressed: captureCubit.callNeedHelp,
-                child: Text(
-                  Texts.needHelp,
-                  style: Theme.of(context).textTheme.bodyText2?.copyWith(
-                        color: NpsColors.colorBlueDash,
-                        decoration: TextDecoration.underline,
-                      ),
-                ),
-              )
-            ],
-          ),
+            const SizedBox(height: 55),
+            // TODO(Jan-Stepien): implement Need Help button
+            TextButton(
+              onPressed: captureCubit.callNeedHelp,
+              child: Text(
+                Texts.needHelp,
+                style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                      color: NpsColors.colorBlueDash,
+                      decoration: TextDecoration.underline,
+                    ),
+              ),
+            )
+          ],
         ),
       ),
     );
@@ -208,7 +211,10 @@ class AnswerChips extends StatelessWidget {
     final captureCubit = context.watch<CaptureCubit>();
     return AnimatedOpacity(
       duration: const Duration(milliseconds: 1500),
-      opacity: context.watch<CaptureCubit>().state.score == -1 ? 0.0 : 1.0,
+      opacity: context.watch<CaptureCubit>().state.score ==
+              CaptureCubitState.initial().score
+          ? 0.0
+          : 1.0,
       child: Wrap(
         runSpacing: 8,
         alignment: WrapAlignment.center,
