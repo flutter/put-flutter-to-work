@@ -49,10 +49,7 @@ class CaptureView extends StatelessWidget {
               const SizedBox(height: 32),
               Text(
                 Texts.captureTitle,
-                style: Theme.of(context)
-                    .textTheme
-                    .headline5
-                    ?.copyWith(fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.headline5,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 4),

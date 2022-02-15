@@ -32,6 +32,17 @@ $ genhtml coverage/lcov.info -o coverage/
 $ open coverage/index.html
 ```
 
+## Using Flutter_gen
+
+To generate all the assets accessors of pubspec.yaml file run:
+
+```sh
+$ fluttergen -c pubspec.yaml
+```
+
+For more information how to use Flutter_gen visit [Flutter_gen](https://pub.dev/packages/flutter_gen)
+
+
 [coverage_badge]: coverage_badge.svg
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [license_link]: https://opensource.org/licenses/MIT
