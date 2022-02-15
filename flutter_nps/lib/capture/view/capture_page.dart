@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_nps/capture/view/capture_end_page.dart';
 import 'package:flutter_nps/capture/widget/responsive_card.dart';
 import 'package:flutter_nps/flutter_nps.dart';
 
 class CapturePage extends StatelessWidget {
   const CapturePage({Key? key}) : super(key: key);
+
+  static const routeName = '/';
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +78,12 @@ class CaptureView extends StatelessWidget {
                     ElevatedButton(
                       onPressed: (captureCubit.state.score != -1 &&
                               captureCubit.state.chipIndexes.isNotEmpty)
-                          ? captureCubit.submitResult
+                          ? () {
+                              captureCubit.submitResult();
+                              Navigator.of(context).pushNamed(
+                                CaptureEndPage.routeName,
+                              );
+                            }
                           : null,
                       child: const Padding(
                         padding: EdgeInsets.symmetric(

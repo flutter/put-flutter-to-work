@@ -5,6 +5,8 @@ import 'package:flutter_nps/texts.dart';
 class CaptureEndPage extends StatelessWidget {
   const CaptureEndPage({Key? key}) : super(key: key);
 
+  static const routeName = 'end';
+
   @override
   Widget build(BuildContext context) {
     return const ResponsiveCard(

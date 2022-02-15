@@ -6,6 +6,7 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_nps/app/route_generator.dart';
 import 'package:flutter_nps/flutter_nps.dart';
 
 class App extends StatelessWidget {
@@ -15,7 +16,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: AppTheme().theme,
-      home: const CapturePage(),
+      initialRoute: CapturePage.routeName,
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }

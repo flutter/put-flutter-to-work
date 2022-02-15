@@ -17,7 +17,15 @@ import '../../helpers/helpers.dart';
 class MockCaptureCubit extends MockCubit<CaptureCubitState>
     implements CaptureCubit {}
 
+class MockNavigatorObserver extends Mock implements NavigatorObserver {}
+
+class FakeRoute extends Fake implements Route<dynamic> {}
+
 void main() {
+  setUpAll(() {
+    registerFallbackValue(FakeRoute());
+  });
+
   group('CapturePage', () {
     testWidgets('renders CaptureView', (tester) async {
       await tester.pumpApp(const CapturePage());
@@ -27,9 +35,11 @@ void main() {
 
   group('CaptureView', () {
     late CaptureCubit captureCubit;
+    late NavigatorObserver navigatorObserver;
 
     setUp(() {
       captureCubit = MockCaptureCubit();
+      navigatorObserver = MockNavigatorObserver();
     });
 
     testWidgets('renders 5 unselected widget', (tester) async {
@@ -119,6 +129,29 @@ void main() {
 
       verify(() => captureCubit.removeChipIndex(index: any(named: 'index')))
           .called(1);
+    });
+
+    testWidgets('submits on Submit button tap', (tester) async {
+      when(() => captureCubit.state)
+          .thenReturn(const CaptureCubitState(score: 1, chipIndexes: [0]));
+      await tester.pumpApp(
+        BlocProvider.value(
+          value: captureCubit,
+          child: const CaptureView(),
+        ),
+        observers: [navigatorObserver],
+      );
+
+      await tester.tap(find.widgetWithText(ElevatedButton, 'Submit').first);
+
+      await tester.pumpAndSettle();
+      verify(() => captureCubit.submitResult()).called(1);
+      verify(
+        () => navigatorObserver.didPush(
+          any(that: isA<Route>()),
+          any(that: isA<Route>()),
+        ),
+      );
     });
 
     // TODO(Jan-Stepien): Implement Need Help button test

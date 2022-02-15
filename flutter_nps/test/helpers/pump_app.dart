@@ -6,12 +6,15 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_nps/app/route_generator.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 extension PumpApp on WidgetTester {
-  Future<void> pumpApp(Widget widget) {
+  Future<void> pumpApp(Widget widget, {List<NavigatorObserver>? observers}) {
     return pumpWidget(
       MaterialApp(
+        navigatorObservers: observers ?? [],
+        onGenerateRoute: RouteGenerator.generateRoute,
         home: Scaffold(
           body: widget,
         ),
