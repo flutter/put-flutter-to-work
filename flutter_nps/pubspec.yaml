@@ -23,6 +23,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/icons/check-circle.png
   module:
     androidX: true
     androidPackage: com.example.flutter_nps
