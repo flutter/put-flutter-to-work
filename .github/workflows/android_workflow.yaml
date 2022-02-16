@@ -2,14 +2,16 @@ name: Android CI
 
 on: [pull_request, push]
 
-defaults:
- run:
-  working-directory: ./counter_app_android
-
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Move to Flutter project directory
+        run: cp flutter_nps
+        
+      - name: Build Flutter AAR file
+        run: flutter build aar
+
       - uses: actions/checkout@v1
 
       - name: set up JDK 1.8
