@@ -11,17 +11,18 @@ jobs:
         with:
           channel: 'stable'
       - run: flutter --version
+
       - name: Build Flutter AAR file
         working-directory: flutter_nps
         run: flutter build aar
 
-      - uses: actions/checkout@v1
-      - name: set up JDK 1.8
+      - name: Set up JDK 1.8
         uses: actions/setup-java@v1
         with:
           java-version: '17'
 
       - name: Change wrapper permissions
+        working-directory: ./counter_app_android
         run: chmod +x ./gradlew
 
       - name: Build with Gradle
