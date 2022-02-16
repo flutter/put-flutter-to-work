@@ -32,8 +32,14 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-      - name: Unit Test
+      - name: Run Unit Test
         run: ./gradlew testDebugUnitTest
+
+      - name: Run AndroidTest
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          script: ./gradlew connectedAndroidTest
+
 
       - name: Android Test Report
         uses: asadmansr/android-test-report-action@v1.2.0
