@@ -6,12 +6,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - run: flutter --version
       - name: Build Flutter AAR file
         working-directory: flutter_nps
         run: flutter build aar
 
       - uses: actions/checkout@v1
-
       - name: set up JDK 1.8
         uses: actions/setup-java@v1
         with:
