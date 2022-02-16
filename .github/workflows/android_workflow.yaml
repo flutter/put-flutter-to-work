@@ -37,7 +37,7 @@ jobs:
 
       - name: Run Android Instrumented tests
         uses: reactivecircus/android-emulator-runner@v2
-        working-directory: ./counter_app_android
         with:
+          working-directory: ./counter_app_android
           api-level: 29
           script: ./gradlew connectedCheck
