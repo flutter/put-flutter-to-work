@@ -4,10 +4,12 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   group('CaptureCubitState', () {
     final initialCaptureCubitState = CaptureCubitState.initial();
+
     test('initial values are set to score: -1 and chipIndexes: []', () {
       expect(initialCaptureCubitState.chipIndexes, isEmpty);
       expect(initialCaptureCubitState.score, equals(-1));
     });
+
     test('initial state props returns array of props', () {
       expect(
         initialCaptureCubitState.props,
@@ -18,8 +20,10 @@ void main() {
         contains(initialCaptureCubitState.chipIndexes),
       );
     });
+
     group('copyWith', () {
       final capture = CaptureCubitState.initial();
+
       test('copies CaptureCubitState with changed values', () {
         expect(capture.score, equals(-1));
         expect(capture.chipIndexes, equals(<int>[]));

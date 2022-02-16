@@ -33,6 +33,7 @@ void main() {
         equals(const CaptureCubitState(score: -1, chipIndexes: [1])),
       ],
     );
+
     blocTest<CaptureCubit, CaptureCubitState>(
       'removeChipIndex from chipIndexes when exists',
       build: CaptureCubit.new,
@@ -42,6 +43,7 @@ void main() {
         equals(const CaptureCubitState(score: -1, chipIndexes: [])),
       ],
     );
+
     blocTest<CaptureCubit, CaptureCubitState>(
       'removeChipIndex from chipIndexes when does not exists',
       build: CaptureCubit.new,
@@ -49,6 +51,7 @@ void main() {
       act: (cubit) => cubit.removeChipIndex(index: 1),
       expect: () => <CaptureCubitState>[],
     );
+
     // TODO(Jan-Stepien): Submit result
     blocTest<CaptureCubit, CaptureCubitState>(
       'submitResult does nothing',
@@ -57,6 +60,7 @@ void main() {
       act: (cubit) => cubit.submitResult(),
       expect: () => <CaptureCubitState>[],
     );
+
     // TODO(Jan-Stepien): Submit Need Help
     blocTest<CaptureCubit, CaptureCubitState>(
       'callNeedHelp does nothing',
