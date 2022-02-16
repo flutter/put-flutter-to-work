@@ -35,10 +35,14 @@ jobs:
       - name: Run Unit Test
         run: ./gradlew testDebugUnitTest
 
-      - name: Run AndroidTest
+      - name: Instrumentation Tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          script: ./gradlew connectedAndroidTest
+          api-level: 29
+          target: default
+          arch: x86
+          profile: Nexus 6
+          script: ./gradlew connectedCheck --stacktrace
 
 
       - name: Android Test Report
