@@ -6,11 +6,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Move to Flutter project directory
-        run: cd flutter_nps
-        
       - name: Build Flutter AAR file
         run: flutter build aar
+          working-directory: flutter_nps
 
       - uses: actions/checkout@v1
 
