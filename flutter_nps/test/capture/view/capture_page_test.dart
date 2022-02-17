@@ -117,9 +117,9 @@ void main() {
 
       await tester.tap(find.byType(ActionChip).first);
 
-      verify(() =>
-              noSubmitCaptureCubit.addChipIndex(index: any(named: 'index')))
-          .called(1);
+      verify(
+        () => noSubmitCaptureCubit.addChipIndex(index: any(named: 'index')),
+      ).called(1);
     });
 
     testWidgets('selected Chip calls removeChip when tapped', (tester) async {
@@ -135,9 +135,9 @@ void main() {
 
       await tester.tap(find.byType(ActionChip).first);
 
-      verify(() =>
-              noSubmitCaptureCubit.removeChipIndex(index: any(named: 'index')))
-          .called(1);
+      verify(
+        () => noSubmitCaptureCubit.removeChipIndex(index: any(named: 'index')),
+      ).called(1);
     });
 
     testWidgets('submit button calls cubit submitResult on tap',

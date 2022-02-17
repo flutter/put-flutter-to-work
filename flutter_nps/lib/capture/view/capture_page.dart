@@ -20,6 +20,7 @@ class CaptureView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Center(
       child: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -43,18 +44,14 @@ class CaptureView extends StatelessWidget {
             const SizedBox(height: 32),
             Text(
               Texts.captureTitle,
-              style: Theme.of(context)
-                  .textTheme
-                  .headline5
+              style: theme.textTheme.headline5
                   ?.copyWith(fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 4),
             Text(
               Texts.captureMessage,
-              style: Theme.of(context)
-                  .textTheme
-                  .subtitle1
+              style: theme.textTheme.subtitle1
                   ?.copyWith(color: NpsColors.colorGrey2),
             ),
             const SizedBox(height: 32),
@@ -96,10 +93,10 @@ class CaptureView extends StatelessWidget {
               onPressed: context.read<CaptureCubit>().callNeedHelp,
               child: Text(
                 Texts.needHelp,
-                style: Theme.of(context).textTheme.bodyText2?.copyWith(
-                      color: NpsColors.colorBlueDash,
-                      decoration: TextDecoration.underline,
-                    ),
+                style: theme.textTheme.bodyText2?.copyWith(
+                  color: NpsColors.colorBlueDash,
+                  decoration: TextDecoration.underline,
+                ),
               ),
             )
           ],
