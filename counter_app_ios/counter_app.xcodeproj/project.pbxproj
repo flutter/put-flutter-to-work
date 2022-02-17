@@ -436,6 +436,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				"SYSTEM_FRAMEWORK_SEARCH_PATHS[arch=*]" = "${PROJECT_DIR}/../flutter_nps/build/ios/framework/Debug";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -465,6 +466,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				"SYSTEM_FRAMEWORK_SEARCH_PATHS[arch=*]" = "${PROJECT_DIR}/../flutter_nps/build/ios/framework/Release";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
