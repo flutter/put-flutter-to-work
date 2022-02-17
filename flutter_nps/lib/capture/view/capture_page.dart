@@ -116,7 +116,7 @@ class CaptureScoreSelector extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: List.generate(
-        5,
+        context.read<CaptureCubit>().state.maxScore,
         (index) => AnimatedContainer(
           duration: const Duration(milliseconds: 500),
           height: radius * 2,
