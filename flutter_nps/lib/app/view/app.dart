@@ -13,9 +13,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme().theme;
     return MaterialApp(
-      theme: theme,
+      theme: AppTheme().theme,
       home: const Scaffold(
         body: CapturePage(),
       ),
