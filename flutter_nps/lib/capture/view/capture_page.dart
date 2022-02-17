@@ -20,7 +20,6 @@ class CaptureView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final captureCubit = context.watch<CaptureCubit>();
     return Center(
       child: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -66,17 +65,14 @@ class CaptureView extends StatelessWidget {
             AnimatedOpacity(
               duration: const Duration(milliseconds: 1500),
               opacity:
-                  captureCubit.state.score == CaptureCubitState.initial().score
-                      ? 0.0
-                      : 1.0,
+                  context.watch<CaptureCubit>().isScoreSelected ? 1.0 : 0.0,
               child: Column(
                 children: [
                   const AnswerChips(),
                   const SizedBox(height: 32),
                   ElevatedButton(
-                    onPressed: (captureCubit.state.score != -1 &&
-                            captureCubit.state.chipIndexes.isNotEmpty)
-                        ? captureCubit.submitResult
+                    onPressed: context.watch<CaptureCubit>().canSubmit
+                        ? context.read<CaptureCubit>().submitResult
                         : null,
                     child: const Padding(
                       padding: EdgeInsets.symmetric(
@@ -97,7 +93,7 @@ class CaptureView extends StatelessWidget {
             const SizedBox(height: 55),
             // TODO(Jan-Stepien): implement Need Help button
             TextButton(
-              onPressed: captureCubit.callNeedHelp,
+              onPressed: context.read<CaptureCubit>().callNeedHelp,
               child: Text(
                 Texts.needHelp,
                 style: Theme.of(context).textTheme.bodyText2?.copyWith(
@@ -120,7 +116,6 @@ class CaptureScoreSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final captureScore = context.watch<CaptureCubit>().state.score;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: List.generate(
@@ -130,9 +125,11 @@ class CaptureScoreSelector extends StatelessWidget {
           height: radius * 2,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: captureScore - 1 == index
-                ? NpsColors.colorSecondary
-                : NpsColors.colorGrey5,
+            color:
+                context.select((CaptureCubit cubit) => cubit.state.score) - 1 ==
+                        index
+                    ? NpsColors.colorSecondary
+                    : NpsColors.colorGrey5,
           ),
           child: TextButton(
             onPressed: () =>
@@ -146,7 +143,11 @@ class CaptureScoreSelector extends StatelessWidget {
             child: Text(
               (index + 1).toString(),
               style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                    color: captureScore - 1 == index
+                    color: context.select(
+                                  (CaptureCubit cubit) => cubit.state.score,
+                                ) -
+                                1 ==
+                            index
                         ? NpsColors.colorWhite
                         : NpsColors.colorPrimary1,
                   ),
@@ -208,45 +209,43 @@ class AnswerChips extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final captureCubit = context.watch<CaptureCubit>();
-    return AnimatedOpacity(
-      duration: const Duration(milliseconds: 1500),
-      opacity: context.watch<CaptureCubit>().state.score ==
-              CaptureCubitState.initial().score
-          ? 0.0
-          : 1.0,
-      child: Wrap(
-        runSpacing: 8,
-        alignment: WrapAlignment.center,
-        children: List<List<Widget>>.generate(
-          chips.length,
-          (index) => <Widget>[
-            ActionChip(
-              onPressed: () => captureCubit.state.chipIndexes.contains(index)
-                  ? captureCubit.removeChipIndex(index: index)
-                  : captureCubit.addChipIndex(index: index),
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 12,
-              ),
-              label: Text(
-                chips[index],
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: captureCubit.state.chipIndexes.contains(index)
-                      ? NpsColors.colorWhite
-                      : NpsColors.colorPrimary1,
-                ),
-              ),
-              backgroundColor: captureCubit.state.chipIndexes.contains(index)
-                  ? NpsColors.colorSecondary
-                  : NpsColors.colorGrey5,
+    return Wrap(
+      runSpacing: 8,
+      alignment: WrapAlignment.center,
+      children: List<List<Widget>>.generate(
+        chips.length,
+        (index) => <Widget>[
+          ActionChip(
+            onPressed: () =>
+                context.read<CaptureCubit>().state.chipIndexes.contains(index)
+                    ? context.read<CaptureCubit>().removeChipIndex(index: index)
+                    : context.read<CaptureCubit>().addChipIndex(index: index),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 12,
             ),
-            const SizedBox(width: 8),
-          ],
-        ).reduce(
-          (value, element) => [...value, ...element],
-        ),
+            label: Text(
+              chips[index],
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: context
+                        .watch<CaptureCubit>()
+                        .state
+                        .chipIndexes
+                        .contains(index)
+                    ? NpsColors.colorWhite
+                    : NpsColors.colorPrimary1,
+              ),
+            ),
+            backgroundColor:
+                context.watch<CaptureCubit>().state.chipIndexes.contains(index)
+                    ? NpsColors.colorSecondary
+                    : NpsColors.colorGrey5,
+          ),
+          const SizedBox(width: 8),
+        ],
+      ).reduce(
+        (value, element) => [...value, ...element],
       ),
     );
   }

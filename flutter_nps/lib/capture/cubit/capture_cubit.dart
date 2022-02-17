@@ -11,6 +11,9 @@ import 'package:flutter_nps/flutter_nps.dart';
 class CaptureCubit extends Cubit<CaptureCubitState> {
   CaptureCubit() : super(CaptureCubitState.initial());
 
+  bool get isScoreSelected => state.score != -1;
+  bool get canSubmit => state.score != -1 && state.chipIndexes.isNotEmpty;
+
   void selectScore({required int score}) => emit(state.copyWith(score: score));
   void addChipIndex({required int index}) =>
       emit(state.copyWith(chipIndexes: [...state.chipIndexes, index]));
