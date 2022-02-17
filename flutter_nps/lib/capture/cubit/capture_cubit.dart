@@ -6,6 +6,7 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_nps/flutter_nps.dart';
 
 class CaptureCubit extends Cubit<CaptureCubitState> {
@@ -15,8 +16,16 @@ class CaptureCubit extends Cubit<CaptureCubitState> {
   bool get canSubmit => state.score != -1 && state.chipIndexes.isNotEmpty;
 
   void selectScore({required int score}) => emit(state.copyWith(score: score));
+
+  void chipToogled({required int index}) => state.chipIndexes.contains(index)
+      ? removeChipIndex(index: index)
+      : addChipIndex(index: index);
+
+  @visibleForTesting
   void addChipIndex({required int index}) =>
       emit(state.copyWith(chipIndexes: [...state.chipIndexes, index]));
+
+  @visibleForTesting
   void removeChipIndex({required int index}) => emit(
         state.copyWith(
           chipIndexes: [...state.chipIndexes.where((item) => item != index)],
@@ -24,5 +33,6 @@ class CaptureCubit extends Cubit<CaptureCubitState> {
       );
 
   void submitResult() {}
+
   void callNeedHelp() {}
 }

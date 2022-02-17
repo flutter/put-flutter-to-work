@@ -118,7 +118,7 @@ void main() {
       await tester.tap(find.byType(ActionChip).first);
 
       verify(
-        () => noSubmitCaptureCubit.addChipIndex(index: any(named: 'index')),
+        () => noSubmitCaptureCubit.chipToogled(index: any(named: 'index')),
       ).called(1);
     });
 
@@ -136,7 +136,7 @@ void main() {
       await tester.tap(find.byType(ActionChip).first);
 
       verify(
-        () => noSubmitCaptureCubit.removeChipIndex(index: any(named: 'index')),
+        () => noSubmitCaptureCubit.chipToogled(index: any(named: 'index')),
       ).called(1);
     });
 

@@ -214,9 +214,7 @@ class AnswerChips extends StatelessWidget {
         (index) => <Widget>[
           ActionChip(
             onPressed: () =>
-                context.read<CaptureCubit>().state.chipIndexes.contains(index)
-                    ? context.read<CaptureCubit>().removeChipIndex(index: index)
-                    : context.read<CaptureCubit>().addChipIndex(index: index),
+                context.read<CaptureCubit>().chipToogled(index: index),
             padding: const EdgeInsets.symmetric(
               horizontal: 16,
               vertical: 12,

@@ -28,7 +28,7 @@ void main() {
       'addChipIndex adds index to chipIndexes',
       build: CaptureCubit.new,
       seed: () => const CaptureCubitState(score: -1, chipIndexes: []),
-      act: (cubit) => cubit.addChipIndex(index: 1),
+      act: (cubit) => cubit.chipToogled(index: 1),
       expect: () => [
         equals(const CaptureCubitState(score: -1, chipIndexes: [1])),
       ],
@@ -38,7 +38,7 @@ void main() {
       'removeChipIndex from chipIndexes when exists',
       build: CaptureCubit.new,
       seed: () => const CaptureCubitState(score: -1, chipIndexes: [1]),
-      act: (cubit) => cubit.removeChipIndex(index: 1),
+      act: (cubit) => cubit.chipToogled(index: 1),
       expect: () => [
         equals(const CaptureCubitState(score: -1, chipIndexes: [])),
       ],
