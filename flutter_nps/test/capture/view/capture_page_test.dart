@@ -22,9 +22,32 @@ class MockSubmitCaptureCubit extends MockCubit<CaptureCubitState>
 
 void main() {
   group('CapturePage', () {
-    testWidgets('renders CaptureView', (tester) async {
+    testWidgets('renders CaptureView fullscreen on width <= 511 screen size',
+        (tester) async {
+      await tester.binding.setSurfaceSize(const Size(511, 600));
       await tester.pumpApp(const CapturePage());
-      expect(find.byType(CaptureView), findsOneWidget);
+      expect(
+        find.ancestor(
+          of: find.byType(CaptureView),
+          matching: find.byType(Scaffold).first,
+        ),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('renders CaptureView in card on width > 511 screen size',
+        (tester) async {
+      await tester.binding.setSurfaceSize(const Size(512, 600));
+
+      await tester.pumpApp(const CapturePage());
+
+      expect(
+        find.ancestor(
+          of: find.byType(CaptureView),
+          matching: find.byType(Card).first,
+        ),
+        findsOneWidget,
+      );
     });
   });
 
@@ -142,8 +165,15 @@ void main() {
         ),
       );
 
-      await tester
-          .tap(find.byKey(const Key('capturePage_submit_elevatedButton')));
+      final button = find.byKey(const Key('capturePage_submit_elevatedButton'));
+
+      await tester.dragUntilVisible(
+        button,
+        find.byType(SingleChildScrollView),
+        const Offset(0, 50),
+      );
+
+      await tester.tap(button);
 
       verify(() => submitCaptureCubit.submitResult()).called(1);
     });

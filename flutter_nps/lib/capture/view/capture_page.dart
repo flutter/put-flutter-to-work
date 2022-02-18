@@ -11,7 +11,27 @@ class CapturePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => CaptureCubit(),
-      child: const CaptureView(),
+      child: LayoutBuilder(
+        builder: (context, boxConstraints) {
+          if (boxConstraints.maxWidth <= 511) {
+            return Scaffold(
+              backgroundColor: Theme.of(context).cardColor,
+              body: const CaptureView(),
+            );
+          } else {
+            return Scaffold(
+              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+              body: Center(
+                child: ConstrainedBox(
+                  constraints:
+                      const BoxConstraints(maxHeight: 558, maxWidth: 511),
+                  child: const Card(child: CaptureView()),
+                ),
+              ),
+            );
+          }
+        },
+      ),
     );
   }
 }
