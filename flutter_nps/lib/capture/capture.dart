@@ -8,3 +8,4 @@
 export 'cubit/capture_cubit.dart';
 export 'cubit/capture_cubit_state.dart';
 export 'view/capture_page.dart';
+export 'widget/responsive_card.dart';

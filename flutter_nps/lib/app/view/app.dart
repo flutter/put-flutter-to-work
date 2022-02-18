@@ -7,7 +7,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_nps/flutter_nps.dart';
+import 'package:flutter_nps/app_theme.dart';
+import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_nps/l10n/l10n.dart';
 
 class App extends StatelessWidget {
