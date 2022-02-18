@@ -36,9 +36,9 @@
     "@shortText": {
         "description": "Text displaying short"
     },
-    "meduimText": "Meduim",
-    "@meduimText": {
-        "description": "Text displaying meduim"
+    "mediumText": "Medium",
+    "@mediumText": {
+        "description": "Text displaying medium"
     },
     "veryLongText": "Very very long text",
     "@veryLongText": {

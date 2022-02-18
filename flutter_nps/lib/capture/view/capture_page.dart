@@ -215,11 +215,11 @@ class AnswerChips extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final chips = [
-      context.l10n.meduimText,
-      context.l10n.meduimText,
-      context.l10n.meduimText,
+      context.l10n.mediumText,
+      context.l10n.mediumText,
+      context.l10n.mediumText,
       context.l10n.veryLongText,
-      context.l10n.meduimText,
+      context.l10n.mediumText,
       context.l10n.shortText,
       context.l10n.veryLongText,
     ];
