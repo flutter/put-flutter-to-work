@@ -164,9 +164,15 @@ void main() {
           child: const CaptureView(),
         ),
       );
+      final button = find.byKey(const Key('capturePage_submit_elevatedButton'));
 
-      await tester
-          .tap(find.byKey(const Key('capturePage_submit_elevatedButton')));
+      await tester.dragUntilVisible(
+        button,
+        find.byType(SingleChildScrollView),
+        const Offset(0, 50),
+      );
+
+      await tester.tap(button);
 
       verify(() => submitCaptureCubit.submitResult()).called(1);
     });
