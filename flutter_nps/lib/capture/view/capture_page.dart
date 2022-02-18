@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_nps/flutter_nps.dart';
+import 'package:flutter_nps/l10n/l10n.dart';
 
 class CapturePage extends StatelessWidget {
   const CapturePage({Key? key}) : super(key: key);
@@ -43,14 +44,14 @@ class CaptureView extends StatelessWidget {
             ),
             const SizedBox(height: 32),
             Text(
-              Texts.captureTitle,
+              context.l10n.captureTitle,
               style: theme.textTheme.headline5
                   ?.copyWith(fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 4),
             Text(
-              Texts.captureMessage,
+              context.l10n.captureMessage,
               style: theme.textTheme.subtitle1
                   ?.copyWith(color: NpsColors.colorGrey2),
             ),
@@ -78,9 +79,10 @@ class CaptureView extends StatelessWidget {
             const SizedBox(height: 55),
             // TODO(Jan-Stepien): implement Need Help button
             TextButton(
-              onPressed: () => context.read<CaptureCubit>().callNeedHelp(),
+              key: const Key('capturePage_needHelp_textButton'),
+              onPressed: context.read<CaptureCubit>().callNeedHelp,
               child: Text(
-                Texts.needHelp,
+                context.l10n.needHelp,
                 style: theme.textTheme.bodyText2?.copyWith(
                   color: NpsColors.colorBlueDash,
                   decoration: TextDecoration.underline,
@@ -184,21 +186,21 @@ class CaptureScoreSelectorLabels extends StatelessWidget {
       children: [
         Wrap(
           crossAxisAlignment: WrapCrossAlignment.center,
-          children: const [
-            Text(
+          children: [
+            const Text(
               '👎',
               style: TextStyle(fontSize: 24),
             ),
-            SizedBox(width: 8),
-            Text(Texts.captureMinLabel),
+            const SizedBox(width: 8),
+            Text(context.l10n.captureMinLabel),
           ],
         ),
         Wrap(
           crossAxisAlignment: WrapCrossAlignment.center,
-          children: const [
-            Text(Texts.captureMaxLabel),
-            SizedBox(width: 8),
-            Text(
+          children: [
+            Text(context.l10n.captureMaxLabel),
+            const SizedBox(width: 8),
+            const Text(
               '😍',
               style: TextStyle(fontSize: 24),
             ),

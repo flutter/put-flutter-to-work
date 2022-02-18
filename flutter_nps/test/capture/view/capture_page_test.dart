@@ -152,9 +152,8 @@ void main() {
         ),
       );
 
-      final button = find.widgetWithText(ElevatedButton, Texts.submit);
-
-      await tester.tap(button);
+      await tester
+          .tap(find.byKey(const Key('capturePage_submit_elevatedButton')));
 
       verify(() => submitCaptureCubit.submitResult()).called(1);
     });
@@ -172,7 +171,9 @@ void main() {
         ),
       );
 
-      final button = find.widgetWithText(TextButton, Texts.needHelp);
+      final button = find.byKey(
+        const Key('capturePage_needHelp_textButton'),
+      );
 
       await tester.dragUntilVisible(
         button,
