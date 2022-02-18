@@ -12,6 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
+  flutter_localizations:
+    sdk: flutter
   intl: ^0.17.0
   
 dev_dependencies:
@@ -23,6 +25,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  generate: true
   module:
     androidX: true
     androidPackage: com.example.flutter_nps

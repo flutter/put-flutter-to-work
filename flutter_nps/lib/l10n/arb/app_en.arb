@@ -1,0 +1,43 @@
+{
+    "@@locale": "en",
+    "captureTitle": "How was your experience?",
+    "@captureTitle": {
+        "description": "Headline of Capture Page"
+    },
+    "captureMessage": "Let us know by rating it.",
+    "@captureMessage": {
+        "description": "Message displayed under headline on Capture Page"
+    },
+    "captureMinLabel": "Not a fan",
+    "@captureMinLabel": {
+        "description": "Label of lowest score on Capture Page"
+    },
+    "captureMaxLabel": "Love it!",
+    "@captureMaxLabel": {
+        "description": "Label of highest score on Capture Page"
+    },
+    "submit": "Submit",
+    "@submit": {
+        "description": "Text displayed on submit button on Capture Page"
+    },
+    "thankYou": "Thank you!",
+    "@thankYou": {
+        "description": "Text saying thank you"
+    },
+    "feedbackSubmittedMessage": "Your feedback has been submitted.",
+    "@feedbackSubmittedMessage": {
+        "description": "Message displayed on submit of feedback"
+    },
+    "shortText": "Short",
+    "@shortText": {
+        "description": "Text displaying short"
+    },
+    "mediumText": "Medium",
+    "@mediumText": {
+        "description": "Text displaying medium"
+    },
+    "veryLongText": "Very very long text",
+    "@veryLongText": {
+        "description": "Text displaying Very very long text"
+    }
+}

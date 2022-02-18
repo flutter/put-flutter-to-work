@@ -6,7 +6,9 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_nps/colors.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_nps/flutter_nps.dart';
+import 'package:flutter_nps/l10n/l10n.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -14,15 +16,17 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch(
-          accentColor: NpsColors.colorSecondary,
-        ),
-      ),
+      theme: AppTheme().theme,
       home: const Scaffold(
-        backgroundColor: Colors.transparent,
-        body: Text('Sample project'),
+        body: CapturePage(),
       ),
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }
