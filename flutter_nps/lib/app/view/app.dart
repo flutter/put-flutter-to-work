@@ -6,8 +6,11 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_nps/app/route_generator.dart';
-import 'package:flutter_nps/flutter_nps.dart';
+import 'package:flutter_nps/app_theme.dart';
+import 'package:flutter_nps/capture/capture.dart';
+import 'package:flutter_nps/l10n/l10n.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -18,6 +21,16 @@ class App extends StatelessWidget {
       theme: AppTheme().theme,
       initialRoute: CapturePage.routeName,
       onGenerateRoute: RouteGenerator.generateRoute,
+      home: const Scaffold(
+        body: CapturePage(),
+      ),
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }

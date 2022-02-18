@@ -5,8 +5,8 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
+import 'package:flutter_nps/app/app.dart';
 import 'package:flutter_nps/bootstrap.dart';
-import 'package:flutter_nps/flutter_nps.dart';
 
 void main() {
   bootstrap(() => const App());

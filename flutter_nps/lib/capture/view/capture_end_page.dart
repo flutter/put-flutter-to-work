@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_nps/capture/widget/responsive_card.dart';
 import 'package:flutter_nps/gen/assets.gen.dart';
-import 'package:flutter_nps/texts.dart';
+import 'package:flutter_nps/l10n/l10n.dart';
 
 class CaptureEndPage extends StatelessWidget {
   const CaptureEndPage({Key? key}) : super(key: key);
 
-  static const routeName = 'end';
+  static const routeName = '/end';
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +32,11 @@ class CaptureEndView extends StatelessWidget {
               Assets.icons.checkCircle.image(),
               const SizedBox(height: 35),
               Text(
-                Texts.thankYou,
+                context.l10n.thankYou,
                 style: Theme.of(context).textTheme.headline5,
               ),
               Text(
-                Texts.feedbackSubmittedMessage,
+                context.l10n.feedbackSubmittedMessage,
                 style: Theme.of(context).textTheme.subtitle1,
               ),
             ],

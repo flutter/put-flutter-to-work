@@ -1,0 +1,43 @@
+name: Android CI
+
+on: [pull_request, push]
+
+defaults:
+ run:
+  working-directory: ./counter_app_android
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - run: flutter --version
+
+      - name: Build Flutter AAR file
+        working-directory: flutter_nps
+        run: flutter build aar
+
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: '17'
+
+      - name: Change wrapper permissions
+        working-directory: ./counter_app_android
+        run: chmod +x ./gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Run Android Unit Test
+        run: ./gradlew testDebugUnitTest
+
+      - name: Run Android Instrumented tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          working-directory: ./counter_app_android
+          api-level: 29
+          script: ./gradlew connectedCheck

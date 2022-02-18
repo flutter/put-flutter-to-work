@@ -6,7 +6,7 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:bloc_test/bloc_test.dart';
-import 'package:flutter_nps/flutter_nps.dart';
+import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -28,28 +28,20 @@ void main() {
       'addChipIndex adds index to chipIndexes',
       build: CaptureCubit.new,
       seed: () => const CaptureCubitState(score: -1, chipIndexes: []),
-      act: (cubit) => cubit.addChipIndex(index: 1),
+      act: (cubit) => cubit.chipToggled(index: 1),
       expect: () => [
         equals(const CaptureCubitState(score: -1, chipIndexes: [1])),
       ],
     );
 
     blocTest<CaptureCubit, CaptureCubitState>(
-      'removeChipIndex from chipIndexes when exists',
+      'removeChipIndex from chipIndexes',
       build: CaptureCubit.new,
       seed: () => const CaptureCubitState(score: -1, chipIndexes: [1]),
-      act: (cubit) => cubit.removeChipIndex(index: 1),
+      act: (cubit) => cubit.chipToggled(index: 1),
       expect: () => [
         equals(const CaptureCubitState(score: -1, chipIndexes: [])),
       ],
-    );
-
-    blocTest<CaptureCubit, CaptureCubitState>(
-      'removeChipIndex from chipIndexes when does not exists',
-      build: CaptureCubit.new,
-      seed: () => const CaptureCubitState(score: -1, chipIndexes: []),
-      act: (cubit) => cubit.removeChipIndex(index: 1),
-      expect: () => <CaptureCubitState>[],
     );
 
     // TODO(Jan-Stepien): Submit result
@@ -58,15 +50,6 @@ void main() {
       build: CaptureCubit.new,
       seed: () => const CaptureCubitState(score: -1, chipIndexes: []),
       act: (cubit) => cubit.submitResult(),
-      expect: () => <CaptureCubitState>[],
-    );
-
-    // TODO(Jan-Stepien): Submit Need Help
-    blocTest<CaptureCubit, CaptureCubitState>(
-      'callNeedHelp does nothing',
-      build: CaptureCubit.new,
-      seed: () => const CaptureCubitState(score: -1, chipIndexes: []),
-      act: (cubit) => cubit.callNeedHelp(),
       expect: () => <CaptureCubitState>[],
     );
   });
