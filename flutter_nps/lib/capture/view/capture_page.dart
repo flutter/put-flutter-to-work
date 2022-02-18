@@ -48,14 +48,12 @@ class CaptureView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: const [
-                IconButton(
-                  onPressed: SystemNavigator.pop,
-                  icon: Icon(Icons.close),
-                ),
-              ],
+            const Align(
+              alignment: Alignment.centerRight,
+              child: IconButton(
+                onPressed: SystemNavigator.pop,
+                icon: Icon(Icons.close),
+              ),
             ),
             const SizedBox(height: 32),
             const CircleAvatar(
