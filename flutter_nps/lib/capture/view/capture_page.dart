@@ -76,18 +76,6 @@ class CaptureView extends StatelessWidget {
               },
             ),
             const SizedBox(height: 55),
-            // TODO(Jan-Stepien): implement Need Help button
-            TextButton(
-              key: const Key('capturePage_needHelp_textButton'),
-              onPressed: context.read<CaptureCubit>().callNeedHelp,
-              child: Text(
-                context.l10n.needHelp,
-                style: theme.textTheme.bodyText2?.copyWith(
-                  color: NpsColors.colorBlueDash,
-                  decoration: TextDecoration.underline,
-                ),
-              ),
-            )
           ],
         ),
       ),
@@ -216,11 +204,11 @@ class AnswerChips extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final chips = [
-      context.l10n.meduimText,
-      context.l10n.meduimText,
-      context.l10n.meduimText,
+      context.l10n.mediumText,
+      context.l10n.mediumText,
+      context.l10n.mediumText,
       context.l10n.veryLongText,
-      context.l10n.meduimText,
+      context.l10n.mediumText,
       context.l10n.shortText,
       context.l10n.veryLongText,
     ];

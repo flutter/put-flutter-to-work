@@ -52,14 +52,5 @@ void main() {
       act: (cubit) => cubit.submitResult(),
       expect: () => <CaptureCubitState>[],
     );
-
-    // TODO(Jan-Stepien): Submit Need Help
-    blocTest<CaptureCubit, CaptureCubitState>(
-      'callNeedHelp does nothing',
-      build: CaptureCubit.new,
-      seed: () => const CaptureCubitState(score: -1, chipIndexes: []),
-      act: (cubit) => cubit.callNeedHelp(),
-      expect: () => <CaptureCubitState>[],
-    );
   });
 }
