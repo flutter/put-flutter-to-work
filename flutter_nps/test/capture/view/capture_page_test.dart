@@ -15,20 +15,10 @@ import 'package:mocktail/mocktail.dart';
 import '../../helpers/helpers.dart';
 
 class MockNoSubmitCaptureCubit extends MockCubit<CaptureCubitState>
-    implements CaptureCubit {
-  @override
-  bool get isScoreSelected => true;
-  @override
-  bool get canSubmit => false;
-}
+    implements CaptureCubit {}
 
 class MockSubmitCaptureCubit extends MockCubit<CaptureCubitState>
-    implements CaptureCubit {
-  @override
-  bool get isScoreSelected => true;
-  @override
-  bool get canSubmit => true;
-}
+    implements CaptureCubit {}
 
 void main() {
   group('CapturePage', () {

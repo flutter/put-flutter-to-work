@@ -105,16 +105,17 @@ class _SubmitButton extends StatelessWidget {
       (CaptureCubit cubit) => cubit.state.canSubmit,
     );
     return ElevatedButton(
+      key: const Key('capturePage_submit_elevatedButton'),
       onPressed:
           canSubmit ? () => context.read<CaptureCubit>().submitResult() : null,
-      child: const Padding(
-        padding: EdgeInsets.symmetric(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
           horizontal: 72,
           vertical: 12,
         ),
         child: Text(
-          Texts.submit,
-          style: TextStyle(
+          context.l10n.submit,
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
           ),
         ),
