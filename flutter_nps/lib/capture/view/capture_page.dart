@@ -214,19 +214,17 @@ class CaptureScoreSelectorLabels extends StatelessWidget {
 
 class AnswerChips extends StatelessWidget {
   const AnswerChips({Key? key}) : super(key: key);
-
-  static const chips = [
-    'Meduim',
-    'Meduim',
-    'Meduim',
-    'Very very long text',
-    'Meduim',
-    'Short',
-    'Very very long text',
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final chips = [
+      context.l10n.meduimText,
+      context.l10n.meduimText,
+      context.l10n.meduimText,
+      context.l10n.veryLongText,
+      context.l10n.meduimText,
+      context.l10n.shortText,
+      context.l10n.veryLongText,
+    ];
     return Wrap(
       runSpacing: 8,
       alignment: WrapAlignment.center,
@@ -239,7 +237,7 @@ class AnswerChips extends StatelessWidget {
           return <Widget>[
             ActionChip(
               onPressed: () {
-                context.read<CaptureCubit>().chipToogled(index: index);
+                context.read<CaptureCubit>().chipToggled(index: index);
               },
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               label: Text(
