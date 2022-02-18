@@ -12,14 +12,21 @@ class CaptureCubit extends Cubit<CaptureCubitState> {
   CaptureCubit() : super(CaptureCubitState.initial());
 
   void selectScore({required int score}) => emit(state.copyWith(score: score));
-  void addChipIndex({required int index}) =>
+
+  void chipToggled({required int index}) => state.chipIndexes.contains(index)
+      ? _removeChipIndex(index: index)
+      : _addChipIndex(index: index);
+
+  void _addChipIndex({required int index}) =>
       emit(state.copyWith(chipIndexes: [...state.chipIndexes, index]));
-  void removeChipIndex({required int index}) => emit(
+
+  void _removeChipIndex({required int index}) => emit(
         state.copyWith(
           chipIndexes: [...state.chipIndexes.where((item) => item != index)],
         ),
       );
 
   void submitResult() {}
+
   void callNeedHelp() {}
 }

@@ -7,7 +7,7 @@ class AppTheme {
           accentColor: NpsColors.colorSecondary,
           backgroundColor: NpsColors.colorWhite,
         ),
-        scaffoldBackgroundColor: Colors.transparent,
+        scaffoldBackgroundColor: NpsColors.colorWhite,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             primary: NpsColors.colorSecondary,

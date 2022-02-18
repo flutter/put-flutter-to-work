@@ -14,7 +14,10 @@ import 'package:mocktail/mocktail.dart';
 
 import '../../helpers/helpers.dart';
 
-class MockCaptureCubit extends MockCubit<CaptureCubitState>
+class MockNoSubmitCaptureCubit extends MockCubit<CaptureCubitState>
+    implements CaptureCubit {}
+
+class MockSubmitCaptureCubit extends MockCubit<CaptureCubitState>
     implements CaptureCubit {}
 
 void main() {
@@ -49,17 +52,20 @@ void main() {
   });
 
   group('CaptureView', () {
-    late CaptureCubit captureCubit;
+    late CaptureCubit noSubmitCaptureCubit;
+    late CaptureCubit submitCaptureCubit;
 
     setUp(() {
-      captureCubit = MockCaptureCubit();
+      noSubmitCaptureCubit = MockNoSubmitCaptureCubit();
+      submitCaptureCubit = MockSubmitCaptureCubit();
     });
 
     testWidgets('renders 5 unselected widget', (tester) async {
-      when(() => captureCubit.state).thenReturn(CaptureCubitState.initial());
+      when(() => noSubmitCaptureCubit.state)
+          .thenReturn(CaptureCubitState.initial());
       await tester.pumpApp(
-        BlocProvider.value(
-          value: captureCubit,
+        BlocProvider(
+          create: (_) => noSubmitCaptureCubit,
           child: const CaptureView(),
         ),
       );
@@ -73,27 +79,28 @@ void main() {
     });
 
     testWidgets('calls selectScore when score is tapped', (tester) async {
-      when(() => captureCubit.state).thenReturn(CaptureCubitState.initial());
+      when(() => noSubmitCaptureCubit.state)
+          .thenReturn(CaptureCubitState.initial());
 
       await tester.pumpApp(
         BlocProvider.value(
-          value: captureCubit,
+          value: noSubmitCaptureCubit,
           child: const CaptureView(),
         ),
       );
 
       await tester.tap(find.widgetWithText(TextButton, '1'));
 
-      verify(() => captureCubit.selectScore(score: 1)).called(1);
+      verify(() => noSubmitCaptureCubit.selectScore(score: 1)).called(1);
     });
 
     testWidgets('selectedScore has changed background', (tester) async {
-      when(() => captureCubit.state)
+      when(() => noSubmitCaptureCubit.state)
           .thenReturn(const CaptureCubitState(score: 1, chipIndexes: []));
 
       await tester.pumpApp(
         BlocProvider.value(
-          value: captureCubit,
+          value: noSubmitCaptureCubit,
           child: const CaptureView(),
         ),
       );
@@ -111,53 +118,53 @@ void main() {
     });
 
     testWidgets('unselected Chip calls addChip when tapped', (tester) async {
-      when(() => captureCubit.state)
+      when(() => noSubmitCaptureCubit.state)
           .thenReturn(const CaptureCubitState(score: 1, chipIndexes: []));
 
       await tester.pumpApp(
         BlocProvider.value(
-          value: captureCubit,
+          value: noSubmitCaptureCubit,
           child: const CaptureView(),
         ),
       );
 
       await tester.tap(find.byType(ActionChip).first);
 
-      verify(() => captureCubit.addChipIndex(index: any(named: 'index')))
-          .called(1);
+      verify(
+        () => noSubmitCaptureCubit.chipToggled(index: any(named: 'index')),
+      ).called(1);
     });
 
     testWidgets('selected Chip calls removeChip when tapped', (tester) async {
-      when(() => captureCubit.state)
+      when(() => noSubmitCaptureCubit.state)
           .thenReturn(const CaptureCubitState(score: 1, chipIndexes: [0]));
 
       await tester.pumpApp(
         BlocProvider.value(
-          value: captureCubit,
+          value: noSubmitCaptureCubit,
           child: const CaptureView(),
         ),
       );
 
       await tester.tap(find.byType(ActionChip).first);
 
-      verify(() => captureCubit.removeChipIndex(index: any(named: 'index')))
-          .called(1);
+      verify(
+        () => noSubmitCaptureCubit.chipToggled(index: any(named: 'index')),
+      ).called(1);
     });
 
-    // TODO(Jan-Stepien): Implement Need Help button test
-    testWidgets('resolve need help funciton when tapped need help button',
+    testWidgets('submit button calls cubit submitResult on tap',
         (tester) async {
-      when(() => captureCubit.state)
-          .thenReturn(const CaptureCubitState(score: -1, chipIndexes: [0]));
+      when(() => submitCaptureCubit.state)
+          .thenReturn(const CaptureCubitState(score: 1, chipIndexes: [1]));
 
       await tester.pumpApp(
         BlocProvider.value(
-          value: captureCubit,
+          value: submitCaptureCubit,
           child: const CaptureView(),
         ),
       );
-
-      final button = find.widgetWithText(TextButton, Texts.needHelp);
+      final button = find.byKey(const Key('capturePage_submit_elevatedButton'));
 
       await tester.dragUntilVisible(
         button,
@@ -167,7 +174,35 @@ void main() {
 
       await tester.tap(button);
 
-      verify(() => captureCubit.callNeedHelp()).called(1);
+      verify(() => submitCaptureCubit.submitResult()).called(1);
+    });
+
+    // TODO(Jan-Stepien): Implement Need Help button test
+    testWidgets('resolve need help funciton when tapped need help button',
+        (tester) async {
+      when(() => noSubmitCaptureCubit.state)
+          .thenReturn(const CaptureCubitState(score: -1, chipIndexes: [0]));
+
+      await tester.pumpApp(
+        BlocProvider.value(
+          value: noSubmitCaptureCubit,
+          child: const CaptureView(),
+        ),
+      );
+
+      final button = find.byKey(
+        const Key('capturePage_needHelp_textButton'),
+      );
+
+      await tester.dragUntilVisible(
+        button,
+        find.byType(SingleChildScrollView),
+        const Offset(0, 50),
+      );
+
+      await tester.tap(button);
+
+      verify(() => noSubmitCaptureCubit.callNeedHelp()).called(1);
     });
   });
 }

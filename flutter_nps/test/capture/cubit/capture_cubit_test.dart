@@ -28,28 +28,20 @@ void main() {
       'addChipIndex adds index to chipIndexes',
       build: CaptureCubit.new,
       seed: () => const CaptureCubitState(score: -1, chipIndexes: []),
-      act: (cubit) => cubit.addChipIndex(index: 1),
+      act: (cubit) => cubit.chipToggled(index: 1),
       expect: () => [
         equals(const CaptureCubitState(score: -1, chipIndexes: [1])),
       ],
     );
 
     blocTest<CaptureCubit, CaptureCubitState>(
-      'removeChipIndex from chipIndexes when exists',
+      'removeChipIndex from chipIndexes',
       build: CaptureCubit.new,
       seed: () => const CaptureCubitState(score: -1, chipIndexes: [1]),
-      act: (cubit) => cubit.removeChipIndex(index: 1),
+      act: (cubit) => cubit.chipToggled(index: 1),
       expect: () => [
         equals(const CaptureCubitState(score: -1, chipIndexes: [])),
       ],
-    );
-
-    blocTest<CaptureCubit, CaptureCubitState>(
-      'removeChipIndex from chipIndexes when does not exists',
-      build: CaptureCubit.new,
-      seed: () => const CaptureCubitState(score: -1, chipIndexes: []),
-      act: (cubit) => cubit.removeChipIndex(index: 1),
-      expect: () => <CaptureCubitState>[],
     );
 
     // TODO(Jan-Stepien): Submit result
