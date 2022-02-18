@@ -176,33 +176,5 @@ void main() {
 
       verify(() => submitCaptureCubit.submitResult()).called(1);
     });
-
-    // TODO(Jan-Stepien): Implement Need Help button test
-    testWidgets('resolve need help funciton when tapped need help button',
-        (tester) async {
-      when(() => noSubmitCaptureCubit.state)
-          .thenReturn(const CaptureCubitState(score: -1, chipIndexes: [0]));
-
-      await tester.pumpApp(
-        BlocProvider.value(
-          value: noSubmitCaptureCubit,
-          child: const CaptureView(),
-        ),
-      );
-
-      final button = find.byKey(
-        const Key('capturePage_needHelp_textButton'),
-      );
-
-      await tester.dragUntilVisible(
-        button,
-        find.byType(SingleChildScrollView),
-        const Offset(0, 50),
-      );
-
-      await tester.tap(button);
-
-      verify(() => noSubmitCaptureCubit.callNeedHelp()).called(1);
-    });
   });
 }
