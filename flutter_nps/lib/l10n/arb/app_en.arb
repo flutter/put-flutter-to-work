@@ -20,10 +20,6 @@
     "@submit": {
         "description": "Text displayed on submit button on Capture Page"
     },
-    "needHelp": "Need Help?",
-    "@needHelp": {
-        "description": "Text displayed on help button on Capture Page"
-    },
     "thankYou": "Thank you!",
     "@thankYou": {
         "description": "Text saying thank you"

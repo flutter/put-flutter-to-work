@@ -27,6 +27,4 @@ class CaptureCubit extends Cubit<CaptureCubitState> {
       );
 
   void submitResult() {}
-
-  void callNeedHelp() {}
 }
