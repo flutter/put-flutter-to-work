@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_nps/breakpoints.dart';
+import 'package:flutter_nps/colors.dart';
 
 class ResponsiveCard extends StatelessWidget {
   const ResponsiveCard({Key? key, required this.child}) : super(key: key);
@@ -17,14 +18,19 @@ class ResponsiveCard extends StatelessWidget {
           );
         } else {
           return Scaffold(
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            backgroundColor: NpsColors.transparent,
             body: Center(
               child: ConstrainedBox(
                 constraints: const BoxConstraints(
-                  maxHeight: 558,
+                  maxHeight: Breakpoints.maxHeight,
                   maxWidth: Breakpoints.small,
                 ),
-                child: Card(child: child),
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(32),
+                  ),
+                  child: child,
+                ),
               ),
             ),
           );

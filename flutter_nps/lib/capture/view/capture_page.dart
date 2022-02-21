@@ -33,13 +33,6 @@ class CaptureView extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Align(
-                  alignment: Alignment.centerRight,
-                  child: IconButton(
-                    onPressed: SystemNavigator.pop,
-                    icon: Icon(Icons.close),
-                  ),
-                ),
                 const SizedBox(height: 32),
                 const CircleAvatar(
                   maxRadius: 85 / 2,
@@ -87,7 +80,7 @@ class CaptureView extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.only(top: 35, right: 15),
           child: Align(
-            alignment: Alignment.centerRight,
+            alignment: Alignment.topRight,
             child: IconButton(
               onPressed: SystemNavigator.pop,
               icon: Icon(Icons.close),
@@ -109,8 +102,12 @@ class _SubmitButton extends StatelessWidget {
     );
     return ElevatedButton(
       key: const Key('capturePage_submit_elevatedButton'),
-      onPressed:
-          canSubmit ? () => context.read<CaptureCubit>().submitResult() : null,
+      onPressed: canSubmit
+          ? () {
+              context.read<CaptureCubit>().submitResult();
+              Navigator.pushReplacementNamed(context, CaptureEndPage.routeName);
+            }
+          : null,
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 72,
