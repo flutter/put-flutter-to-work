@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import UIKit
+import Flutter
 
 struct ContentView: View {
     @State var count: Int = 0;
@@ -25,6 +27,9 @@ struct ContentView: View {
                         Spacer()
                         Button(action: {
                             count+=1;
+                            if(count%5 == 0){
+                                openFlutterApp();
+                            }
                         }, label: {
                             Text("+")
                                 .font(.system(.largeTitle))
@@ -51,6 +56,13 @@ struct ContentView: View {
                 }
             }
         }
+    }
+    
+    func openFlutterApp()-> Void {
+        
+        let flutterViewController = FlutterViewController(project: nil, nibName: nil, bundle: nil)
+        
+        UIApplication.shared.keyWindow?.rootViewController?.present(flutterViewController, animated: true, completion: nil)
     }
 }
 
