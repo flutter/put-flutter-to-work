@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_nps/flutter_nps.dart';
+import 'package:flutter_nps/capture/capture.dart';
+import 'package:flutter_nps/colors.dart';
 import 'package:flutter_nps/l10n/l10n.dart';
 
 class CapturePage extends StatelessWidget {
@@ -11,27 +12,7 @@ class CapturePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => CaptureCubit(),
-      child: LayoutBuilder(
-        builder: (context, boxConstraints) {
-          if (boxConstraints.maxWidth <= 511) {
-            return Scaffold(
-              backgroundColor: Theme.of(context).cardColor,
-              body: const CaptureView(),
-            );
-          } else {
-            return Scaffold(
-              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-              body: Center(
-                child: ConstrainedBox(
-                  constraints:
-                      const BoxConstraints(maxHeight: 558, maxWidth: 511),
-                  child: const Card(child: CaptureView()),
-                ),
-              ),
-            );
-          }
-        },
-      ),
+      child: const ResponsiveCard(child: CaptureView()),
     );
   }
 }

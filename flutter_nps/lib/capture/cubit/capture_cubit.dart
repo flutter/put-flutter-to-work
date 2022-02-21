@@ -6,7 +6,7 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter_nps/flutter_nps.dart';
+import 'package:flutter_nps/capture/capture.dart';
 
 class CaptureCubit extends Cubit<CaptureCubitState> {
   CaptureCubit() : super(CaptureCubitState.initial());

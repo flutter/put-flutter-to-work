@@ -18,6 +18,7 @@ dependencies:
   
 dev_dependencies:
   bloc_test: ^9.0.2
+  build_runner: ^2.1.7
   flutter_test:
     sdk: flutter
   mocktail: ^0.2.0
@@ -26,6 +27,8 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/icons/
   module:
     androidX: true
     androidPackage: com.example.flutter_nps
