@@ -165,6 +165,7 @@ void main() {
           child: const CaptureView(),
         ),
       );
+
       final button = find.byKey(const Key('capturePage_submit_elevatedButton'));
 
       await tester.dragUntilVisible(
