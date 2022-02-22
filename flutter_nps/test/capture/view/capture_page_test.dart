@@ -22,15 +22,7 @@ class MockNoSubmitCaptureCubit extends MockCubit<CaptureCubitState>
 class MockSubmitCaptureCubit extends MockCubit<CaptureCubitState>
     implements CaptureCubit {}
 
-class MockNavigatorObserver extends Mock implements NavigatorObserver {}
-
-class FakeRoute extends Fake implements Route<dynamic> {}
-
 void main() {
-  setUpAll(() {
-    registerFallbackValue(FakeRoute());
-  });
-
   group('CapturePage', () {
     testWidgets('renders CaptureView fullscreen on width <= 511 screen size',
         (tester) async {
@@ -43,6 +35,7 @@ void main() {
         ),
         findsOneWidget,
       );
+      await tester.binding.setSurfaceSize(null);
     });
 
     testWidgets('renders CaptureView in card on width > 511 screen size',
@@ -59,16 +52,15 @@ void main() {
         ),
         findsOneWidget,
       );
+      await tester.binding.setSurfaceSize(null);
     });
   });
 
   group('CaptureView', () {
     late CaptureCubit noSubmitCaptureCubit;
     late CaptureCubit submitCaptureCubit;
-    late NavigatorObserver navigatorObserver;
 
     setUp(() {
-      navigatorObserver = MockNavigatorObserver();
       noSubmitCaptureCubit = MockNoSubmitCaptureCubit();
       submitCaptureCubit = MockSubmitCaptureCubit();
     });
@@ -176,7 +168,6 @@ void main() {
           value: submitCaptureCubit,
           child: const CaptureView(),
         ),
-        observers: [navigatorObserver],
       );
 
       final button = find.byKey(const Key('capturePage_submit_elevatedButton'));

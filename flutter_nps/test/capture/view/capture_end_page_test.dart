@@ -25,6 +25,7 @@ void main() {
         ),
         findsOneWidget,
       );
+      await tester.binding.setSurfaceSize(null);
     });
 
     testWidgets('renders CaptureView in card on width > 511 screen size',
@@ -41,6 +42,7 @@ void main() {
         ),
         findsOneWidget,
       );
+      await tester.binding.setSurfaceSize(null);
     });
   });
 }
