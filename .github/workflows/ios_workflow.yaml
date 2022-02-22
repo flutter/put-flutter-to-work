@@ -24,9 +24,7 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_13.2.app && /usr/bin/xcodebuild -version
 
       - name: Install Dependencies
-        run: |
-          cd counter_app_ios
-          pod install
+        run: pod install
 
       - name: Run unit tests
         run: xcodebuild test -scheme counter_app -workspace counter_app.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.2' | xcpretty && exit ${PIPESTATUS[0]}
