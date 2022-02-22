@@ -1,6 +1,6 @@
 name: Swift CI
 
-on: [pull_request, push]
+on: [pull_request]
 
 defaults:
  run:
@@ -11,11 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # - name: Build Flutter Module for IOS
-      #   working-directory: ./flutter_nps
-      #   run: flutter build ios-framework
-
-      
+      - name: Build Flutter Module for IOS
+        working-directory: ../flutter_nps
+        run: flutter build ios-framework
 
       - name: List available Xcode versions
         run: ls /Applications | grep Xcode
