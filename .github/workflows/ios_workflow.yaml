@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build Flutter Module for IOS
-        working-directory: ../flutter_nps
+        working-directory: ./flutter_nps
         run: flutter build ios-framework
 
       - name: List available Xcode versions
