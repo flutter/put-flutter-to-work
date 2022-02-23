@@ -1,3 +1,4 @@
+
 //
 //  ContentView.swift
 //  counter_app
@@ -26,8 +27,8 @@ struct ContentView: View {
                     HStack {
                         Spacer()
                         Button(action: {
-                            count+=1;
-                            if(count%5 == 0){
+                            count += 1;
+                            if(count % 5 == 0){
                                 openFlutterApp();
                             }
                         }, label: {
@@ -58,7 +59,7 @@ struct ContentView: View {
         }
     }
     
-    func openFlutterApp()-> Void {
+    func openFlutterApp() -> Void {
         
         let flutterViewController = FlutterViewController(project: nil, nibName: nil, bundle: nil)
         
@@ -66,7 +67,7 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ContentViewPreviews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
