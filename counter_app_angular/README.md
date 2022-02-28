@@ -1,27 +1,46 @@
-# CounterAppAngular
+# Counter App Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
+This project contains sample Angular application that shows how to embed Flutter project into Angular (web-based) project.
 
-## Development server
+## Setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To add existing Flutter Application into web-based project you need to build your Flutter project for web.
 
-## Code scaffolding
+### Building Flutter project for web
+To setup Flutter web project go check out the [Building a web application with Flutter](https://docs.flutter.dev/get-started/web)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To get the required web app build run:
 
-## Build
+```
+flutter build web
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This generates the app, including the assets, and places the files into the `/build/web` directory of the project.
 
-## Running unit tests
+### Generate web for Flutter Module
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Note**: Current version of Flutter doesn't support creating web project of Flutter module.
+To allow generating Flutter web of Flutter module change entry in `.metadata`:
 
-## Running end-to-end tests
+```
+~~project_type: module~~
+project_type: app
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run:
+```
+flutter create . --platforms web --org com.example.flutter_nps
+```
 
-## Further help
+Remove automatically generated `widget_test.dart` file
+
+and build app with:
+
+```
+flutter build web
+```
+
+
+## Further Angular help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
