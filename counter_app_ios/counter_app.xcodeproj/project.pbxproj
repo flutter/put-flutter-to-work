@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B77B4F127AAC75800D1FED3 /* counter_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B4F027AAC75800D1FED3 /* counter_appApp.swift */; };
+		2B77B4F127AAC75800D1FED3 /* CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B4F027AAC75800D1FED3 /* CounterApp.swift */; };
 		2B77B4F327AAC75800D1FED3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B4F227AAC75800D1FED3 /* ContentView.swift */; };
 		2B77B4F527AAC75900D1FED3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B77B4F427AAC75900D1FED3 /* Assets.xcassets */; };
 		2B77B4F827AAC75900D1FED3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B77B4F727AAC75900D1FED3 /* Preview Assets.xcassets */; };
@@ -35,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		2B77B4ED27AAC75800D1FED3 /* counter_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = counter_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B77B4F027AAC75800D1FED3 /* counter_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = counter_appApp.swift; sourceTree = "<group>"; };
+		2B77B4F027AAC75800D1FED3 /* CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterApp.swift; sourceTree = "<group>"; };
 		2B77B4F227AAC75800D1FED3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2B77B4F427AAC75900D1FED3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B77B4F727AAC75900D1FED3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -74,9 +74,9 @@
 		2B77B4E427AAC75800D1FED3 = {
 			isa = PBXGroup;
 			children = (
-				2B77B4EF27AAC75800D1FED3 /* counter_app */,
-				2B77B50027AAC75900D1FED3 /* counter_appTests */,
-				2B77B50A27AAC75900D1FED3 /* counter_appUITests */,
+				2B77B4EF27AAC75800D1FED3 /* counterApp */,
+				2B77B50027AAC75900D1FED3 /* counterAppTests */,
+				2B77B50A27AAC75900D1FED3 /* counterAppUITests */,
 				2B77B4EE27AAC75800D1FED3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,15 +91,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2B77B4EF27AAC75800D1FED3 /* counter_app */ = {
+		2B77B4EF27AAC75800D1FED3 /* counterApp */ = {
 			isa = PBXGroup;
 			children = (
-				2B77B4F027AAC75800D1FED3 /* counter_appApp.swift */,
+				2B77B4F027AAC75800D1FED3 /* CounterApp.swift */,
 				2B77B4F227AAC75800D1FED3 /* ContentView.swift */,
 				2B77B4F427AAC75900D1FED3 /* Assets.xcassets */,
 				2B77B4F627AAC75900D1FED3 /* Preview Content */,
 			);
-			path = counter_app;
+			path = counterApp;
 			sourceTree = "<group>";
 		};
 		2B77B4F627AAC75900D1FED3 /* Preview Content */ = {
@@ -110,21 +110,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		2B77B50027AAC75900D1FED3 /* counter_appTests */ = {
+		2B77B50027AAC75900D1FED3 /* counterAppTests */ = {
 			isa = PBXGroup;
 			children = (
 				2B77B50127AAC75900D1FED3 /* counter_appTests.swift */,
 			);
-			path = counter_appTests;
+			path = counterAppTests;
 			sourceTree = "<group>";
 		};
-		2B77B50A27AAC75900D1FED3 /* counter_appUITests */ = {
+		2B77B50A27AAC75900D1FED3 /* counterAppUITests */ = {
 			isa = PBXGroup;
 			children = (
 				2B77B50B27AAC75900D1FED3 /* counter_appUITests.swift */,
 				2B77B50D27AAC75900D1FED3 /* counter_appUITestsLaunchTests.swift */,
 			);
-			path = counter_appUITests;
+			path = counterAppUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B77B4F327AAC75800D1FED3 /* ContentView.swift in Sources */,
-				2B77B4F127AAC75800D1FED3 /* counter_appApp.swift in Sources */,
+				2B77B4F127AAC75800D1FED3 /* CounterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +418,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"counter_app/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"counterApp/Preview Content\"";
 				DEVELOPMENT_TEAM = CPVGY3KSDF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -448,7 +448,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"counter_app/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"counterApp/Preview Content\"";
 				DEVELOPMENT_TEAM = CPVGY3KSDF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
