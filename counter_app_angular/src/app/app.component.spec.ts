@@ -4,9 +4,7 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
     }).compileComponents();
   });
 
@@ -27,13 +25,12 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement as HTMLElement;
     expect(compiled.querySelector('.counter')?.textContent).toContain('0');
-    
+
     let button = fixture.debugElement.nativeElement.querySelector('button');
 
     button.click();
     fixture.detectChanges();
 
     expect(compiled.querySelector('.counter')?.textContent).toContain('1');
-    
   });
 });

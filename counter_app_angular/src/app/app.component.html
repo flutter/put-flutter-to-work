@@ -1,5 +1,5 @@
 <div class="toolbar" role="banner">
-  <h3 style="margin-bottom: 0;">Angular Demo Home Page</h3>
+  <h3 style="margin-bottom: 0">Angular Demo Home Page</h3>
 </div>
 
 <div class="wrappingContainer">
@@ -7,4 +7,9 @@
   <p class="counter">{{ counter }}</p>
 </div>
 
-<button mat-fab class="md-fab-bottom-right flutter-color" (click)="counter = counter + 1">+</button>
+<button
+  mat-fab
+  class="md-fab-bottom-right flutter-color"
+  (click)="incrementCounter()">
+  +
+</button>
