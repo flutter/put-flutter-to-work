@@ -17,14 +17,14 @@ flutter build web
 
 This generates the app, including the assets, and places the files into the `/build/web` directory of the project.
 
-### Generate web for Flutter Module
+#### Generate web for Flutter Module
 
 **Note**: Current version of Flutter doesn't support creating web project of Flutter module.
 To allow generating Flutter web of Flutter module change entry in `.metadata`:
 
 ```
-~~project_type: module~~
-project_type: app
+- project_type: module
++ project_type: app
 ```
 
 Run:
@@ -40,7 +40,22 @@ and build app with:
 flutter build web
 ```
 
+### Embeding Flutter in Angular project
 
-## Further Angular help
+For Angular project to be able to discover Flutter project copy `/build/web` directory from the project and paste it into `src` directory of Angular project. 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**Note**: Flutter files need to be added in `angular.json` for Angular to be able to discover them:
+```
+...
+"assets": [
+    "src/favicon.ico",
+    "src/assets",
+    "src/web"
+],
+...
+```
+
+To display the Flutter application in Html use `<iframe></iframe>` tag with defined `src` pointing to the `index.html` file of your project with `src` folder as your root.
+```
+<iframe src="./web/index.html"> </iframe>
+```
