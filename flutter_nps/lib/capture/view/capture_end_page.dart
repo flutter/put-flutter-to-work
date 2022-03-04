@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_nps/gen/assets.gen.dart';
-import 'package:flutter_nps/helper/helpers.dart';
 import 'package:flutter_nps/l10n/l10n.dart';
 
 class CaptureEndPage extends StatelessWidget {
