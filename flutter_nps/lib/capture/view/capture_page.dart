@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_nps/colors.dart';
+import 'package:flutter_nps/helper/helpers.dart';
 import 'package:flutter_nps/l10n/l10n.dart';
 
 class CapturePage extends StatelessWidget {
@@ -29,11 +29,11 @@ class CaptureView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Align(
+            Align(
               alignment: Alignment.centerRight,
               child: IconButton(
-                onPressed: SystemNavigator.pop,
-                icon: Icon(Icons.close),
+                onPressed: PlatformClose().close,
+                icon: const Icon(Icons.close),
               ),
             ),
             const SizedBox(height: 32),

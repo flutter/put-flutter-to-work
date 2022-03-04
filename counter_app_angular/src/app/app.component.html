@@ -13,5 +13,6 @@
   (click)="incrementCounter()">
   +
 </button>
-
-<iframe *ngIf="isFlutterAppVisible" class="iframe-overlay" src="./web/index.html"> </iframe>
+<div *ngIf="isFlutterAppVisible">
+  <iframe id="iframe"  class="iframe-overlay" src="../web/index.html">Your browser doesn't support iframe</iframe>
+</div>
