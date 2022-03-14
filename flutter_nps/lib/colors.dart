@@ -1,4 +1,4 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
 abstract class NpsColors {
   static const colorPrimary1 = Color(0xFF041E3C);
@@ -8,4 +8,5 @@ abstract class NpsColors {
   static const colorGrey2 = Color(0xFF9FA2AF);
   static const colorGrey5 = Color(0xFFF8F9FA);
   static const colorWhite = Color(0xFFFFFFFF);
+  static const transparent = Colors.transparent;
 }

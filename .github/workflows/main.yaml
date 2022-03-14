@@ -7,6 +7,6 @@ jobs:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
     with:
       working_directory: "flutter_nps"
-      coverage_excludes: "*.g.dart"
+      coverage_excludes: "*.g.dart lib/gen/*.gen.dart"
       flutter_channel: stable
       flutter_version: 2.10.0

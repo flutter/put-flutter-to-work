@@ -19,19 +19,28 @@ see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-a
 To run all unit and widget tests use the following command:
 
 ```sh
-$ flutter test --coverage --test-randomize-ordering-seed random
+flutter test --coverage --test-randomize-ordering-seed random
 ```
 
 To view the generated coverage report you can use [lcov](https://github.com/linux-test-project/lcov).
 
 ```sh
 # Generate Coverage Report
-$ genhtml coverage/lcov.info -o coverage/
+genhtml coverage/lcov.info -o coverage/
 
 # Open Coverage Report
-$ open coverage/index.html
+open coverage/index.html
 ```
 
+## Using Flutter_gen
+
+To generate all the assets accessors of pubspec.yaml file run:
+
+```sh
+fluttergen -c pubspec.yaml
+```
+
+For more information how to use Flutter_gen visit [Flutter_gen](https://pub.dev/packages/flutter_gen)
 ## Working with Translations 🌐
 
 This project relies on [flutter_localizations][flutter_localizations_link] and follows the [official internationalization guide for Flutter][internationalization_link].
