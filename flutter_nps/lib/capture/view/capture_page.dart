@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_nps/colors.dart';
-import 'package:flutter_nps/helper/helpers.dart';
+import 'package:flutter_nps/helpers/helpers.dart';
 import 'package:flutter_nps/l10n/l10n.dart';
 
 class CapturePage extends StatelessWidget {
@@ -32,7 +32,7 @@ class CaptureView extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: IconButton(
-                onPressed: PlatformClose().close,
+                onPressed: PlatformClose.instance().close,
                 icon: const Icon(Icons.close),
               ),
             ),
