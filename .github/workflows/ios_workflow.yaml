@@ -1,0 +1,34 @@
+name: Swift CI
+
+on: [pull_request]
+
+defaults:
+ run:
+  working-directory: ./counter_app_ios
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: List Flutter version
+        run: flutter --version
+
+      - name: Build Flutter Module for IOS
+        working-directory: flutter_nps
+        run: flutter build ios-framework
+
+      - name: List available Xcode versions
+        run: ls /Applications | grep Xcode
+
+      - name: Select Xcode
+        run: sudo xcode-select -switch /Applications/Xcode_13.2.app && /usr/bin/xcodebuild -version
+
+      - name: Install Dependencies
+        run: pod install
+
+      - name: Run unit tests
+        run: xcodebuild test -scheme counter_app -workspace counter_app.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 11,OS=15.2' | xcpretty && exit ${PIPESTATUS[0]}

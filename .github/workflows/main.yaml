@@ -1,6 +1,6 @@
 name: flutter_nps_test
 
-on: [pull_request, push]
+on: [pull_request]
 
 jobs:
   build:

@@ -7,6 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_nps/app/route_generator.dart';
 import 'package:flutter_nps/app_theme.dart';
 import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_nps/l10n/l10n.dart';
@@ -18,6 +19,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: AppTheme().theme,
+      initialRoute: CapturePage.routeName,
+      onGenerateRoute: RouteGenerator.generateRoute,
       home: const Scaffold(
         body: CapturePage(),
       ),

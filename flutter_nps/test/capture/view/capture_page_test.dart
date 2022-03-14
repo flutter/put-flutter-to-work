@@ -8,6 +8,7 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_nps/breakpoints.dart';
 import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_nps/colors.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -25,7 +26,7 @@ void main() {
   group('CapturePage', () {
     testWidgets('renders CaptureView fullscreen on width <= 511 screen size',
         (tester) async {
-      await tester.binding.setSurfaceSize(const Size(511, 600));
+      await tester.binding.setSurfaceSize(const Size(Breakpoints.small, 600));
       await tester.pumpApp(const CapturePage());
       expect(
         find.ancestor(
@@ -34,11 +35,13 @@ void main() {
         ),
         findsOneWidget,
       );
+      await tester.binding.setSurfaceSize(null);
     });
 
     testWidgets('renders CaptureView in card on width > 511 screen size',
         (tester) async {
-      await tester.binding.setSurfaceSize(const Size(512, 600));
+      await tester.binding
+          .setSurfaceSize(const Size(Breakpoints.small + 1, 600));
 
       await tester.pumpApp(const CapturePage());
 
@@ -49,6 +52,7 @@ void main() {
         ),
         findsOneWidget,
       );
+      await tester.binding.setSurfaceSize(null);
     });
   });
 
