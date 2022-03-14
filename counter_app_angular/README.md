@@ -44,6 +44,8 @@ flutter build web
 
 For Angular project to be able to discover Flutter project copy `/build/web` directory from the project and paste it into `src` directory of Angular project. 
 
+In `src/web/index.html` change <base href="/"> to <base href="./">
+
 **Note**: Flutter files need to be added in `angular.json` for Angular to be able to discover them:
 ```
 ...
