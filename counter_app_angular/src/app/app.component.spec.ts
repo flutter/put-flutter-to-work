@@ -13,16 +13,15 @@ describe('AppComponent', () => {
     app = fixture.componentInstance;
   });
 
-  it('should create the app', () => {
+  it('should create the app.', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have 0 as initial counter value`, () => {
+  it(`should have 0 as initial counter value.`, () => {
     expect(app.counter).toEqual(0);
   });
 
-  it('should change from 0 to 1 on button click', () => {
-    
+  it('should change from 0 to 1 on button click.', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement as HTMLElement;
     expect(compiled.querySelector('.counter')?.textContent).toContain('0');
@@ -35,8 +34,7 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.counter')?.textContent).toContain('1');
   });
 
-  it('should change from 0 to 1 on button click', () => {
-    
+  it('should open flutter modal when counter is incremented from 4 to 5.', () => {
     app.counter = 4;
     const spy = spyOn(app, 'openFlutterModal');
 
@@ -44,15 +42,12 @@ describe('AppComponent', () => {
     button.click();
     
     expect(spy).toHaveBeenCalled();
-    
   });
 
-  it('should change from 0 to 1 on button click', () => {
-    
+  it('isFlutterAppVisible should be true when openFlutterModal is called.', () => {
     app.isFlutterAppVisible = false;
     app.openFlutterModal();
       
     expect(app.isFlutterAppVisible).toBeTrue();
-    
   });
 });

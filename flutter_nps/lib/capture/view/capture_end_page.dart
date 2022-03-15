@@ -48,7 +48,7 @@ class CaptureEndView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               IconButton(
-                onPressed: PlatformClose.instance().close,
+                onPressed: PlatformClose.instance.close,
                 icon: const Icon(Icons.close),
               ),
             ],

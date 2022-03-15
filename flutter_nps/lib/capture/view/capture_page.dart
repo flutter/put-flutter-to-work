@@ -82,7 +82,7 @@ class CaptureView extends StatelessWidget {
           child: Align(
             alignment: Alignment.topRight,
             child: IconButton(
-              onPressed: PlatformClose.instance().close,
+              onPressed: PlatformClose.instance.close,
               icon: const Icon(Icons.close),
             ),
           ),

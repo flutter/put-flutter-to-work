@@ -17,7 +17,7 @@ void main() {
 
       await tester.pumpApp(
         ElevatedButton(
-          onPressed: PlatformClose.instance().close,
+          onPressed: PlatformClose.instance.close,
           child: const Text(testText),
         ),
       );

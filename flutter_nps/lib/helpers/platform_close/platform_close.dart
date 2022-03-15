@@ -6,7 +6,7 @@ import 'package:flutter_nps/helpers/platform_close/platform_close_stub.dart'
     if (dart.library.html) 'package:flutter_nps/helpers/platform_close/web_close.dart';
 
 abstract class PlatformClose {
-  static PlatformClose instance() => platform ?? getPlatformClose();
+  static PlatformClose get instance => platform ?? getPlatformClose();
 
   @visibleForTesting
   static PlatformClose? platform;

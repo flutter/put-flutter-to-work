@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_nps/helpers/helpers.dart';
 
 class MobileClose implements PlatformClose {
-  MobileClose({required this.closeCallback});
+  const MobileClose({required this.closeCallback});
 
-  VoidCallback closeCallback;
+  final VoidCallback closeCallback;
 
   @override
   void close() {
@@ -14,4 +14,4 @@ class MobileClose implements PlatformClose {
 }
 
 PlatformClose getPlatformClose() =>
-    MobileClose(closeCallback: SystemNavigator.pop);
+    const MobileClose(closeCallback: SystemNavigator.pop);
