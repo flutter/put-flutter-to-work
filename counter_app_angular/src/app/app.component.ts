@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  openFlutterModal():void {
+  openFlutterModal(): void {
     this.isFlutterAppVisible = true;
   }
 
