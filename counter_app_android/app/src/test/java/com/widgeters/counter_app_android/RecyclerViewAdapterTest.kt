@@ -33,6 +33,7 @@ class RecyclerViewAdapterTest{
         val recycler = RecyclerViewAdapter(list)
 
         val result = recycler.getItemViewType(list.size - 1)
+
         assertEquals(1, result)
     }
 }
