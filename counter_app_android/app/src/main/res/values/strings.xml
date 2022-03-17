@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Android Demo Home Page</string>
+    <string name="app_name">newsfeed</string>
+    <string name="blue_dot_description">Blue dot a part of application logo</string>
+    <string name="card_row_image_description">Sample image for the category row</string>
+    <string name="category">Category</string>
+    <string name="content">Lorem ipsum dolor sit amet…</string>
+    <string name="date">13 Jan, 2022</string>
 </resources>

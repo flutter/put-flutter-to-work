@@ -6,39 +6,36 @@
     android:layout_gravity="top"
     app:cardElevation="2dp"
     app:cardUseCompatPadding="true">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="top"
-
         android:layout_marginTop="10dp"
         android:orientation="vertical">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
-
             <TextView
-                android:id="@+id/appName"
+                android:id="@+id/app_name"
+                android:text="@string/app_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textColor="@color/black"
-                android:textSize="26dp"
+                android:textSize="26sp"
                 android:textStyle="bold" />
-
             <ImageView
-                android:id="@+id/blueDot"
+                android:id="@+id/dot"
+                android:src="@drawable/dot"
+                android:contentDescription="@string/blue_dot_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
                 android:scaleType="centerCrop" />
         </LinearLayout>
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
@@ -48,9 +45,5 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        <androidx.core.widget.ContentLoadingProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
