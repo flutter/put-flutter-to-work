@@ -10,3 +10,12 @@ You must run `flutter build ios-framework` every time you make code changes in y
   in your Flutter module directory to refresh the list of plugins read by the podhelper.rb script. 
   Then, run 
   `pod install` again from your application at /counter_app_ios.
+
+### installing swift-format
+
+For the full guide on swift-format visit [swift-format GitHub repository](https://github.com/apple/swift-format#:~:text=swift%2Dformat%20provides%20the%20formatting,and%20invoked%20via%20an%20API.)
+
+or install swift-format from Homebrew Taps
+
+
+`brew install exyte/formulae/swift-format`

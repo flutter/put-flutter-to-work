@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2B75520A27E4D9A200E53ED8 /* RowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75520927E4D9A200E53ED8 /* RowItem.swift */; };
+		2B75520D27E8BC6100E53ED8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B75520F27E8BC6100E53ED8 /* Localizable.strings */; };
+		2B75521027E8BCF000E53ED8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B4F227AAC75800D1FED3 /* ContentView.swift */; };
+		2B75521127E8BCF100E53ED8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B4F227AAC75800D1FED3 /* ContentView.swift */; };
 		2B77B4F127AAC75800D1FED3 /* CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B4F027AAC75800D1FED3 /* CounterApp.swift */; };
 		2B77B4F327AAC75800D1FED3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B4F227AAC75800D1FED3 /* ContentView.swift */; };
 		2B77B4F527AAC75900D1FED3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B77B4F427AAC75900D1FED3 /* Assets.xcassets */; };
@@ -41,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		2B75520927E4D9A200E53ED8 /* RowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItem.swift; sourceTree = "<group>"; };
+		2B75520E27E8BC6100E53ED8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2B77B4ED27AAC75800D1FED3 /* counter_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = counter_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B77B4F027AAC75800D1FED3 /* CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterApp.swift; sourceTree = "<group>"; };
 		2B77B4F227AAC75800D1FED3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				2BC5344927E4AC9E00F96DE0 /* EndlessList.swift */,
 				2BC5344B27E4ACD900F96DE0 /* ContentDataSource.swift */,
 				2B75520927E4D9A200E53ED8 /* RowItem.swift */,
+				2B75520F27E8BC6100E53ED8 /* Localizable.strings */,
 			);
 			path = counterApp;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				2B77B4EA27AAC75800D1FED3 /* Frameworks */,
 				2B77B4EB27AAC75800D1FED3 /* Resources */,
 				11B10AB18505B9F73361FED0 /* [CP] Embed Pods Frameworks */,
+				2B75521227E8C85400E53ED8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -290,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B77B4F827AAC75900D1FED3 /* Preview Assets.xcassets in Resources */,
+				2B75520D27E8BC6100E53ED8 /* Localizable.strings in Resources */,
 				2B77B4F527AAC75900D1FED3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +361,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../flutter_nps/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+		};
+		2B75521227E8C85400E53ED8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swift-format >/dev/null; then\n    swift-format -m format -i -r ${PROJECT_DIR}\n    swift-format -m lint -r ${PROJECT_DIR}\n    exit 0\nelse\n    echo \"warning: swift-format not installed\"\nfi\n";
 		};
 		6D513D13F5677F947FEF88F3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -477,6 +501,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B75521027E8BCF000E53ED8 /* ContentView.swift in Sources */,
 				2BF9EC0427CCF8270073EC0F /* counterAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +512,7 @@
 			files = (
 				2B77B50C27AAC75900D1FED3 /* counterAppUITests.swift in Sources */,
 				2B77B50E27AAC75900D1FED3 /* counterAppUITestsLaunchTests.swift in Sources */,
+				2B75521127E8BCF100E53ED8 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +530,17 @@
 			targetProxy = 2B77B50827AAC75900D1FED3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2B75520F27E8BC6100E53ED8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B75520E27E8BC6100E53ED8 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2B77B50F27AAC75900D1FED3 /* Debug */ = {

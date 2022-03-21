@@ -20,7 +20,7 @@ struct EndlessList: View {
             RowItem(id: item)
                 .onAppear {
                     dataSource.loadMoreContentIfNeeded(currentItem: item)
-                    if(item == 10 && wasOpened == false){
+                    if( item == 10 && wasOpened == false){
                         openFlutterApp()
                         wasOpened = true
                     }

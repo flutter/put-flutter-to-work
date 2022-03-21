@@ -23,7 +23,7 @@ struct ContentView: View {
                 ToolbarItem(placement: .principal) {
                   
                     HStack(alignment: .top ) {
-                        Text("newsfeed").font(.system(size: 24, weight: .bold))
+                        Text("AppName".localized()).font(.system(size: 24, weight: .bold))
                         Circle().frame(width: 8, height: 8)
 .foregroundColor(.blue)
                   

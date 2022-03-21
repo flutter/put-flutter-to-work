@@ -34,7 +34,7 @@ import SwiftUI
     if items.first(where: { $0 == item }) == thresholdIndex {
         Task {
             await loadMoreContent()
-            }
+        }
     }
   }
 
