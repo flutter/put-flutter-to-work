@@ -8,7 +8,7 @@ import SwiftUI
 import UIKit
 
 struct EndlessList: View {
-    
+
   @StateObject var dataSource = ContentDataSource()
   @State var wasOpened = false
 
@@ -33,7 +33,7 @@ struct EndlessList: View {
       }
     }
   }
-    
+
   func openFlutterApp() {
     let flutterViewController = FlutterViewController(project: nil, nibName: nil, bundle: nil)
     flutterViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext

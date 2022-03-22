@@ -8,12 +8,12 @@ import SwiftUI
 import UIKit
 
 struct ContentView: View {
-    
+
   init() {
     UITableView.appearance().backgroundColor = .clear
     UINavigationBar.appearance().barTintColor = .white
   }
-    
+
   var body: some View {
     NavigationView {
       EndlessList()
