@@ -8,7 +8,7 @@ describe('AppComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [AppComponent],
     }).compileComponents();
-    
+
     fixture = TestBed.createComponent(AppComponent);
     app = fixture.componentInstance;
   });
@@ -40,14 +40,14 @@ describe('AppComponent', () => {
 
     let button = fixture.debugElement.nativeElement.querySelector('button');
     button.click();
-    
+
     expect(spy).toHaveBeenCalled();
   });
 
   it('isFlutterAppVisible should be true when openFlutterModal is called.', () => {
     app.isFlutterAppVisible = false;
     app.openFlutterModal();
-      
+
     expect(app.isFlutterAppVisible).toBeTrue();
   });
 });

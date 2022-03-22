@@ -7,15 +7,7 @@
   <p class="counter">{{ counter }}</p>
 </div>
 
-<button
-  mat-fab
-  class="md-fab-bottom-right flutter-color"
-  (click)="incrementCounter()"
->
-  +
-</button>
+<button mat-fab class="md-fab-bottom-right flutter-color" (click)="incrementCounter()">+</button>
 <div *ngIf="isFlutterAppVisible">
-  <iframe id="iframe" class="iframe-overlay" src="../web/index.html"
-    >Your browser doesn't support iframe</iframe
-  >
+  <iframe id="iframe" class="iframe-overlay" src="../web/index.html">Your browser doesn't support iframe</iframe>
 </div>
