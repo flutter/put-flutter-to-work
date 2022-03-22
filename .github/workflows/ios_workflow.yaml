@@ -21,6 +21,33 @@ jobs:
         working-directory: flutter_nps
         run: flutter build ios-framework
 
+      - name: Restore swift build cache
+        uses: actions/cache@v1
+        with:
+          path: .build
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
+
+      - name: Swift build
+        run: |
+          if [ -d ".build" ]; then
+            if ! [ -x "$(command -v swift-format)" ]; then
+              sudo cp -f .build/release/swift-format /usr/local/bin/swift-format
+            fi
+          else
+            git clone -b swift-5.2-branch https://github.com/apple/swift-format.git
+            cd swift-format
+            swift build --disable-sandbox -c release
+            mv .build .. && cd ..
+            sudo cp -f .build/release/swift-format /usr/local/bin/swift-format
+          fi
+
+      - name: Swift Lint
+        uses: Iron-Ham/swift-format-linter-action@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: List available Xcode versions
         run: ls /Applications | grep Xcode
 
