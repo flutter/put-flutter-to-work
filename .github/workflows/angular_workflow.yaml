@@ -24,10 +24,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run lint
-        run: npm run lint  
+      - name: Run format check
+        run: npm run format:check
 
-      - name: Build 
+      - name: Run lint
+        run: npm run lint
+
+      - name: Build
         run: npm run build:ci
 
       - name: Test

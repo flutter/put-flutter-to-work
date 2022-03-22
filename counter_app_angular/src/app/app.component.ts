@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,11 +10,7 @@ export class AppComponent implements OnInit {
   isFlutterAppVisible = false;
 
   ngOnInit(): void {
-    window.addEventListener(
-      'message',
-      this.closeFlutterModal.bind(this),
-      false
-    );
+    window.addEventListener('message', this.closeFlutterModal.bind(this), false);
   }
 
   incrementCounter(): void {
