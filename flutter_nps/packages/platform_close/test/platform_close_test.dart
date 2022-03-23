@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_nps/helpers/helpers.dart';
-import 'package:flutter_nps/helpers/platform_close/mobile_close.dart' as mobile;
+import 'package:platform_close/mobile_close.dart' as mobile;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-
-import '../helpers.dart';
+import 'package:platform_close/platform_close.dart';
 
 class MockMobileClose extends Mock implements mobile.MobileClose {}
 
@@ -15,7 +13,7 @@ void main() {
       final mobileMock = MockMobileClose();
       PlatformClose.platform = mobileMock;
 
-      await tester.pumpApp(
+      await tester.pumpWidget(
         ElevatedButton(
           onPressed: PlatformClose.instance.close,
           child: const Text(testText),

@@ -2,6 +2,7 @@ name: flutter_nps
 description: A new flutter module project.
 
 version: 1.0.0+1
+publish_to: none
 
 environment:
   sdk: ">=2.15.1 <3.0.0"
@@ -15,7 +16,9 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
-  
+  platform_close:
+    path: ./packages/platform_close
+
 dev_dependencies:
   bloc_test: ^9.0.2
   build_runner: ^2.1.7

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_nps/helpers/helpers.dart';
+import 'package:platform_close/platform_close.dart';
 
 class MobileClose implements PlatformClose {
   const MobileClose({required this.closeCallback});

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_nps/capture/widget/responsive_card.dart';
 import 'package:flutter_nps/gen/assets.gen.dart';
-import 'package:flutter_nps/helpers/helpers.dart';
 import 'package:flutter_nps/l10n/l10n.dart';
+import 'package:platform_close/platform_close.dart';
 
 class CaptureEndPage extends StatelessWidget {
   const CaptureEndPage({Key? key}) : super(key: key);
