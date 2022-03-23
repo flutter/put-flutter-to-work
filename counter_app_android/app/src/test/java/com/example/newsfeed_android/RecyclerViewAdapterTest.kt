@@ -1,9 +1,6 @@
-package com.widgeters.counter_app_android
-
-
+package com.example.newsfeed_android
 import org.junit.Assert.assertEquals
 import org.junit.Test
-
 
 class RecyclerViewAdapterTest{
 

@@ -1,4 +1,4 @@
-package com.widgeters.counter_app_android
+package com.example.newsfeed_android
 
 import org.junit.Test
 import org.junit.runner.RunWith

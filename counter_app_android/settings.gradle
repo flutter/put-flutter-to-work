@@ -8,5 +8,5 @@ dependencyResolutionManagement {
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "counter_app_android"
+rootProject.name = "newsfeed_android"
 include ':app'

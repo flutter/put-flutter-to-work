@@ -1,5 +1,4 @@
-package com.widgeters.counter_app_android
-
+package com.example.newsfeed_android
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

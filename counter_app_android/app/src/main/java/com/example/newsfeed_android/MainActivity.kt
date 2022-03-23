@@ -1,5 +1,4 @@
-package com.widgeters.counter_app_android
-
+package com.example.newsfeed_android
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
