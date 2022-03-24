@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 private const val VIEW_TYPE_ITEM = 0
 private const val VIEW_TYPE_LOADING = 1
 
-class RecyclerViewAdapter internal constructor(private val itemList: List<String>) :
+class RecyclerViewAdapter constructor(private val itemList: List<String>) :
 RecyclerView.Adapter<ViewHolder>() {
 
    @NonNull

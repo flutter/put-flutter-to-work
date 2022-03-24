@@ -6,6 +6,7 @@ import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.newsfeed_android.databinding.ActivityMainBinding
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.android.FlutterActivityLaunchConfigs
 import io.flutter.embedding.engine.FlutterEngine
@@ -16,25 +17,26 @@ private const val FLUTTER_ENGINE_NAME = "nps_flutter_engine_name"
 private const val ROW_ITEM_NAME = "row_item"
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var recyclerViewAdapter: RecyclerViewAdapter
+    private var recyclerViewAdapter: RecyclerViewAdapter? = null
     var rowsArrayList: ArrayList<String> = ArrayList()
     var isLoading = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        this.supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
-        setContentView(R.layout.activity_main)
-        recyclerView = findViewById(R.id.recyclerView)
-
         warmupFlutterEngine()
+
+        this.supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+
         populateData(rowsArrayList)
-        initAdapter()
-        initScrollListener()
+
+        initAdapter(binding)
+        initScrollListener(binding)
+        setContentView(binding.root)
     }
 
-    private fun initScrollListener() {
-        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+    private fun initScrollListener(binding: ActivityMainBinding) {
+        binding.recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 val linearLayoutManager = recyclerView.layoutManager as LinearLayoutManager?
@@ -49,10 +51,10 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun initAdapter() {
+    private fun initAdapter( binding: ActivityMainBinding) {
         recyclerViewAdapter = RecyclerViewAdapter(rowsArrayList)
-        recyclerView.layoutManager = LinearLayoutManager(applicationContext)
-        recyclerView.adapter = recyclerViewAdapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(applicationContext)
+        binding.recyclerView.adapter = recyclerViewAdapter
     }
 
     private fun populateData(list: ArrayList<String> ) {
@@ -70,7 +72,7 @@ class MainActivity : AppCompatActivity() {
         handler.postDelayed({
             rowsArrayList.removeAt(rowsArrayList.size - 1)
             val scrollPosition = rowsArrayList.size
-            recyclerViewAdapter.notifyItemRemoved(scrollPosition)
+            recyclerViewAdapter?.notifyItemRemoved(scrollPosition)
 
             var currentSize = rowsArrayList.size
             val nextLimit = currentSize + 10
@@ -79,7 +81,7 @@ class MainActivity : AppCompatActivity() {
                 currentSize++
             }
             isLoading = false
-            recyclerViewAdapter.notifyItemRangeInserted(nextLimit - 10,10)
+            recyclerViewAdapter?.notifyItemRangeInserted(nextLimit - 10,10)
         }, 2000)
     }
 
