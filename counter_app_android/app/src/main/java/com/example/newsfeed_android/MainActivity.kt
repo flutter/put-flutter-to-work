@@ -18,8 +18,8 @@ private const val ROW_ITEM_NAME = "row_item"
 
 class MainActivity : AppCompatActivity() {
     private var recyclerViewAdapter: RecyclerViewAdapter? = null
-    var rowsArrayList: ArrayList<String> = ArrayList()
-    var isLoading = false
+    private var rowsArrayList: ArrayList<String> = ArrayList()
+    private var isLoading = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,19 +36,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initScrollListener(binding: ActivityMainBinding) {
-        binding.recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                super.onScrolled(recyclerView, dx, dy)
-                val linearLayoutManager = recyclerView.layoutManager as LinearLayoutManager?
-                if (!isLoading) {
-                    if (linearLayoutManager != null &&
-                        linearLayoutManager.findLastCompletelyVisibleItemPosition() == (rowsArrayList.size - 1)) {
-                        isLoading = true
-                        loadMore()
-                    }
+        val loadMoreCallback = LoadMoreOnScrollListener(callback = {
+            val linearLayoutManager = binding.recyclerView.layoutManager as LinearLayoutManager?
+            if (!isLoading) {
+                if (linearLayoutManager != null &&
+                    linearLayoutManager.findLastCompletelyVisibleItemPosition() == (rowsArrayList.size - 1)) {
+                    isLoading = true
+                    loadMore()
                 }
             }
         })
+        binding.recyclerView.addOnScrollListener(loadMoreCallback)
     }
 
     private fun initAdapter( binding: ActivityMainBinding) {
@@ -105,5 +103,12 @@ class MainActivity : AppCompatActivity() {
         FlutterEngineCache
             .getInstance()
             .put(FLUTTER_ENGINE_NAME, flutterEngine)
+    }
+
+    internal class LoadMoreOnScrollListener(private var callback: () -> Unit) : RecyclerView.OnScrollListener() {
+        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+            super.onScrolled(recyclerView, dx, dy)
+            callback()
+        }
     }
 }
