@@ -1,7 +1,5 @@
 package com.example.newsfeed_android
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +10,7 @@ import io.flutter.embedding.android.FlutterActivityLaunchConfigs
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.embedding.engine.FlutterEngineCache
 import io.flutter.embedding.engine.dart.DartExecutor
+import kotlinx.coroutines.*
 
 private const val FLUTTER_ENGINE_NAME = "nps_flutter_engine_name"
 private const val ROW_ITEM_NAME = "row_item"
@@ -65,22 +64,30 @@ class MainActivity : AppCompatActivity() {
         if(rowsArrayList.size in 19..29){
             runFlutterNPS()
         }
+        runBlocking {
+            launch {
+                fakeRequest()
+                rowsArrayList.removeAt(rowsArrayList.size - 1)
+                val scrollPosition = rowsArrayList.size
+                recyclerViewAdapter?.notifyItemRemoved(scrollPosition)
 
-        val handler = Handler(Looper.myLooper()!!)
-        handler.postDelayed({
-            rowsArrayList.removeAt(rowsArrayList.size - 1)
-            val scrollPosition = rowsArrayList.size
-            recyclerViewAdapter?.notifyItemRemoved(scrollPosition)
-
-            var currentSize = rowsArrayList.size
-            val nextLimit = currentSize + 10
-            while (currentSize - 1 < nextLimit) {
-                rowsArrayList.add(ROW_ITEM_NAME)
-                currentSize++
+                var currentSize = rowsArrayList.size
+                val nextLimit = currentSize + 10
+                while (currentSize - 1 < nextLimit) {
+                    rowsArrayList.add(ROW_ITEM_NAME)
+                    currentSize++
+                }
+                isLoading = false
+                recyclerViewAdapter?.notifyItemRangeInserted(nextLimit - 10,10)
             }
-            isLoading = false
-            recyclerViewAdapter?.notifyItemRangeInserted(nextLimit - 10,10)
-        }, 2000)
+        }
+    }
+
+
+
+    private suspend fun fakeRequest(): Boolean {
+        delay(2000)
+        return true
     }
 
     private fun runFlutterNPS() {
