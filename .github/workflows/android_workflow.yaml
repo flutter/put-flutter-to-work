@@ -5,7 +5,6 @@ on: [pull_request]
 defaults:
   run:
     working-directory: ./counter_app_android
-
 jobs:
   build:
     strategy:
@@ -49,6 +48,7 @@ jobs:
         run: ./gradlew testDebugUnitTest
 
       - name: Run Android Instrumented tests
+        if: matrix.platform == 'macos-latest'
         uses: reactivecircus/android-emulator-runner@v2
         with:
           working-directory: ./counter_app_android
