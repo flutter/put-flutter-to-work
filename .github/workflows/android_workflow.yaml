@@ -7,8 +7,8 @@ defaults:
     working-directory: ./counter_app_android
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v2
@@ -33,11 +33,6 @@ jobs:
         run: ./gradlew lint
         continue-on-error: false
 
-      - name: Run check style
-        uses: nikitasavinov/checkstyle-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Build with Gradle
         run: ./gradlew build
 
@@ -50,3 +45,19 @@ jobs:
           working-directory: ./counter_app_android
           api-level: 29
           script: ./gradlew connectedCheck
+  checkstyle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: "17"
+
+      - name: Change wrapper permissions
+        working-directory: ./counter_app_android
+        run: chmod +x ./gradlew
+
+      - name: Run check style
+            uses: nikitasavinov/checkstyle-action@master
+            with:
+              github_token: ${{ secrets.GITHUB_TOKEN }}
