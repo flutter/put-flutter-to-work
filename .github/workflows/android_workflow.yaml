@@ -8,7 +8,10 @@ defaults:
 
 jobs:
   build:
-    runs-on: macos-latest
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v2
@@ -33,7 +36,9 @@ jobs:
         run: ./gradlew lint
         continue-on-error: false
 
-      - uses: dbelyaev/action-checkstyle@v0.5.1
+      - name: Run Checkstyle
+        uses: dbelyaev/action-checkstyle@v0.5.1
+        if: matrix.platform == 'ubuntu-latest'
         with:
           github_token: ${{ secrets.github_token }}
 
