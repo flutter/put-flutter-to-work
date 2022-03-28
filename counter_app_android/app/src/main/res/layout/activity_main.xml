@@ -33,7 +33,7 @@
             android:layout_marginStart="2dp"
             android:contentDescription="@string/blue_dot_description"
             android:scaleType="centerCrop"
-            android:src="@drawable/dot"
+            android:src="@mipmap/dot"
             app:layout_constraintLeft_toRightOf="@+id/app_name"
             app:layout_constraintTop_toTopOf="@+id/app_name" />
 

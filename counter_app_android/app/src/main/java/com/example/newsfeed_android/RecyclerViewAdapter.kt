@@ -45,9 +45,9 @@ RecyclerView.Adapter<ViewHolder>() {
 
    private fun populateItemRows(viewHolder: ItemViewHolder, position: Int) {
       when(position % 3) {
-         0 -> viewHolder.imageItem.setImageResource(R.drawable.placeholder_image)
-         1 -> viewHolder.imageItem.setImageResource(R.drawable.placeholder_image2)
-         2 -> viewHolder.imageItem.setImageResource(R.drawable.placeholder_image3)
+         0 -> viewHolder.imageItem.setImageResource(R.mipmap.placeholder_image)
+         1 -> viewHolder.imageItem.setImageResource(R.mipmap.placeholder_image2)
+         2 -> viewHolder.imageItem.setImageResource(R.mipmap.placeholder_image3)
       }
    }
 
