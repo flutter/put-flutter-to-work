@@ -33,6 +33,11 @@ jobs:
         run: ./gradlew lint
         continue-on-error: false
 
+      - name: Run check style
+        uses: nikitasavinov/checkstyle-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Build with Gradle
         run: ./gradlew build
 
