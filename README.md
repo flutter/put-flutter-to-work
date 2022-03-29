@@ -1,4 +1,3 @@
-
 # Take Flutter Home 🧪
 
 A GitHub repository that holds a complete example how to insert Flutter Module into your Android, iOS or Web application.
@@ -10,5 +9,4 @@ The AAR library is required to run the Android application. To create Android AA
 ```sh
 cd flutter_nps
 flutter build aar
-``` 
- 
+```

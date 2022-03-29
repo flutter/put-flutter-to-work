@@ -10,13 +10,13 @@ import UIKit
 struct ContentView: View {
 
   init() {
-    UITableView.appearance().backgroundColor = .clear
     UINavigationBar.appearance().barTintColor = .white
   }
 
   var body: some View {
     NavigationView {
       EndlessList()
+        .background(.clear)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
           ToolbarItem(placement: .principal) {
