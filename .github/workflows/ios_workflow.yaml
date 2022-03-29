@@ -33,7 +33,7 @@ jobs:
       - name: Install SwiftFormat
         uses: Cyberbeni/install-swift-tool@v2
         with:
-        url: https://github.com/nicklockwood/SwiftFormat
+          url: https://github.com/nicklockwood/SwiftFormat
 
       - name: Lint
         run: swiftformat --lint .
