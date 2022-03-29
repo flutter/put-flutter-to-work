@@ -31,13 +31,13 @@ jobs:
         run: pod install
 
       - name: Install swift-format
-        run:
-          git clone -b release/5.6 https://github.com/apple/swift-format.git &&
-          swift build &&
-          export PATH=$PATH:~/swift-format/.build/x86_64-apple-macosx/debug &&
-          cd ~ &&
-          source .bash_profile &&
-          swift-format --version &&
+        run: |
+          git clone -b release/5.6 https://github.com/apple/swift-format.git
+          swift build
+          export PATH=$PATH:~/swift-format/.build/x86_64-apple-macosx/debug
+          cd ~
+          source .bash_profile
+          swift-format --version
 
       - name: Swift format
         run: swift-format format -r .
