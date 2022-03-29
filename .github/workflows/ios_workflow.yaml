@@ -30,6 +30,10 @@ jobs:
       - name: Install Dependencies
         run: pod install
 
+      - uses: ConorMacBride/install-package@v1
+        with:
+          brew: swift-format
+
       - name: Swift format & lint
         run: swift format lint --configuration .swift-format-config -r .
 
