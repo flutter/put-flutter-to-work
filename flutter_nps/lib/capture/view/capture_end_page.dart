@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_nps/capture/widget/responsive_card.dart';
 import 'package:flutter_nps/gen/assets.gen.dart';
 import 'package:flutter_nps/l10n/l10n.dart';
+import 'package:platform_close/platform_close.dart';
 
 class CaptureEndPage extends StatelessWidget {
   const CaptureEndPage({Key? key}) : super(key: key);
@@ -46,10 +46,10 @@ class CaptureEndView extends StatelessWidget {
           padding: const EdgeInsets.only(top: 35, right: 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: const [
+            children: [
               IconButton(
-                onPressed: SystemNavigator.pop,
-                icon: Icon(Icons.close),
+                onPressed: PlatformClose.instance.close,
+                icon: const Icon(Icons.close),
               ),
             ],
           ),

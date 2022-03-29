@@ -1,0 +1,48 @@
+.toolbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2196f3;
+  color: white;
+}
+
+.flutter-color {
+  background-color: #2196f3;
+}
+
+.md-fab-bottom-right {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+}
+
+.wrapping-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 60px);
+}
+
+.title {
+  font-size: 16px;
+}
+
+.counter {
+  font-size: 36px;
+  color: gray;
+}
+
+.headline {
+  margin-bottom: 0;
+}
+
+.iframe-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

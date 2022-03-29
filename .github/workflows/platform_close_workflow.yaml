@@ -1,0 +1,15 @@
+name: platform_close
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/platform_close_workflow.yaml
+      - flutter_nps/packages/platform_close/**
+
+jobs:
+  build:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+    with:
+      working_directory: "flutter_nps/packages/platform_close"
+      flutter_channel: stable
+      flutter_version: 2.10.0

@@ -1,0 +1,13 @@
+<div class="toolbar" role="banner">
+  <h3 class="headline">Angular Demo Home Page</h3>
+</div>
+
+<div class="wrapping-container">
+  <p class="title">You have pushed the button this many times:</p>
+  <p class="counter">{{ counter }}</p>
+</div>
+
+<button mat-fab class="md-fab-bottom-right flutter-color" (click)="incrementCounter()">+</button>
+<div *ngIf="isFlutterAppVisible">
+  <iframe id="iframe" class="iframe-overlay" src="../web/index.html">Your browser doesn't support iframe</iframe>
+</div>
