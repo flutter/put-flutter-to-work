@@ -34,8 +34,11 @@ jobs:
         with:
           brew: swift-format
 
-      - name: Swift format & lint
-        run: swift format lint --configuration .swift-format-config -r .
+      - name: Swift lint
+        run: swift format lint -r .
+
+      - name: Swift format
+        run: swift format -r .
 
       - name: Run unit tests
         run: xcodebuild test -scheme counter_app -workspace counter_app.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 11,OS=15.2' | xcpretty && exit ${PIPESTATUS[0]}
