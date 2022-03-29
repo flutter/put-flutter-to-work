@@ -30,10 +30,11 @@ jobs:
       - name: Install Dependencies
         run: pod install
 
-      - name: Swift Lint
-        uses: Iron-Ham/swift-format-linter-action@v5
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install swift tool
+        uses: Cyberbeni/install-swift-tool@v2.2.0
+
+      - name: Format Swift code
+        run: swiftformat --verbose .
 
       - name: Run unit tests
         run: xcodebuild test -scheme counter_app -workspace counter_app.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 11,OS=15.2' | xcpretty && exit ${PIPESTATUS[0]}
