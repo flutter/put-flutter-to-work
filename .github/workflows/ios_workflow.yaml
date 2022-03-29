@@ -30,8 +30,13 @@ jobs:
       - name: Install Dependencies
         run: pod install
 
-      - name: Install swift tool
-        uses: Cyberbeni/install-swift-tool@v2.2.0
+      - name: Install SwiftFormat
+        uses: Cyberbeni/install-swift-tool@v2
+        with:
+        url: https://github.com/nicklockwood/SwiftFormat
+
+      - name: Lint
+        run: swiftformat --lint .
 
       - name: Format Swift code
         run: swiftformat --verbose .
