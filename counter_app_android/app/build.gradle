@@ -21,7 +21,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.counter_app_android"
+        applicationId "com.example.newsfeed_android"
         minSdk 21
         targetSdk 31
         versionCode 1
@@ -48,6 +48,10 @@ android {
     testOptions {
         unitTests.returnDefaultValues = true
     }
+    buildFeatures{
+        dataBinding true
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -57,10 +61,11 @@ dependencies {
     implementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'androidx.test:runner:1.4.0'
     implementation 'androidx.test:rules:1.4.0'
+    implementation 'androidx.test.espresso:espresso-contrib:3.4.0'
     debugImplementation 'androidx.test.ext:junit:1.1.3'
-    implementation "androidx.core:core-ktx:+"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
+    implementation "androidx.core:core-ktx:1.7.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.20-M1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9"
     debugImplementation 'com.example.flutter_nps:flutter_debug:1.0'
     profileImplementation 'com.example.flutter_nps:flutter_profile:1.0'
     releaseImplementation 'com.example.flutter_nps:flutter_release:1.0'

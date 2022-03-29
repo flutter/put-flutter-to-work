@@ -3,12 +3,14 @@ name: Android CI
 on: [pull_request]
 
 defaults:
- run:
-  working-directory: ./counter_app_android
-
+  run:
+    working-directory: ./counter_app_android
 jobs:
-  test:
-    runs-on: macos-latest
+  build:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v2
@@ -29,6 +31,16 @@ jobs:
         working-directory: ./counter_app_android
         run: chmod +x ./gradlew
 
+      - name: Android linter
+        run: ./gradlew lint
+        continue-on-error: false
+
+      - name: Run Checkstyle
+        uses: dbelyaev/action-checkstyle@v0.5.1
+        if: matrix.platform == 'ubuntu-latest'
+        with:
+          github_token: ${{ secrets.github_token }}
+
       - name: Build with Gradle
         run: ./gradlew build
 
@@ -36,6 +48,7 @@ jobs:
         run: ./gradlew testDebugUnitTest
 
       - name: Run Android Instrumented tests
+        if: matrix.platform == 'macos-latest'
         uses: reactivecircus/android-emulator-runner@v2
         with:
           working-directory: ./counter_app_android

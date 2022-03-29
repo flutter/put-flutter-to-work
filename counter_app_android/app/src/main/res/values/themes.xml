@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Counter_app_android" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.newsfeed_android" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/flutter_blue_500</item>
         <item name="colorPrimaryVariant">@color/flutter_blue_700</item>
@@ -13,7 +13,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-    <style name="Theme.Translucent.Counter_app_android" parent="Theme.Counter_app_android">
+    <style name="Theme.Translucent.newsfeed_android" parent="Theme.newsfeed_android">
         <item name="android:windowIsTranslucent">true</item>
     </style>
 </resources>
