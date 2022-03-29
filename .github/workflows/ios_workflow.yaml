@@ -30,16 +30,20 @@ jobs:
       - name: Install Dependencies
         run: pod install
 
-      - name: Install SwiftFormat
-        uses: Cyberbeni/install-swift-tool@v2
-        with:
-          url: https://github.com/nicklockwood/SwiftFormat
+      - name: Install swift-format
+        run:
+          git clone -b release/5.6 https://github.com/apple/swift-format.git &&
+          swift build &&
+          export PATH=$PATH:~/swift-format/.build/x86_64-apple-macosx/debug &&
+          cd ~ &&
+          source .bash_profile &&
+          swift-format --version &&
 
-      - name: Lint
-        run: swiftformat --lint .
+      - name: Swift format
+        run: swift-format format -r .
 
-      - name: Format Swift code
-        run: swiftformat --verbose .
+        - name: Swift format
+        run: swift-format lint --recursive .
 
       - name: Run unit tests
         run: xcodebuild test -scheme counter_app -workspace counter_app.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 11,OS=15.2' | xcpretty && exit ${PIPESTATUS[0]}
