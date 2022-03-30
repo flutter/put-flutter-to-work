@@ -1,0 +1,47 @@
+.bubble {
+  border-radius: 25px;
+  border: 1px solid #c4c4c4;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.square {
+  height: 16px;
+  width: 16px;
+  background-color: #c4c4c4;
+  margin-right: 10px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.content {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.date {
+  color: #4a4a4a;
+  font-size: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.template-image {
+  object-fit: contain;
+}
+
+.image-wrapper {
+  width: 200px;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}

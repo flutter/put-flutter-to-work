@@ -1,0 +1,4 @@
+<app-endless-scroll (scrolled)="onScroll()" style="height: 400px; overflow-y: auto">
+  <app-news-tile *ngFor="let info of news" [number]="info"> </app-news-tile>
+  <!-- <div *ngIf="isLoading$ | async">Fetching tweets...</div> -->
+</app-endless-scroll>
