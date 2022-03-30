@@ -3,8 +3,8 @@ name: Swift CI
 on: [pull_request]
 
 defaults:
- run:
-  working-directory: ./counter_app_ios
+  run:
+    working-directory: ./counter_app_ios
 jobs:
   build:
     runs-on: macos-latest
@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          channel: "stable"
 
       - name: List Flutter version
         run: flutter --version
@@ -30,5 +30,18 @@ jobs:
       - name: Install Dependencies
         run: pod install
 
+      - uses: ConorMacBride/install-package@v1
+        with:
+          brew: swift-format
+
+      - name: Swift lint
+        run: swift format lint -r .
+
+      - name: Swift format
+        run: swift format -r .
+
       - name: Run unit tests
-        run: xcodebuild test -scheme counter_app -workspace counter_app.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 11,OS=15.2' | xcpretty && exit ${PIPESTATUS[0]}
+        run: xcodebuild test -scheme counter_appTests -workspace counter_app.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 11,OS=15.2' | xcpretty && exit ${PIPESTATUS[0]}
+
+      - name: Run UI tests
+        run: xcodebuild test -scheme counter_appUITests -workspace counter_app.xcworkspace -destination 'platform=iOS Simulator,name=iPhone 11,OS=15.2' | xcpretty && exit ${PIPESTATUS[0]}
