@@ -25,8 +25,14 @@
 
 .iframe-overlay {
   position: fixed;
-  top: 10%;
-  height: 80%;
-  width: 50%;
+  top: 0;
+  height: 100%;
+  width: 100%;
   border: 0;
+  padding: 0;
+}
+
+.background {
+  background-color: black;
+  opacity: 0.2;
 }
