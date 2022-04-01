@@ -1,4 +1,6 @@
-<app-endless-scroll (scrolled)="onScroll()" style="height: 400px; overflow-y: auto">
-  <app-news-tile *ngFor="let info of news" [number]="info"> </app-news-tile>
-  <!-- <div *ngIf="isLoading$ | async">Fetching tweets...</div> -->
-</app-endless-scroll>
+<div (window:scroll)="onScroll($event)">
+  <app-news-tile *ngFor="let newsId of news$ | async" [number]="newsId"> </app-news-tile>
+</div>
+<div class="row justify-content-center">
+  <mat-spinner></mat-spinner>
+</div>

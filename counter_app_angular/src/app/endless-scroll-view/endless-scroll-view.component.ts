@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { NewsService } from '../shared/news/news.service';
 
 @Component({
   selector: 'app-endless-scroll-view',
@@ -6,13 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./endless-scroll-view.component.css'],
 })
 export class EndlessScrollViewComponent implements OnInit {
-  news: number[] = Array.from(Array(10).keys());
+  news$: Observable<number[]> | undefined;
 
-  constructor() {}
+  constructor(private dataService: NewsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.news$ = this.dataService.getNews();
+  }
 
-  onScroll() {
-    //TODO: get data after 2 seconds
+  onScroll(event: any) {
+    var scrollBottom = event.currentTarget.window.scrollY + event.target.scrollingElement.offsetHeight;
+    var viewHeight = event.target.scrollingElement.scrollHeight;
+
+    if (scrollBottom >= viewHeight) {
+      this.dataService.loadMoreNews();
+    }
   }
 }

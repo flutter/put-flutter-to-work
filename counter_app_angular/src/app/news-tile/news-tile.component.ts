@@ -11,8 +11,6 @@ export class NewsTileComponent implements OnInit {
   image: String | undefined;
   imageName: String = 'assets/templateImage';
 
-  constructor() {}
-
   ngOnInit(): void {
     this.image = this.imageName + (this.number % 5).toString() + '.png';
   }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { filter, first } from 'rxjs';
+import { NewsService } from './shared/news/news.service';
 
 @Component({
   selector: 'app-root',
@@ -6,22 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  counter: number = 0;
-  isFlutterAppVisible = false;
+  isFlutterAppVisible = true;
+
+  constructor(private newsService: NewsService) {}
 
   ngOnInit(): void {
     window.addEventListener('message', this.closeFlutterModal.bind(this), false);
-  }
-
-  incrementCounter(): void {
-    this.counter++;
-    if (this.counter % 5 == 0) {
-      this.openFlutterModal();
-    }
-  }
-
-  openFlutterModal(): void {
-    this.isFlutterAppVisible = true;
+    this.newsService.loading$
+      .pipe(
+        filter((value) => value == true),
+        first()
+      )
+      .subscribe(() => (this.isFlutterAppVisible = true));
   }
 
   closeFlutterModal(event: MessageEvent): void {
