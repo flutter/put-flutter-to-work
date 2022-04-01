@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { filter, first } from 'rxjs';
+import { filter, take } from 'rxjs';
 import { NewsService } from './shared/news/news.service';
 
 @Component({
@@ -8,16 +8,16 @@ import { NewsService } from './shared/news/news.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  isFlutterAppVisible = true;
+  isFlutterAppVisible = false;
 
   constructor(private newsService: NewsService) {}
 
   ngOnInit(): void {
-    window.addEventListener('message', this.closeFlutterModal.bind(this), false);
+    window.addEventListener('message', this.closeFlutterModal.bind(this), true);
     this.newsService.loading$
       .pipe(
         filter((value) => value == true),
-        first()
+        take(1)
       )
       .subscribe(() => (this.isFlutterAppVisible = true));
   }

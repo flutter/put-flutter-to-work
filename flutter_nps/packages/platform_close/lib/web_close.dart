@@ -9,9 +9,8 @@ class WebClose implements PlatformClose {
 
   @override
   void close() {
-    window.location.href = '/';
-    // window.parent?.postMessage('close', '*');
-    // document.getElementById('iframe')?.remove();
+    window.parent?.postMessage('close', '*');
+    document.getElementById('iframe')?.remove();
   }
 }
 
