@@ -1,14 +1,19 @@
+import { Type } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { NewsService } from './shared/news/news.service';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let app: AppComponent;
+  let mockNewsService: NewsService;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AppComponent],
     }).compileComponents();
 
+    mockNewsService = TestBed.inject(NewsService);
     fixture = TestBed.createComponent(AppComponent);
     app = fixture.componentInstance;
   });
@@ -17,37 +22,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have 0 as initial counter value.`, () => {
-    expect(app.counter).toEqual(0);
-  });
-
-  it('should change from 0 to 1 on button click.', () => {
-    fixture.detectChanges();
+  it('should display header and title when initialized', () => {
     const compiled = fixture.debugElement.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.counter')?.textContent).toContain('0');
 
-    let button = fixture.debugElement.nativeElement.querySelector('button');
-
-    button.click();
-    fixture.detectChanges();
-
-    expect(compiled.querySelector('.counter')?.textContent).toContain('1');
+    expect(compiled.querySelector('.header')?.textContent).toContain('newsfeed');
+    expect(compiled.querySelector('.title')?.textContent).toContain('Lorem ipsum');
   });
 
-  it('should open flutter modal when counter is incremented from 4 to 5.', () => {
-    app.counter = 4;
-    const spy = spyOn(app, 'openFlutterModal');
+  it('should display endless scroll view component', () => {
+    const compiled = fixture.debugElement.nativeElement as HTMLElement;
 
-    let button = fixture.debugElement.nativeElement.querySelector('button');
-    button.click();
-
-    expect(spy).toHaveBeenCalled();
-  });
-
-  it('isFlutterAppVisible should be true when openFlutterModal is called.', () => {
-    app.isFlutterAppVisible = false;
-    app.openFlutterModal();
-
-    expect(app.isFlutterAppVisible).toBeTrue();
+    expect(compiled.querySelector('#app-endless-scroll-view')).toBeDefined();
   });
 });

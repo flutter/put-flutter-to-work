@@ -9,9 +9,9 @@ export class NewsTileComponent implements OnInit {
   @Input()
   number!: number;
   image: String | undefined;
-  imageName: String = 'assets/templateImage';
+  static imageName: String = 'assets/templateImage';
 
   ngOnInit(): void {
-    this.image = this.imageName + (this.number % 5).toString() + '.png';
+    this.image = NewsTileComponent.imageName + (this.number % 5).toString() + '.png';
   }
 }
