@@ -7,7 +7,7 @@ defaults:
     working-directory: ./counter_app_ios
 jobs:
   build:
-    runs-on: macos-12
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v2
@@ -25,7 +25,7 @@ jobs:
         run: ls /Applications | grep Xcode
 
       - name: Select Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_13.3.app && /usr/bin/xcodebuild -version
+        run: sudo xcode-select -switch /Applications/Xcode_13.2.app && /usr/bin/xcodebuild -version
 
       - name: Install Dependencies
         run: pod install
