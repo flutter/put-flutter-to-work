@@ -1,6 +1,4 @@
-<div (window:scroll)="onScroll($event)">
-  <app-news-tile *ngFor="let newsId of news$ | async" [number]="newsId"> </app-news-tile>
-</div>
+<app-news-tile *ngFor="let newsId of news$ | async" [newsId]="newsId"> </app-news-tile>
 <div class="row justify-content-center">
   <mat-spinner></mat-spinner>
 </div>

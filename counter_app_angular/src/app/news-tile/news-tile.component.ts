@@ -7,11 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NewsTileComponent implements OnInit {
   @Input()
-  number!: number;
-  image: String | undefined;
-  static imageName: String = 'assets/templateImage';
+  newsId: number | undefined;
+  image: string | undefined;
+  static imageName: string = 'assets/templateImage';
 
   ngOnInit(): void {
-    this.image = NewsTileComponent.imageName + (this.number % 5).toString() + '.png';
+    this.image = NewsTileComponent.imageName + ((this.newsId ?? 0) % 5).toString() + '.png';
   }
 }

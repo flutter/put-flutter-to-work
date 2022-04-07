@@ -34,7 +34,7 @@ describe('NewsTileComponent', () => {
     ];
 
     numberInputs.forEach((input) => {
-      component.number = input;
+      component.newsId = input;
       component.ngOnInit();
 
       expect(component.image).toEqual(fileNameResults[input]);

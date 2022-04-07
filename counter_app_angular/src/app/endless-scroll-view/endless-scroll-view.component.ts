@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NewsService } from '../shared/news/news.service';
 
@@ -16,9 +16,10 @@ export class EndlessScrollViewComponent implements OnInit {
     this.news$ = this.dataService.getNews();
   }
 
+  @HostListener('window:scroll', ['$event'])
   onScroll(event: any) {
-    var scrollBottom = event.currentTarget.window.scrollY + event.target.scrollingElement.offsetHeight;
-    var viewHeight = event.target.scrollingElement.scrollHeight;
+    const scrollBottom = event.currentTarget.window.scrollY + event.target.scrollingElement.offsetHeight;
+    const viewHeight = event.target.scrollingElement.scrollHeight;
 
     if (scrollBottom >= viewHeight) {
       this.dataService.loadMoreNews();
