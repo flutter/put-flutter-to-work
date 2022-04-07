@@ -12,7 +12,7 @@ Take Flutter Home NPS (Net Promoter Score) module
 
 ## Getting Started
 
-For instructions integrating Flutter modules to your existing applications,
+For instructions on integrating Flutter modules into your existing applications,
 see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app).
 
 ## Running Tests 🧪
@@ -35,7 +35,7 @@ open coverage/index.html
 
 ## Using Flutter_gen
 
-To install flutter_gen follow [Flutter_gen](https://pub.dev/packages/flutter_gen) instalation guide
+To install `flutter_gen` follow the [flutter_gen](https://pub.dev/packages/flutter_gen) installation guide.
 
 To generate all the assets accessors of pubspec.yaml file run:
 
