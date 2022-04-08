@@ -1,9 +1,0 @@
-/* 
-  Localizable.strings
-  counter_app
-*/
-
-"appName"="newsfeed";
-"category"="Category";
-"content"="Lorem ipsum dolor sit amet...";
-"date"="13 Jan, 2022";
