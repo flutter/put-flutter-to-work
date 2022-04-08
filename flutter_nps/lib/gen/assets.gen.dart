@@ -13,6 +13,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/check-circle.png
   AssetGenImage get checkCircle =>
       const AssetGenImage('assets/icons/check-circle.png');
+
+  /// File path: assets/icons/loving-emoji.png
+  AssetGenImage get lovingEmoji =>
+      const AssetGenImage('assets/icons/loving-emoji.png');
+
+  /// File path: assets/icons/thumb-down-emoji.png
+  AssetGenImage get thumbDownEmoji =>
+      const AssetGenImage('assets/icons/thumb-down-emoji.png');
 }
 
 class Assets {

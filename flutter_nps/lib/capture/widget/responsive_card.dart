@@ -19,16 +19,21 @@ class ResponsiveCard extends StatelessWidget {
         } else {
           return Scaffold(
             backgroundColor: NpsColors.transparent,
-            body: Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(
-                  maxWidth: Breakpoints.small,
-                ),
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(32),
+            body: SafeArea(
+              child: SingleChildScrollView(
+                child: Center(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      maxWidth: Breakpoints.small,
+                      minHeight: Breakpoints.small,
+                    ),
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(32),
+                      ),
+                      child: child,
+                    ),
                   ),
-                  child: child,
                 ),
               ),
             ),
