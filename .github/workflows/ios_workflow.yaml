@@ -30,9 +30,13 @@ jobs:
       - name: Install Dependencies
         run: pod install
 
-      - uses: ConorMacBride/install-package@v1
-        with:
-          brew: swift-format
+      - name: Install swift-format
+        run: |
+          set HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK
+          set HOMEBREW_NO_INSTALL_UPGRADE
+          # Version 0.50500.0
+          curl https://raw.githubusercontent.com/Homebrew/homebrew-core/4f0edc5d74cdfa84822102a4f69f70a39561dea5/Formula/swift-format.rb > swift-format.rb
+          brew install swift-format.rb
 
       - name: Swift lint
         run: swift format lint -r .
