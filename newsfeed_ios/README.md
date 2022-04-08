@@ -9,7 +9,7 @@ When you change the Flutter plugin dependencies in flutter_nps/pubspec.yaml,
 `run flutter pub get`
 in your Flutter module directory to refresh the list of plugins read by the podhelper.rb script.
 Then, run
-`pod install` again from your application at /counter_app_ios.
+`pod install` again from your application at /newsfeed_ios.
 
 ### Installing swift-format
 
