@@ -1,13 +1,11 @@
 //
-//  counter_appUITestsLaunchTests.swift
-//  counter_appUITests
-//
-//  Created by Jan Stepien on 02/02/2022.
+//  CounterAppUITestsLaunchTests.swift
+//  newsfeed_appUITests
 //
 
 import XCTest
 
-class CounterAppUITestsLaunchTests: XCTestCase {
+class NewsfeedAppUITestsLaunchTests: XCTestCase {
 
   override class var runsForEachTargetApplicationUIConfiguration: Bool {
     true

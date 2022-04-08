@@ -1,12 +1,12 @@
 //
-//  CounterApp.swift
-//  counter_app
+//  NewsfeedApp.swift
+//  newsfeed_app
 //
 
 import SwiftUI
 
 @main
-struct CounterApp: App {
+struct NewsfeedApp: App {
   var body: some Scene {
     WindowGroup {
       ContentView()

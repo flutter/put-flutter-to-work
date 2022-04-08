@@ -1,6 +1,6 @@
 //
 //  RowItem.swift
-//  counter_app
+//  newsfeed_app
 //
 
 import Foundation

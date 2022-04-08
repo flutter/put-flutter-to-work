@@ -1,13 +1,11 @@
 //
-//  counter_appUITests.swift
-//  counter_appUITests
-//
-//  Created by Jan Stepien on 02/02/2022.
+//  NewsfeedAppUITests.swift
+//  newsfeed_appUITests
 //
 
 import XCTest
 
-class CounterAppUITests: XCTestCase {
+class NewsfeedAppUITests: XCTestCase {
 
   override func setUpWithError() throws {
     continueAfterFailure = false

@@ -1,6 +1,6 @@
 //
 //  ContentDataSource.swift
-//  counter_app
+//  newsfeed_app
 //
 
 import Combine

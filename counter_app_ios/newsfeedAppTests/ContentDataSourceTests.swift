@@ -1,13 +1,11 @@
 //
-//  counter_appTests.swift
-//  counter_appTests
-//
-//  Created by Jan Stepien on 02/02/2022.
+//  ContentDataSourceTests.swift
+//  newsfeed_appTests
 //
 
 import XCTest
 
-@testable import counter_app
+@testable import newsfeed_app
 
 class ContentDataSourceTests: XCTestCase {
 

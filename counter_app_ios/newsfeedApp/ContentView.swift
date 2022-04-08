@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  counter_app
+//  newsfeed_app
 //
 
 import Flutter

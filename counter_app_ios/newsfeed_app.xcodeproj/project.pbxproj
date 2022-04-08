@@ -18,13 +18,13 @@
 		2B75521827F3292400E53ED8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B77B4F427AAC75900D1FED3 /* Assets.xcassets */; };
 		2B75521927F3292400E53ED8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B77B4F727AAC75900D1FED3 /* Preview Assets.xcassets */; };
 		2B75521A27F3292400E53ED8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B75520F27E8BC6100E53ED8 /* Localizable.strings */; };
-		2B75521B27F3294E00E53ED8 /* CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B4F027AAC75800D1FED3 /* CounterApp.swift */; };
-		2B77B4F127AAC75800D1FED3 /* CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B4F027AAC75800D1FED3 /* CounterApp.swift */; };
+		2B75521B27F3294E00E53ED8 /* NewsfeedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B4F027AAC75800D1FED3 /* NewsfeedApp.swift */; };
+		2B77B4F127AAC75800D1FED3 /* NewsfeedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B4F027AAC75800D1FED3 /* NewsfeedApp.swift */; };
 		2B77B4F327AAC75800D1FED3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B4F227AAC75800D1FED3 /* ContentView.swift */; };
 		2B77B4F527AAC75900D1FED3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B77B4F427AAC75900D1FED3 /* Assets.xcassets */; };
 		2B77B4F827AAC75900D1FED3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B77B4F727AAC75900D1FED3 /* Preview Assets.xcassets */; };
-		2B77B50C27AAC75900D1FED3 /* CounterAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B50B27AAC75900D1FED3 /* CounterAppUITests.swift */; };
-		2B77B50E27AAC75900D1FED3 /* CounterAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B50D27AAC75900D1FED3 /* CounterAppUITestsLaunchTests.swift */; };
+		2B77B50C27AAC75900D1FED3 /* NewsfeedAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B50B27AAC75900D1FED3 /* NewsfeedAppUITests.swift */; };
+		2B77B50E27AAC75900D1FED3 /* NewsfeedAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B50D27AAC75900D1FED3 /* NewsfeedAppUITestsLaunchTests.swift */; };
 		2BC5344A27E4AC9E00F96DE0 /* EndlessList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC5344927E4AC9E00F96DE0 /* EndlessList.swift */; };
 		2BC5344C27E4ACD900F96DE0 /* ContentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC5344B27E4ACD900F96DE0 /* ContentDataSource.swift */; };
 		2BF9EC0427CCF8270073EC0F /* ContentDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B50127AAC75900D1FED3 /* ContentDataSourceTests.swift */; };
@@ -56,15 +56,15 @@
 		2B75520927E4D9A200E53ED8 /* RowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowItem.swift; sourceTree = "<group>"; };
 		2B75520E27E8BC6100E53ED8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2B77B4ED27AAC75800D1FED3 /* newsfeed_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newsfeed_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B77B4F027AAC75800D1FED3 /* CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterApp.swift; sourceTree = "<group>"; };
+		2B77B4F027AAC75800D1FED3 /* NewsfeedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedApp.swift; sourceTree = "<group>"; };
 		2B77B4F227AAC75800D1FED3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2B77B4F427AAC75900D1FED3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B77B4F727AAC75900D1FED3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2B77B4FD27AAC75900D1FED3 /* newsfeed_appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = newsfeed_appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B77B50127AAC75900D1FED3 /* ContentDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDataSourceTests.swift; sourceTree = "<group>"; };
 		2B77B50727AAC75900D1FED3 /* newsfeed_appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = newsfeed_appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B77B50B27AAC75900D1FED3 /* CounterAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppUITests.swift; sourceTree = "<group>"; };
-		2B77B50D27AAC75900D1FED3 /* CounterAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2B77B50B27AAC75900D1FED3 /* NewsfeedAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedAppUITests.swift; sourceTree = "<group>"; };
+		2B77B50D27AAC75900D1FED3 /* NewsfeedAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2BC5344927E4AC9E00F96DE0 /* EndlessList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessList.swift; sourceTree = "<group>"; };
 		2BC5344B27E4ACD900F96DE0 /* ContentDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDataSource.swift; sourceTree = "<group>"; };
 		34926C09C23C71865A9FB76A /* Pods-newsfeed_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsfeed_app.debug.xcconfig"; path = "Target Support Files/Pods-newsfeed_app/Pods-newsfeed_app.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,8 +131,8 @@
 		2B77B4E427AAC75800D1FED3 = {
 			isa = PBXGroup;
 			children = (
-				2B77B4EF27AAC75800D1FED3 /* counterApp */,
-				2B77B50027AAC75900D1FED3 /* counterAppTests */,
+				2B77B4EF27AAC75800D1FED3 /* newsfeedApp */,
+				2B77B50027AAC75900D1FED3 /* newsfeedAppTests */,
 				2B77B50A27AAC75900D1FED3 /* counterAppUITests */,
 				2B77B4EE27AAC75800D1FED3 /* Products */,
 				02A6C5795784A12605857FC1 /* Pods */,
@@ -150,10 +150,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2B77B4EF27AAC75800D1FED3 /* counterApp */ = {
+		2B77B4EF27AAC75800D1FED3 /* newsfeedApp */ = {
 			isa = PBXGroup;
 			children = (
-				2B77B4F027AAC75800D1FED3 /* CounterApp.swift */,
+				2B77B4F027AAC75800D1FED3 /* NewsfeedApp.swift */,
 				2B77B4F227AAC75800D1FED3 /* ContentView.swift */,
 				2B77B4F427AAC75900D1FED3 /* Assets.xcassets */,
 				2B77B4F627AAC75900D1FED3 /* Preview Content */,
@@ -162,7 +162,7 @@
 				2B75520927E4D9A200E53ED8 /* RowItem.swift */,
 				2B75520F27E8BC6100E53ED8 /* Localizable.strings */,
 			);
-			path = counterApp;
+			path = newsfeedApp;
 			sourceTree = "<group>";
 		};
 		2B77B4F627AAC75900D1FED3 /* Preview Content */ = {
@@ -173,19 +173,19 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		2B77B50027AAC75900D1FED3 /* counterAppTests */ = {
+		2B77B50027AAC75900D1FED3 /* newsfeedAppTests */ = {
 			isa = PBXGroup;
 			children = (
 				2B77B50127AAC75900D1FED3 /* ContentDataSourceTests.swift */,
 			);
-			path = counterAppTests;
+			path = newsfeedAppTests;
 			sourceTree = "<group>";
 		};
 		2B77B50A27AAC75900D1FED3 /* counterAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				2B77B50B27AAC75900D1FED3 /* CounterAppUITests.swift */,
-				2B77B50D27AAC75900D1FED3 /* CounterAppUITestsLaunchTests.swift */,
+				2B77B50B27AAC75900D1FED3 /* NewsfeedAppUITests.swift */,
+				2B77B50D27AAC75900D1FED3 /* NewsfeedAppUITestsLaunchTests.swift */,
 			);
 			path = counterAppUITests;
 			sourceTree = "<group>";
@@ -514,7 +514,7 @@
 				2BC5344C27E4ACD900F96DE0 /* ContentDataSource.swift in Sources */,
 				2BC5344A27E4AC9E00F96DE0 /* EndlessList.swift in Sources */,
 				2B77B4F327AAC75800D1FED3 /* ContentView.swift in Sources */,
-				2B77B4F127AAC75800D1FED3 /* CounterApp.swift in Sources */,
+				2B77B4F127AAC75800D1FED3 /* NewsfeedApp.swift in Sources */,
 				2B75520A27E4D9A200E53ED8 /* RowItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,12 +532,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B75521B27F3294E00E53ED8 /* CounterApp.swift in Sources */,
+				2B75521B27F3294E00E53ED8 /* NewsfeedApp.swift in Sources */,
 				2B75521527F328F300E53ED8 /* EndlessList.swift in Sources */,
 				2B75521627F328F300E53ED8 /* ContentDataSource.swift in Sources */,
 				2B75521727F328F300E53ED8 /* RowItem.swift in Sources */,
-				2B77B50C27AAC75900D1FED3 /* CounterAppUITests.swift in Sources */,
-				2B77B50E27AAC75900D1FED3 /* CounterAppUITestsLaunchTests.swift in Sources */,
+				2B77B50C27AAC75900D1FED3 /* NewsfeedAppUITests.swift in Sources */,
+				2B77B50E27AAC75900D1FED3 /* NewsfeedAppUITestsLaunchTests.swift in Sources */,
 				2B75521127E8BCF100E53ED8 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,8 +693,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"counterApp/Preview Content\"";
-				DEVELOPMENT_TEAM = CPVGY3KSDF;
+				DEVELOPMENT_ASSET_PATHS = "\"newsfeedApp/Preview Content\"";
+				DEVELOPMENT_TEAM = RYXU36SM66;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -707,7 +707,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.widgeters.counter-app";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.newsfeedApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -724,8 +724,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"counterApp/Preview Content\"";
-				DEVELOPMENT_TEAM = CPVGY3KSDF;
+				DEVELOPMENT_ASSET_PATHS = "\"newsfeedApp/Preview Content\"";
+				DEVELOPMENT_TEAM = RYXU36SM66;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -738,7 +738,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.widgeters.counter-app";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.newsfeedApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
