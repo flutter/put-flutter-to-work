@@ -4,7 +4,7 @@ on: [pull_request]
 
 defaults:
   run:
-    working-directory: ./counter_app_android
+    working-directory: ./newsfeed_android
 jobs:
   build:
     strategy:
@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          channel: "stable"
       - run: flutter --version
 
       - name: Build Flutter AAR file
@@ -25,10 +25,10 @@ jobs:
       - name: Set up JDK 1.8
         uses: actions/setup-java@v1
         with:
-          java-version: '17'
+          java-version: "17"
 
       - name: Change wrapper permissions
-        working-directory: ./counter_app_android
+        working-directory: ./newsfeed_android
         run: chmod +x ./gradlew
 
       - name: Android linter
@@ -51,6 +51,6 @@ jobs:
         if: matrix.platform == 'macos-latest'
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          working-directory: ./counter_app_android
+          working-directory: ./newsfeed_android
           api-level: 29
           script: ./gradlew connectedCheck
