@@ -4,7 +4,7 @@ on: [pull_request]
 
 defaults:
   run:
-    working-directory: ./counter_app_ios
+    working-directory: ./newsfeed_ios
 jobs:
   build:
     runs-on: macos-latest
