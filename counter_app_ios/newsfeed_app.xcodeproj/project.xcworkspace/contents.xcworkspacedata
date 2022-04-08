@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "self:/Users/janstepien/projects/take_flutter_home/counter_app_ios/newsfeed_app.xcodeproj">
    </FileRef>
 </Workspace>

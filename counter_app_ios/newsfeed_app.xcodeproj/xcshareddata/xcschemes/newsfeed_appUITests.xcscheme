@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B77B50627AAC75900D1FED3"
-               BuildableName = "counter_appUITests.xctest"
-               BlueprintName = "counter_appUITests"
-               ReferencedContainer = "container:counter_app.xcodeproj">
+               BuildableName = "newsfeed_appUITests.xctest"
+               BlueprintName = "newsfeed_appUITests"
+               ReferencedContainer = "container:newsfeed_app.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B77B50627AAC75900D1FED3"
-               BuildableName = "counter_appUITests.xctest"
-               BlueprintName = "counter_appUITests"
-               ReferencedContainer = "container:counter_app.xcodeproj">
+               BuildableName = "newsfeed_appUITests.xctest"
+               BlueprintName = "newsfeed_appUITests"
+               ReferencedContainer = "container:newsfeed_app.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -61,9 +61,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B77B50627AAC75900D1FED3"
-            BuildableName = "counter_appUITests.xctest"
-            BlueprintName = "counter_appUITests"
-            ReferencedContainer = "container:counter_app.xcodeproj">
+            BuildableName = "newsfeed_appUITests.xctest"
+            BlueprintName = "newsfeed_appUITests"
+            ReferencedContainer = "container:newsfeed_app.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
