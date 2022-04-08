@@ -1,5 +1,5 @@
 //
-//  CounterAppUITestsLaunchTests.swift
+//  NewsfeedAppUITestsLaunchTests.swift
 //  newsfeed_appUITests
 //
 
