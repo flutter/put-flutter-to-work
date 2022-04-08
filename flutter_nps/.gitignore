@@ -127,3 +127,7 @@ app.*.map.json
 !.idea/codeStyles/
 !.idea/dictionaries/
 !.idea/runConfigurations/
+
+# Flutter web ignore for module type
+web/
+.idea/runConfigurations/main_dart.xml

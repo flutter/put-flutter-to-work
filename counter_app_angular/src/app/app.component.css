@@ -1,48 +1,38 @@
-.toolbar {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.header {
+  font-size: 56px;
+  line-height: 65px;
+  height: 56px;
+  font-weight: 600;
+}
+
+.padding-vertical-large {
+  margin-top: 110px;
+  margin-bottom: 55px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.dot {
+  height: 18px;
+  width: 18px;
   background-color: #2196f3;
-  color: white;
-}
-
-.flutter-color {
-  background-color: #2196f3;
-}
-
-.md-fab-bottom-right {
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-}
-
-.wrapping-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: calc(100% - 60px);
-}
-
-.title {
-  font-size: 16px;
-}
-
-.counter {
-  font-size: 36px;
-  color: gray;
-}
-
-.headline {
-  margin-bottom: 0;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .iframe-overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
   height: 100%;
+  width: 100%;
   border: 0;
+  padding: 0;
+}
+
+.background {
+  background-color: black;
+  opacity: 0.2;
 }

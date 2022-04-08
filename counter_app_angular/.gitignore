@@ -54,3 +54,6 @@ baseline.json
 .husky/_
 
 .angular
+
+# Flutter web copy
+web/

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { filter, Observable, Subscription, take } from 'rxjs';
+import { NewsService } from './shared/news/news.service';
 
 @Component({
   selector: 'app-root',
@@ -6,27 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  counter: number = 0;
   isFlutterAppVisible = false;
+  subscription$: Subscription | undefined;
+
+  constructor(private newsService: NewsService) {}
 
   ngOnInit(): void {
-    window.addEventListener('message', this.closeFlutterModal.bind(this), false);
-  }
-
-  incrementCounter(): void {
-    this.counter++;
-    if (this.counter % 5 == 0) {
-      this.openFlutterModal();
-    }
-  }
-
-  openFlutterModal(): void {
-    this.isFlutterAppVisible = true;
+    window.addEventListener('message', this.closeFlutterModal.bind(this), true);
+    this.subscription$ = this.newsService.loading$
+      .pipe(
+        filter((value) => value == true),
+        take(1)
+      )
+      .subscribe(() => (this.isFlutterAppVisible = true));
   }
 
   closeFlutterModal(event: MessageEvent): void {
     if (event.data === 'close') {
       this.isFlutterAppVisible = false;
     }
+  }
+
+  ngOnDestory() {
+    this.subscription$?.unsubscribe();
   }
 }
