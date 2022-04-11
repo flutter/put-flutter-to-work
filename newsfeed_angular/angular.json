@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "counter_app_angular": {
+    "newsfeed_angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/counter_app_angular",
+            "outputPath": "dist/newsfeed_angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "counter_app_angular:build:production"
+              "browserTarget": "newsfeed_angular:build:production"
             },
             "development": {
-              "browserTarget": "counter_app_angular:build:development"
+              "browserTarget": "newsfeed_angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "counter_app_angular:build"
+            "browserTarget": "newsfeed_angular:build"
           }
         },
         "test": {
@@ -102,7 +102,7 @@
       }
     }
   },
-  "defaultProject": "counter_app_angular",
+  "defaultProject": "newsfeed_angular",
   "cli": {
     "defaultCollection": "@angular-eslint/schematics"
   }

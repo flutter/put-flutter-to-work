@@ -4,7 +4,7 @@ on: [pull_request]
 
 defaults:
   run:
-    working-directory: ./counter_app_angular
+    working-directory: ./newsfeed_angular
 jobs:
   build:
     runs-on: ubuntu-latest
