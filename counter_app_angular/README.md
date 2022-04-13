@@ -1,4 +1,4 @@
-# Counter App Angular
+# Newsfeed App Angular
 
 This project contains sample Angular application that shows how to embed Flutter project into Angular (web-based) project.
 
