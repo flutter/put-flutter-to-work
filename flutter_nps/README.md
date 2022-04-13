@@ -17,11 +17,11 @@ This Flutter module consists of a pop-up allowing for obtaining customer satisfa
 For instructions integrating Flutter modules to your existing applications,
 see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app).
 
-Each native application uses different system to embed Flutter within it. Thats why a specific build-flow needs to be implemented depending on the project Flutter module will be embeded in. Follow links for a specific instructions for [Android](https://github.com/VGVentures/take-flutter-home/tree/main/counter_app_android/README.md), [iOS](https://github.com/VGVentures/take-flutter-home/tree/main/counter_app_ios/README.md) or [Web](https://github.com/VGVentures/take-flutter-home/tree/main/counter_app_angular/README.md).
+Each native application uses different system to embed Flutter within it. Thats why a specific build-flow needs to be implemented depending on the project Flutter module will be embeded in. Follow links for a specific instructions for [Android](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_android/README.md), [iOS](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_ios/README.md) or [Web](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_angular/README.md).
 
 ## Firebase integration (optional)
 
-To enable Firebase usage in project you need to specify your Firebase project information and include them in the [firebase_options.dart]() file. Flutter project needs to be rebuild after the change to do so use the Rebuild segment of the [Android](https://github.com/VGVentures/take-flutter-home/tree/main/counter_app_android/README.md#rebuild), [iOS](https://github.com/VGVentures/take-flutter-home/tree/main/counter_app_ios/README.md#rebuild) or [Web](https://github.com/VGVentures/take-flutter-home/tree/main/counter_app_angular/README.md#rebuild) instruction.
+To enable Firebase usage in project you need to specify your Firebase project information and include them in the [firebase_options.dart]() file. Flutter project needs to be rebuild after the change to do so use the Rebuild segment of the [Android](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_android/README.md#rebuild), [iOS](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_ios/README.md#rebuild) or [Web](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_angular/README.md#rebuild) instruction.
 
 ### Credentials setup
 
@@ -57,7 +57,7 @@ Note that apiKey key is platform dependent and will vary between iOS, Android an
 
 ![image](https://user-images.githubusercontent.com/17708132/163172065-96a2361b-c075-4772-9f7d-012a6a94e5c9.png)
 
-Flutter project needs to be rebuild after the credentials change. To do so use the Rebuild segment of the [Android](https://github.com/VGVentures/take-flutter-home/tree/main/counter_app_android/README.md#rebuild), [iOS](https://github.com/VGVentures/take-flutter-home/tree/main/counter_app_ios/README.md#rebuild) or [Web](https://github.com/VGVentures/take-flutter-home/tree/main/counter_app_angular/README.md#rebuild) instruction.
+Flutter project needs to be rebuild after the credentials change. To do so use the Rebuild segment of the [Android](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_android/README.md#rebuild), [iOS](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_ios/README.md#rebuild) or [Web](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_angular/README.md#rebuild) instruction.
 
 
 # Flutter improvements
