@@ -10,7 +10,7 @@ To enable sending customer satisfaction score to cloud firestore you need to obt
 
 Provide application specific configuration to `flutter_nps/firebase_config.dart`. Where to find the credentials you can follow [Firebase setup part](https://github.com/VGVentures/take-flutter-home/tree/main#firebase-setup-optional).
 
-After successfully seting up credentials to Firebase follow [Rebuild instructions](https://github.com/VGVentures/take-flutter-home/tree/main/counter_app_ios/README.md#rebuild)
+After successfully seting up credentials to Firebase follow [Rebuild instructions](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_ios/README.md#rebuild)
 
 ## Rebuild
 
@@ -20,7 +20,7 @@ When you change the Flutter plugin dependencies in `flutter_nps/pubspec.yaml`,
 `run flutter pub get`
 in your Flutter module directory to refresh the list of plugins read by the podhelper.rb script.
 Then, run
-`pod install` again from your application at `counter_app_ios/`.
+`pod install` again from your application at `newsfeed_ios/`.
 
 
 ## Troubleshooting
