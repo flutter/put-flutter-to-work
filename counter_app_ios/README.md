@@ -20,6 +20,8 @@ Then, run
 Message: `CocoaPods could not find compatible versions for pod "cloud_firestore"`
 Resolution: in `/flutter_nps` after running `flutter build ios-framework` make sure that `.ios/Podfile` `platform :ios, '10.0'` and `ios/Pods/Local Podspecs` versions in all the `*.json` files match
 
+Make sure that `<your_ios_native_app>/Podfile` version also matches.
+
 ```
 "platforms": {
     "ios": "10.0"
