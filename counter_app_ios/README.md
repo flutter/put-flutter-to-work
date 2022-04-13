@@ -13,6 +13,13 @@ in your Flutter module directory to refresh the list of plugins read by the podh
 Then, run
 `pod install` again from your application at /counter_app_ios.
 
+## Clound firestore configuration
+
+To enable sending customer satisfaction score to cloud firestore you need to obtain Firebase credentials from already existing Firebase project. (To setup new Firebase project visit [official guide](https://console.firebase.google.com/).
+
+Provide application specific configuration to `flutter_nps/firebase_config.dart`. Where to find the credentials you can follow [Firebase setup part](https://github.com/VGVentures/take-flutter-home/tree/main#firebase-setup-optional).
+
+
 ## Troubleshooting
 
 ### Cloud firestore
