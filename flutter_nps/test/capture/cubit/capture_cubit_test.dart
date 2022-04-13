@@ -44,7 +44,6 @@ void main() {
       ],
     );
 
-    // TODO(Jan-Stepien): Submit result
     blocTest<CaptureCubit, CaptureCubitState>(
       'submitResult does nothing',
       build: CaptureCubit.new,
