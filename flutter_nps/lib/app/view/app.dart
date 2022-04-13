@@ -20,6 +20,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       theme: AppTheme().theme,
       initialRoute: CapturePage.routeName,
+      debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteGenerator.generateRoute,
       home: const Scaffold(
         body: CapturePage(),

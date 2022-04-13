@@ -28,9 +28,9 @@ class CaptureView extends StatelessWidget {
     final theme = Theme.of(context);
     return Stack(
       children: [
-        SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: Center(
+        Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
