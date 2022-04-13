@@ -13,7 +13,7 @@ in your Flutter module directory to refresh the list of plugins read by the podh
 Then, run
 `pod install` again from your application at /counter_app_ios.
 
-## Clound firestore configuration
+## Cloud firestore configuration
 
 To enable sending customer satisfaction score to cloud firestore you need to obtain Firebase credentials from already existing Firebase project. (To setup new Firebase project visit [official guide](https://console.firebase.google.com/).
 
@@ -34,7 +34,9 @@ Make sure that `<your_ios_native_app>/Podfile` version also matches.
     "ios": "10.0"
   },
 ```
+### `flutter build ios-framework` takes long time
 
+It is a known limitation, the build can take up to an hour on less performant machines. You can follow the issue on [github]( https://github.com/firebase/flutterfire/issues/3185)
 
 ### Installing swift-format
 
