@@ -56,8 +56,8 @@ This project relies on [flutter_localizations][flutter_localizations_link] and f
 ```arb
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
+    "newsfeedAppBarTitle": "Counter",
+    "@newsfeedAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
     }
 }
@@ -68,8 +68,8 @@ This project relies on [flutter_localizations][flutter_localizations_link] and f
 ```arb
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
+    "newsfeedAppBarTitle": "Counter",
+    "@newsfeedAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
     },
     "helloWorld": "Hello World",
@@ -125,8 +125,8 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 ```arb
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
+    "newsfeedAppBarTitle": "Counter",
+    "@newsfeedAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
     }
 }
@@ -137,8 +137,8 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 ```arb
 {
     "@@locale": "es",
-    "counterAppBarTitle": "Contador",
-    "@counterAppBarTitle": {
+    "newsfeedAppBarTitle": "Contador",
+    "@newsfeedAppBarTitle": {
         "description": "Texto mostrado en la AppBar de la página del contador"
     }
 }
