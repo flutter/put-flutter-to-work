@@ -23,6 +23,43 @@ Each native application uses different system to embed Flutter within it. Thats 
 
 To enable Firebase usage in project you need to specify your Firebase project information and include them in the [firebase_options.dart]() file. Flutter project needs to be rebuild after the change to do so use the Rebuild segment of the [Android](https://github.com/VGVentures/take-flutter-home/tree/main/counter_app_android/README.md#rebuild), [iOS](https://github.com/VGVentures/take-flutter-home/tree/main/counter_app_ios/README.md#rebuild) or [Web](https://github.com/VGVentures/take-flutter-home/tree/main/counter_app_angular/README.md#rebuild) instruction.
 
+### Credentials setup
+
+Every native application needs to be added in Firebase Console before the credentials can be setup. This project requires 4 configuration strings to be setup before Cloud Firestore can be used. All this configurations need to be passed to prepared `flutter_nps/firebase_config.dart` file before building platform specific project.
+
+#### messagingSenderId
+
+Can be found in the Firebase Console > Project Settings > Cloud Messaging
+
+<img height="300" 
+     alt="Screenshot 2022-04-13 at 13 17 34" src="https://user-images.githubusercontent.com/17708132/163169591-ec533851-7aba-4042-a96d-6a451453f5f6.png"></img>
+
+#### projectId
+
+Can be found in the Firebase Console > Project Settings > General
+
+<img  height="300" alt="Screenshot 2022-04-13 at 13 24 47" src="https://user-images.githubusercontent.com/17708132/163170400-bb201376-ea10-4ffd-8d68-87383ba73855.png"></img>
+
+#### appId
+
+Can be found in the Firebase Console > Project Settings > General (Scroll to bottom) > Click created app or `Add new` app
+
+Note that appId key is platform dependent and will vary between iOS, Android and Web builds!
+
+<img height="300" alt="Screenshot 2022-04-13 at 13 30 43" src="https://user-images.githubusercontent.com/17708132/163171434-c0987ab3-44bf-42b8-a06b-1006ee83510e.png">
+
+
+#### apiKey
+
+Can be found in the Firebase Console > Project Settings > General (Scroll to bottom) > Download project file > Locate apiKey property in file
+
+Note that apiKey key is platform dependent and will vary between iOS, Android and Web builds!
+
+![image](https://user-images.githubusercontent.com/17708132/163172065-96a2361b-c075-4772-9f7d-012a6a94e5c9.png)
+
+Flutter project needs to be rebuild after the credentials change. To do so use the Rebuild segment of the [Android](https://github.com/VGVentures/take-flutter-home/tree/main/counter_app_android/README.md#rebuild), [iOS](https://github.com/VGVentures/take-flutter-home/tree/main/counter_app_ios/README.md#rebuild) or [Web](https://github.com/VGVentures/take-flutter-home/tree/main/counter_app_angular/README.md#rebuild) instruction.
+
+
 # Flutter improvements
 
 Feel free to fork this repository and add your own ideas into it. Bellow is a list of guidelines on usage of the tools that are already used in this project.
