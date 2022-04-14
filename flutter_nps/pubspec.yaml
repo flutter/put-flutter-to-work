@@ -9,11 +9,7 @@ environment:
 
 dependencies:
   bloc: ^8.0.2
-  cloud_firestore: ^3.1.11
   equatable: ^2.0.3
-  firebase_core: ^1.14.0
-  firebase_provider:
-    path: ./packages/firebase_provider
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
@@ -22,6 +18,8 @@ dependencies:
   intl: ^0.17.0
   platform_close:
     path: ./packages/platform_close
+  send_data_service:
+    path: ./packages/send_data_service
 
 dev_dependencies:
   bloc_test: ^9.0.2

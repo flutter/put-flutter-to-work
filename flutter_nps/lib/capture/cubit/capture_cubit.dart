@@ -6,16 +6,16 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:bloc/bloc.dart';
-import 'package:firebase_provider/firebase_provider.dart';
-import 'package:firebase_provider/score_submit_model.dart';
 import 'package:flutter_nps/capture/capture.dart';
+import 'package:send_data_service/score_submit_model.dart';
+import 'package:send_data_service/send_data_service.dart';
 
 class CaptureCubit extends Cubit<CaptureCubitState> {
-  CaptureCubit({FirebaseProvider? firebaseProvider})
-      : _firebaseProvider = firebaseProvider,
+  CaptureCubit({SendDataService? sendService})
+      : _sendService = sendService,
         super(CaptureCubitState.initial());
 
-  final FirebaseProvider? _firebaseProvider;
+  final SendDataService? _sendService;
 
   void selectScore({required int score}) => emit(state.copyWith(score: score));
 
@@ -33,8 +33,8 @@ class CaptureCubit extends Cubit<CaptureCubitState> {
       );
 
   void submitResult() {
-    if (_firebaseProvider != null) {
-      _firebaseProvider!.sendCustomerSatisfaction(
+    if (_sendService != null) {
+      _sendService!.sendCustomerSatisfaction(
         scoreSubmit: ScoreSubmitModel(
           score: state.score,
           chipIndexes: state.chipIndexes,

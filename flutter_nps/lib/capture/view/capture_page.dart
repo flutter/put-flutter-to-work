@@ -1,6 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_provider/firebase_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_nps/capture/capture.dart';
@@ -8,6 +5,7 @@ import 'package:flutter_nps/colors.dart';
 import 'package:flutter_nps/gen/assets.gen.dart';
 import 'package:flutter_nps/l10n/l10n.dart';
 import 'package:platform_close/platform_close.dart';
+import 'package:send_data_service/send_data_service.dart';
 
 class CapturePage extends StatelessWidget {
   const CapturePage({Key? key}) : super(key: key);
@@ -18,10 +16,7 @@ class CapturePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => CaptureCubit(
-        firebaseProvider: FirebaseProvider(
-          firestore:
-              Firebase.apps.isNotEmpty ? FirebaseFirestore.instance : null,
-        ),
+        sendService: SendDataService(),
       ),
       child: const ResponsiveCard(child: CaptureView()),
     );
