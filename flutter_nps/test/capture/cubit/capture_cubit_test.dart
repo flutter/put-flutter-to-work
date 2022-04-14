@@ -8,6 +8,10 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
+import 'package:send_data_service/send_data_service.dart';
+
+class SendDataServiceMock extends Mock implements SendDataService {}
 
 void main() {
   group('CaptureCubit', () {
@@ -46,7 +50,7 @@ void main() {
 
     blocTest<CaptureCubit, CaptureCubitState>(
       'submitResult does nothing',
-      build: CaptureCubit.new,
+      build: () => CaptureCubit(sendService: SendDataServiceMock()),
       seed: () => const CaptureCubitState(score: -1, chipIndexes: []),
       act: (cubit) => cubit.submitResult(),
       expect: () => <CaptureCubitState>[],
