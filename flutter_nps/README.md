@@ -10,12 +10,20 @@ Take Flutter Home NPS (Net Promoter Score) module
 
 ---
 
-## Getting Started
+## Introduction
 
-For instructions on integrating Flutter modules into your existing applications,
+This Flutter module consists of a pop-up that allows customer to provide a satisfaction score. It can be run as a standalone application however its main purpose is to be embedded within existing native applications as a module.
+
+For instructions integrating Flutter modules to your existing applications,
 see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app).
 
-## Running Tests 🧪
+Each native application uses a different system to embed a Flutter within it. Thats why a specific build-flow needs to be implemented depending on the project Flutter module will be embeded in. Follow links for a specific instructions for [Android](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_android/README.md), [iOS](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_ios/README.md) or [Web](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_angular/README.md).
+
+# Flutter improvements
+
+Feel free to fork and customize this repository. Bellow is a list of guidelines on usage of the tools that are already used in this project.
+
+### Running Tests 🧪
 
 To run all unit and widget tests use the following command:
 
@@ -33,9 +41,7 @@ genhtml coverage/lcov.info -o coverage/
 open coverage/index.html
 ```
 
-## Using Flutter_gen
-
-To install `flutter_gen` follow the [flutter_gen](https://pub.dev/packages/flutter_gen) installation guide.
+### Using Flutter_gen
 
 To generate all the assets accessors of pubspec.yaml file run:
 
@@ -45,7 +51,7 @@ fluttergen -c pubspec.yaml
 
 For more information how to use Flutter_gen visit [Flutter_gen](https://pub.dev/packages/flutter_gen)
 
-## Working with Translations 🌐
+### Working with Translations 🌐
 
 This project relies on [flutter_localizations][flutter_localizations_link] and follows the [official internationalization guide for Flutter][internationalization_link].
 
@@ -56,8 +62,8 @@ This project relies on [flutter_localizations][flutter_localizations_link] and f
 ```arb
 {
     "@@locale": "en",
-    "newsfeedAppBarTitle": "Counter",
-    "@newsfeedAppBarTitle": {
+    "counterAppBarTitle": "Counter",
+    "@counterAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
     }
 }
@@ -68,8 +74,8 @@ This project relies on [flutter_localizations][flutter_localizations_link] and f
 ```arb
 {
     "@@locale": "en",
-    "newsfeedAppBarTitle": "Counter",
-    "@newsfeedAppBarTitle": {
+    "counterAppBarTitle": "Counter",
+    "@counterAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
     },
     "helloWorld": "Hello World",
@@ -125,8 +131,8 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 ```arb
 {
     "@@locale": "en",
-    "newsfeedAppBarTitle": "Counter",
-    "@newsfeedAppBarTitle": {
+    "counterAppBarTitle": "Counter",
+    "@counterAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
     }
 }
@@ -137,8 +143,8 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 ```arb
 {
     "@@locale": "es",
-    "newsfeedAppBarTitle": "Contador",
-    "@newsfeedAppBarTitle": {
+    "counterAppBarTitle": "Contador",
+    "@counterAppBarTitle": {
         "description": "Texto mostrado en la AppBar de la página del contador"
     }
 }
