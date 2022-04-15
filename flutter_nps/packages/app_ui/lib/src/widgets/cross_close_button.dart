@@ -1,11 +1,10 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:platform_close/platform_close.dart';
 
 class CrossCloseButton extends StatelessWidget {
-  const CrossCloseButton({
-    Key? key,
-  }) : super(key: key);
+  const CrossCloseButton({Key? key, required this.onPressed}) : super(key: key);
+
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class CrossCloseButton extends StatelessWidget {
       child: Align(
         alignment: Alignment.topRight,
         child: IconButton(
-          onPressed: PlatformClose.instance.close,
+          onPressed: onPressed,
           icon: const Icon(Icons.close),
         ),
       ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_nps/l10n/l10n.dart';
+import 'package:platform_close/platform_close.dart';
 
 class CapturePage extends StatelessWidget {
   const CapturePage({Key? key}) : super(key: key);
@@ -121,7 +122,9 @@ class CaptureView extends StatelessWidget {
             ),
           ),
         ),
-        const CrossCloseButton(),
+        CrossCloseButton(
+          onPressed: PlatformClose.instance.close,
+        ),
       ],
     );
   }

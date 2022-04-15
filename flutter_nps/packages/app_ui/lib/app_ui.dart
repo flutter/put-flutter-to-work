@@ -9,5 +9,6 @@ export 'src/typography/text_styles.dart';
 export 'src/widgets/answer_chips.dart';
 export 'src/widgets/capture_score_selector.dart';
 export 'src/widgets/capture_score_selector_labels.dart';
+export 'src/widgets/cross_close_button.dart';
 export 'src/widgets/responsive_card.dart';
 export 'src/widgets/submit_button.dart';
