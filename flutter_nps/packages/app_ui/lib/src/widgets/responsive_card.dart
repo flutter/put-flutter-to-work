@@ -23,6 +23,7 @@ class ResponsiveCard extends StatelessWidget {
                 child: Center(
                   child: ConstrainedBox(
                     constraints: const BoxConstraints(
+                      minWidth: Breakpoints.small,
                       maxWidth: Breakpoints.small,
                       minHeight: Breakpoints.small,
                     ),

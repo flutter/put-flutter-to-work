@@ -22,37 +22,28 @@ class CaptureEndView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.center,
       children: [
-        Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Assets.icons.checkCircle.image(),
-              const SizedBox(height: Spacing.spacing35),
-              Text(
-                context.l10n.thankYou,
-                style: Theme.of(context).textTheme.headline5,
-              ),
-              Text(
-                context.l10n.feedbackSubmittedMessage,
-                style: Theme.of(context).textTheme.subtitle1,
-              ),
-            ],
-          ),
+        Column(
+          children: [
+            Assets.icons.checkCircle.image(),
+            const SizedBox(height: Spacing.spacing35),
+            Text(
+              context.l10n.thankYou,
+              style: Theme.of(context).textTheme.headline5,
+            ),
+            Text(
+              context.l10n.feedbackSubmittedMessage,
+              style: Theme.of(context).textTheme.subtitle1,
+            ),
+          ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(
-            top: Spacing.spacing35,
-            right: Spacing.spacing15,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              IconButton(
-                onPressed: PlatformClose.instance.close,
-                icon: const Icon(Icons.close),
-              ),
-            ],
+        Positioned(
+          top: Spacing.spacing35,
+          right: Spacing.spacing15,
+          child: IconButton(
+            onPressed: PlatformClose.instance.close,
+            icon: const Icon(Icons.close),
           ),
         ),
       ],
