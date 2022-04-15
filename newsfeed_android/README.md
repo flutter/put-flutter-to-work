@@ -4,7 +4,7 @@ This project contains sample Android application that shows how to embed Flutter
 
 ## Getting Started
 
-For instructions integrating Flutter modules to your existing applications,
+**Important:** For instructions integrating Flutter modules to your existing applications,
 see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app).
 
 ## Setup
@@ -17,3 +17,5 @@ flutter build aar
 ```
 
 You must run `flutter build aar` every time you make code changes in your Flutter module. Than follow rest of the instructions regarding configuration displayed in the command line.
+
+Open the Android project in Android Studio or IntelliJ and run the app.

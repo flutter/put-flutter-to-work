@@ -4,7 +4,7 @@ This project contains sample iOS application that shows how to embed Flutter pro
 
 ## Getting Started
 
-For instructions integrating Flutter modules to your existing applications,
+**Important:** For instructions integrating Flutter modules to your existing applications,
 see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app).
 
 ## Build
@@ -15,6 +15,8 @@ When you change the Flutter plugin dependencies in `flutter_nps/pubspec.yaml`,
 `run flutter pub get` in your Flutter module directory to refresh the list of plugins read by the podhelper.rb script.
 
 Then, run `pod install` again from your application at `newsfeed_ios/`.
+
+Open the xcworkspace in Xcode and run the app.
 
 ### Installing swift-format
 

@@ -14,14 +14,14 @@ Take Flutter Home NPS (Net Promoter Score) module
 
 This Flutter module consists of a pop-up that allows customer to provide a satisfaction score. It can be run as a standalone application however its main purpose is to be embedded within existing native applications as a module.
 
-For instructions integrating Flutter modules to your existing applications,
+For instructions on integrating Flutter modules to your existing applications,
 see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app).
 
 Each native application uses a different system to embed a Flutter within it. Thats why a specific build-flow needs to be implemented depending on the project Flutter module will be embeded in. Follow links for a specific instructions for [Android](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_android/README.md), [iOS](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_ios/README.md) or [Web](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_angular/README.md).
 
 # Flutter improvements
 
-Feel free to fork and customize this repository. Bellow is a list of guidelines on usage of the tools that are already used in this project.
+Feel free to fork and customize this repository. Below is a list of guidelines on usage of the tools that are already used in this project.
 
 ### Running Tests 🧪
 
@@ -41,7 +41,7 @@ genhtml coverage/lcov.info -o coverage/
 open coverage/index.html
 ```
 
-### Using Flutter_gen
+### Using flutter_gen
 
 To generate all the assets accessors of pubspec.yaml file run:
 
