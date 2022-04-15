@@ -28,7 +28,7 @@ Open the Android project in Android Studio or IntelliJ and run the app.
 
 ### Failed to resolve: com.example.flutter_nps:flutter_debug:1.0
 
-In both `build.gradle` and `app/build.gradle` replace 
+In both `build.gradle` and `app/build.gradle` replace relative path
 
 ```
 maven {
