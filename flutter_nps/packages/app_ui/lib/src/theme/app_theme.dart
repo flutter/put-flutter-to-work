@@ -1,6 +1,5 @@
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_nps/colors.dart';
-import 'package:flutter_nps/styles.dart';
 
 class AppTheme {
   ThemeData get theme => ThemeData(

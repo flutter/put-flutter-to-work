@@ -5,10 +5,11 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_nps/app/route_generator.dart';
-import 'package:flutter_nps/app_theme.dart';
+
 import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_nps/l10n/l10n.dart';
 

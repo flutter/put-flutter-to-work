@@ -1,7 +1,5 @@
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_nps/capture/capture.dart';
-import 'package:flutter_nps/capture/widget/responsive_card.dart';
-import 'package:flutter_nps/gen/assets.gen.dart';
 import 'package:flutter_nps/l10n/l10n.dart';
 import 'package:platform_close/platform_close.dart';
 
@@ -30,7 +28,7 @@ class CaptureEndView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Assets.icons.checkCircle.image(),
-              const SizedBox(height: 35),
+              const SizedBox(height: Spacing.spacing35),
               Text(
                 context.l10n.thankYou,
                 style: Theme.of(context).textTheme.headline5,
@@ -43,7 +41,10 @@ class CaptureEndView extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 35, right: 15),
+          padding: const EdgeInsets.only(
+            top: Spacing.spacing35,
+            right: Spacing.spacing15,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_nps/breakpoints.dart';
-import 'package:flutter_nps/capture/widget/responsive_card.dart';
+import '../../../packages/app_ui/lib/src/widgets/responsive_card.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../helpers/helpers.dart';
