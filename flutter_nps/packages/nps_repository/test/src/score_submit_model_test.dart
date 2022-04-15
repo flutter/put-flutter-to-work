@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:send_data_service/score_submit_model.dart';
+import 'package:nps_repository/nps_repository.dart';
 
 void main() {
   test('ScoreSubmitModel toJson translates corectly', () {

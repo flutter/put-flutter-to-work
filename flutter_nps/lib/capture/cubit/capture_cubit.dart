@@ -7,15 +7,14 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter_nps/capture/capture.dart';
-import 'package:send_data_service/score_submit_model.dart';
-import 'package:send_data_service/send_data_service.dart';
+import 'package:nps_repository/nps_repository.dart';
 
 class CaptureCubit extends Cubit<CaptureCubitState> {
-  CaptureCubit({SendDataService? sendService})
-      : _sendService = sendService,
+  CaptureCubit({required NpsRepository npsRepository})
+      : _npsRepository = npsRepository,
         super(CaptureCubitState.initial());
 
-  final SendDataService? _sendService;
+  final NpsRepository _npsRepository;
 
   void selectScore({required int score}) => emit(state.copyWith(score: score));
 
@@ -33,13 +32,11 @@ class CaptureCubit extends Cubit<CaptureCubitState> {
       );
 
   void submitResult() {
-    if (_sendService != null) {
-      _sendService!.sendCustomerSatisfaction(
-        scoreSubmit: ScoreSubmitModel(
-          score: state.score,
-          chipIndexes: state.chipIndexes,
-        ),
-      );
-    }
+    _npsRepository.sendCustomerSatisfaction(
+      scoreSubmit: ScoreSubmitModel(
+        score: state.score,
+        chipIndexes: state.chipIndexes,
+      ),
+    );
   }
 }

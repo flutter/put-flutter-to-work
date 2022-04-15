@@ -4,8 +4,8 @@ import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_nps/colors.dart';
 import 'package:flutter_nps/gen/assets.gen.dart';
 import 'package:flutter_nps/l10n/l10n.dart';
+import 'package:nps_repository/nps_repository.dart';
 import 'package:platform_close/platform_close.dart';
-import 'package:send_data_service/send_data_service.dart';
 
 class CapturePage extends StatelessWidget {
   const CapturePage({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class CapturePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => CaptureCubit(
-        sendService: SendDataService(),
+        npsRepository: const NpsRepository(),
       ),
       child: const ResponsiveCard(child: CaptureView()),
     );

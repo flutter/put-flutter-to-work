@@ -9,19 +9,25 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:send_data_service/send_data_service.dart';
+import 'package:nps_repository/nps_repository.dart';
 
-class SendDataServiceMock extends Mock implements SendDataService {}
+class NpsRepositoryMock extends Mock implements NpsRepository {}
 
 void main() {
+  late final NpsRepository npsRepository;
+  late final CaptureCubit captureCubit;
   group('CaptureCubit', () {
+    setUpAll(() {
+      npsRepository = NpsRepositoryMock();
+      captureCubit = CaptureCubit(npsRepository: npsRepository);
+    });
     test('initial state is set to score: -1 and chipIndexes: []', () {
-      expect(CaptureCubit().state, equals(CaptureCubitState.initial()));
+      expect(captureCubit.state, equals(CaptureCubitState.initial()));
     });
 
     blocTest<CaptureCubit, CaptureCubitState>(
       'selectScore sets score to 1',
-      build: CaptureCubit.new,
+      build: () => captureCubit,
       act: (cubit) => cubit.selectScore(score: 1),
       expect: () => [
         equals(const CaptureCubitState(score: 1, chipIndexes: [])),
@@ -30,7 +36,7 @@ void main() {
 
     blocTest<CaptureCubit, CaptureCubitState>(
       'addChipIndex adds index to chipIndexes',
-      build: CaptureCubit.new,
+      build: () => captureCubit,
       seed: () => const CaptureCubitState(score: -1, chipIndexes: []),
       act: (cubit) => cubit.chipToggled(index: 1),
       expect: () => [
@@ -40,7 +46,7 @@ void main() {
 
     blocTest<CaptureCubit, CaptureCubitState>(
       'removeChipIndex from chipIndexes',
-      build: CaptureCubit.new,
+      build: () => captureCubit,
       seed: () => const CaptureCubitState(score: -1, chipIndexes: [1]),
       act: (cubit) => cubit.chipToggled(index: 1),
       expect: () => [
@@ -50,7 +56,7 @@ void main() {
 
     blocTest<CaptureCubit, CaptureCubitState>(
       'submitResult does nothing',
-      build: () => CaptureCubit(sendService: SendDataServiceMock()),
+      build: () => captureCubit,
       seed: () => const CaptureCubitState(score: -1, chipIndexes: []),
       act: (cubit) => cubit.submitResult(),
       expect: () => <CaptureCubitState>[],
