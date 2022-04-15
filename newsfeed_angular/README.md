@@ -65,3 +65,11 @@ To display the Flutter application in Html use `<iframe></iframe>` tag with defi
 ```
 <iframe src="./web/index.html"> </iframe>
 ```
+
+Move to your angular project directory and run:
+
+`npm install` or `npm install --legacy-peed-deps` depending on your npm dependencies.
+
+Finally run:
+
+`ng serve`
