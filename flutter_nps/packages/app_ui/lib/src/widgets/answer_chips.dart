@@ -1,4 +1,3 @@
-//chips up, numbers from app_ui
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 
@@ -23,12 +22,13 @@ class AnswerChips extends StatelessWidget {
         chips.length,
         (index) {
           final isSelected = selectedChipsIndexes.contains(index);
-
           return <Widget>[
-            //FilterChip verify
             ActionChip(
               onPressed: () => chipToogleCallback(index),
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              padding: const EdgeInsets.symmetric(
+                horizontal: Spacing.spacing15,
+                vertical: Spacing.spacing15,
+              ),
               label: Text(
                 chips[index],
                 style: TextStyle(
