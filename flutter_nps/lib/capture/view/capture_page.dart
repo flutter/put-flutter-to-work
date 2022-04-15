@@ -121,7 +121,7 @@ class CaptureView extends StatelessWidget {
             ),
           ),
         ),
-        const CloseButton(),
+        const CrossCloseButton(),
       ],
     );
   }

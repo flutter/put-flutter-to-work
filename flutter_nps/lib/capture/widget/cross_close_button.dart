@@ -2,8 +2,8 @@ import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:platform_close/platform_close.dart';
 
-class CloseButton extends StatelessWidget {
-  const CloseButton({
+class CrossCloseButton extends StatelessWidget {
+  const CrossCloseButton({
     Key? key,
   }) : super(key: key);
 
