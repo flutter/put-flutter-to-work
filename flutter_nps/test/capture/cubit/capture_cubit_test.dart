@@ -13,21 +13,25 @@ import 'package:nps_repository/nps_repository.dart';
 
 class NpsRepositoryMock extends Mock implements NpsRepository {}
 
+class ScoreSubmitModelMock extends Mock implements ScoreSubmitModel {}
+
 void main() {
   late final NpsRepository npsRepository;
-  late final CaptureCubit captureCubit;
   group('CaptureCubit', () {
     setUpAll(() {
       npsRepository = NpsRepositoryMock();
-      captureCubit = CaptureCubit(npsRepository: npsRepository);
+      registerFallbackValue(ScoreSubmitModelMock());
     });
     test('initial state is set to score: -1 and chipIndexes: []', () {
-      expect(captureCubit.state, equals(CaptureCubitState.initial()));
+      expect(
+        CaptureCubit(npsRepository: npsRepository).state,
+        equals(CaptureCubitState.initial()),
+      );
     });
 
     blocTest<CaptureCubit, CaptureCubitState>(
       'selectScore sets score to 1',
-      build: () => captureCubit,
+      build: () => CaptureCubit(npsRepository: npsRepository),
       act: (cubit) => cubit.selectScore(score: 1),
       expect: () => [
         equals(const CaptureCubitState(score: 1, chipIndexes: [])),
@@ -36,7 +40,7 @@ void main() {
 
     blocTest<CaptureCubit, CaptureCubitState>(
       'addChipIndex adds index to chipIndexes',
-      build: () => captureCubit,
+      build: () => CaptureCubit(npsRepository: npsRepository),
       seed: () => const CaptureCubitState(score: -1, chipIndexes: []),
       act: (cubit) => cubit.chipToggled(index: 1),
       expect: () => [
@@ -46,7 +50,7 @@ void main() {
 
     blocTest<CaptureCubit, CaptureCubitState>(
       'removeChipIndex from chipIndexes',
-      build: () => captureCubit,
+      build: () => CaptureCubit(npsRepository: npsRepository),
       seed: () => const CaptureCubitState(score: -1, chipIndexes: [1]),
       act: (cubit) => cubit.chipToggled(index: 1),
       expect: () => [
@@ -55,8 +59,15 @@ void main() {
     );
 
     blocTest<CaptureCubit, CaptureCubitState>(
-      'submitResult does nothing',
-      build: () => captureCubit,
+      'submitResult returns nothing',
+      setUp: () {
+        when(
+          () => npsRepository.sendCustomerSatisfaction(
+            scoreSubmit: any(named: 'scoreSubmit'),
+          ),
+        ).thenReturn(true);
+      },
+      build: () => CaptureCubit(npsRepository: npsRepository),
       seed: () => const CaptureCubitState(score: -1, chipIndexes: []),
       act: (cubit) => cubit.submitResult(),
       expect: () => <CaptureCubitState>[],
