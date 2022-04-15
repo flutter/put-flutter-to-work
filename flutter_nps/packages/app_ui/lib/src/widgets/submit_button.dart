@@ -18,9 +18,8 @@ class SubmitButton extends StatelessWidget {
       onPressed: onPressed,
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          //use spacing
           horizontal: Spacing.spacing75,
-          vertical: 12,
+          vertical: Spacing.spacing15,
         ),
         child: Text(
           buttonText,
