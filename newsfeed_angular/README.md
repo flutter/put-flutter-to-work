@@ -2,6 +2,8 @@
 
 This project contains sample Angular application that shows how to embed Flutter project into Angular (web-based) project.
 
+https://user-images.githubusercontent.com/17708132/163605104-f21a539a-c4dc-4059-aca3-670f674ebcbb.mov
+
 ## Getting Started
 
 To add existing Flutter Application into web-based project you need to build your Flutter project for web.
