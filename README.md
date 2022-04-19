@@ -5,7 +5,7 @@ This example contains a customer satisfaction rating dialog (Flutter NPS module)
 
 ## Overview
 
-This repository consists of 4 projects: Flutter, iOS, Android and Angular project.
+This repository consists of 4 main parts: iOS, Android, and Angular newsfeeds, and the Flutter NPS module.
 
 If you don't have Flutter installed, you should [go through the Flutter setup guide](https://docs.flutter.dev/get-started/install) on your computer.
 
