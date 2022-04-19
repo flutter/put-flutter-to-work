@@ -4,8 +4,6 @@ This project contains sample iOS application that shows how to embed Flutter pro
 
 https://user-images.githubusercontent.com/17708132/163604266-3e640917-6860-4592-baa4-2376335a8fc3.mov
 
-
-
 ## Getting Started
 
 **Important:** For instructions integrating Flutter modules to your existing applications,
