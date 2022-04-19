@@ -49,8 +49,9 @@ class ScoreButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const duration = Duration(milliseconds: 500);
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 500),
+      duration: duration,
       height: Spacing.huge,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
@@ -64,10 +65,15 @@ class ScoreButton extends StatelessWidget {
           ),
           alignment: Alignment.center,
         ),
-        child: Text(
-          (index + 1).toString(),
+        child: AnimatedDefaultTextStyle(
           style: theme.textTheme.subtitle1?.copyWith(
-            color: isSelected ? NpsColors.colorWhite : NpsColors.colorPrimary1,
+                color:
+                    isSelected ? NpsColors.colorWhite : NpsColors.colorPrimary1,
+              ) ??
+              const TextStyle(),
+          duration: duration,
+          child: Text(
+            (index + 1).toString(),
           ),
         ),
       ),
