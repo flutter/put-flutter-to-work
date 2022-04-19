@@ -1,6 +1,6 @@
 # Newsfeed Angular App
 
-This project contains sample Angular application that shows how to embed Flutter project into Angular (web-based) project.
+This project contains a sample Angular application that shows how to add a Flutter project into an Angular (web-based) project.
 
 https://user-images.githubusercontent.com/17708132/163605104-f21a539a-c4dc-4059-aca3-670f674ebcbb.mov
 
