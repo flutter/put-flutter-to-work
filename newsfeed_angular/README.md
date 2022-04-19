@@ -12,7 +12,7 @@ To add existing Flutter Application into web-based project you need to build you
 
 To setup Flutter web project check out [building a web application with Flutter](https://docs.flutter.dev/get-started/web)
 
-To get the required web app build run:
+To build the web app run:
 
 ```
 flutter build web
