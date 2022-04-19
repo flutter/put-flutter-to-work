@@ -17,7 +17,7 @@ This Flutter module consists of a pop-up that allows customer to provide a satis
 For instructions on integrating Flutter modules to your existing applications,
 see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app).
 
-Each native application uses a different system to embed a Flutter within it. Thats why a specific build-flow needs to be implemented depending on the project Flutter module will be embeded in. Follow links for a specific instructions for [Android](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_android/README.md), [iOS](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_ios/README.md) or [Web](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_angular/README.md).
+Each native application uses a different system to embed a Flutter module. Follow links for a specific instructions for [Android](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_android/README.md), [iOS](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_ios/README.md), or [Web](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_angular/README.md).
 
 # Flutter improvements
 
