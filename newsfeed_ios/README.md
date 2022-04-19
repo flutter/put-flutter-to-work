@@ -6,7 +6,7 @@ https://user-images.githubusercontent.com/17708132/163604266-3e640917-6860-4592-
 
 ## Getting Started
 
-**Important:** For instructions integrating Flutter modules to your existing applications,
+**Important:** For instructions on integrating Flutter modules into your existing applications,
 see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app).
 
 ## Build
