@@ -1,6 +1,6 @@
 # Take Flutter Home 🧪
 
-A GitHub repository that holds a complete example how to insert a Flutter module into your an existing Android, iOS or Web application.
+A GitHub repository that holds a complete example of how to add a Flutter module into an existing Android, iOS, or web application.
 Example shows how to achieve customer satisfaction rating pop-up that is purely written in Flutter and how to insert it into natively written application.
 
 ## Overview
