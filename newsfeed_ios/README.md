@@ -2,8 +2,6 @@
 
 This project contains sample iOS application that shows how to embed Flutter project into native iOS project.
 
-
-
 https://user-images.githubusercontent.com/17708132/163604266-3e640917-6860-4592-baa4-2376335a8fc3.mov
 
 
