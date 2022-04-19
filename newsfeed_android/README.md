@@ -19,7 +19,7 @@ cd flutter_nps
 flutter build aar
 ```
 
-You must run `flutter build aar` every time you make code changes in your Flutter module. Than follow rest of the instructions regarding configuration displayed in the command line.
+You must run `flutter build aar` every time you make code changes in your Flutter module. Then follow the rest of the instructions regarding configuration displayed in the command line.
 
 Open the Android project in Android Studio or IntelliJ and run the app.
 
