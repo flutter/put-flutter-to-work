@@ -1,7 +1,7 @@
 # Take Flutter Home 🧪
 
 A GitHub repository that holds a complete example of how to add a Flutter module into an existing Android, iOS, or web application.
-Example shows how to achieve customer satisfaction rating pop-up that is purely written in Flutter and how to insert it into natively written application.
+This example contains a customer satisfaction rating dialog (Flutter NPS module) that is written purely in Flutter and can be added to existing native applications.
 
 ## Overview
 
