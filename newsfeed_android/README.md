@@ -12,7 +12,7 @@ see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-a
 
 ## Setup
 
-To easily import the Flutter project into existing Android application we need to build the Flutter module into a generic Android Archive(AAR). To create Android AAR file from the Flutter module run:
+To easily import the Flutter project into an existing Android application, we need to build the Flutter module into a generic Android Archive(AAR). To create an Android AAR file from the Flutter module run:
 
 ```sh
 cd flutter_nps
