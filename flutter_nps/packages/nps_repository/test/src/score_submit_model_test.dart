@@ -5,7 +5,8 @@ import 'package:nps_repository/nps_repository.dart';
 
 void main() {
   test('ScoreSubmitModel toJson translates corectly', () {
-    final scoreSubmitModel = ScoreSubmitModel(chipIndexes: [0, 1], score: 1);
+    const scoreSubmitModel =
+        CustomerSatisfaction(chipIndexes: [0, 1], score: 1);
 
     final result = scoreSubmitModel.toJson();
 

@@ -7,8 +7,13 @@ class NpsRepositoryMock extends Mock implements NpsRepository {}
 
 void main() {
   group('NpsRepository', () {
-    final scoreSubmit = ScoreSubmitModel(score: 1, chipIndexes: [0, 1]);
-    const npsRepository = NpsRepository();
+    final scoreSubmit = CustomerSatisfaction(score: 1, chipIndexes: [0, 1]);
+    late NpsRepository npsRepository;
+
+    setUp(() {
+      npsRepository = NpsRepository();
+    });
+
     test('can be instantiated', () {
       expect(npsRepository, isNotNull);
     });
@@ -17,7 +22,7 @@ void main() {
       final result =
           npsRepository.sendCustomerSatisfaction(scoreSubmit: scoreSubmit);
 
-      expect(result, isTrue);
+      expectLater(result, completes);
     });
   });
 }

@@ -11,17 +11,21 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:nps_repository/nps_repository.dart';
 
-class NpsRepositoryMock extends Mock implements NpsRepository {}
+class MockNpsRepository extends Mock implements NpsRepository {}
 
-class ScoreSubmitModelMock extends Mock implements ScoreSubmitModel {}
+class MockScoreSubmitModel extends Mock implements CustomerSatisfaction {}
 
 void main() {
-  late final NpsRepository npsRepository;
+  late NpsRepository npsRepository;
   group('CaptureCubit', () {
     setUpAll(() {
-      npsRepository = NpsRepositoryMock();
-      registerFallbackValue(ScoreSubmitModelMock());
+      registerFallbackValue(MockScoreSubmitModel());
     });
+
+    setUp(() {
+      npsRepository = MockNpsRepository();
+    });
+
     test('initial state is set to score: -1 and chipIndexes: []', () {
       expect(
         CaptureCubit(npsRepository: npsRepository).state,
@@ -65,7 +69,7 @@ void main() {
           () => npsRepository.sendCustomerSatisfaction(
             scoreSubmit: any(named: 'scoreSubmit'),
           ),
-        ).thenReturn(true);
+        ).thenAnswer(Future.value);
       },
       build: () => CaptureCubit(npsRepository: npsRepository),
       seed: () => const CaptureCubitState(score: -1, chipIndexes: []),

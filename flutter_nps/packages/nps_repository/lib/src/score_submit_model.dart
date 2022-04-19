@@ -1,5 +1,5 @@
-class ScoreSubmitModel {
-  ScoreSubmitModel({required this.score, required this.chipIndexes});
+class CustomerSatisfaction {
+  const CustomerSatisfaction({required this.score, required this.chipIndexes});
   final int score;
   final List<int> chipIndexes;
 

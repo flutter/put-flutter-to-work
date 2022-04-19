@@ -31,9 +31,9 @@ class CaptureCubit extends Cubit<CaptureCubitState> {
         ),
       );
 
-  void submitResult() {
-    _npsRepository.sendCustomerSatisfaction(
-      scoreSubmit: ScoreSubmitModel(
+  Future<void> submitResult() async {
+    await _npsRepository.sendCustomerSatisfaction(
+      scoreSubmit: CustomerSatisfaction(
         score: state.score,
         chipIndexes: state.chipIndexes,
       ),
