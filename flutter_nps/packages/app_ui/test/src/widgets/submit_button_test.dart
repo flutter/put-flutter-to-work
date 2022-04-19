@@ -11,7 +11,7 @@ void main() {
     const buttonText = 'test';
     testWidgets(
       'submits on click',
-      (WidgetTester tester) async {
+      (tester) async {
         final completer = Completer<void>();
         await tester.pumpApp(
           SubmitButton(

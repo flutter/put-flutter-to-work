@@ -20,8 +20,8 @@ class CaptureScoreSelectorLabels extends StatelessWidget {
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             Assets.icons.thumbDownEmoji
-                .image(width: Spacing.spacing25, height: Spacing.spacing25),
-            const SizedBox(width: Spacing.spacing10),
+                .image(width: Spacing.m, height: Spacing.m),
+            const SizedBox(width: Spacing.xs),
             Text(minLabel),
           ],
         ),
@@ -29,10 +29,10 @@ class CaptureScoreSelectorLabels extends StatelessWidget {
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             Text(maxLabel),
-            const SizedBox(width: Spacing.spacing10),
+            const SizedBox(width: Spacing.xs),
             Assets.icons.lovingEmoji.image(
-              width: Spacing.spacing25,
-              height: Spacing.spacing25,
+              width: Spacing.m,
+              height: Spacing.m,
             )
           ],
         )

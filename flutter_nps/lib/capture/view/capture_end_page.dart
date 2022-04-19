@@ -27,7 +27,7 @@ class CaptureEndView extends StatelessWidget {
         Column(
           children: [
             Assets.icons.checkCircle.image(),
-            const SizedBox(height: Spacing.spacing35),
+            const SizedBox(height: Spacing.xl),
             Text(
               context.l10n.thankYou,
               style: Theme.of(context).textTheme.headline5,
@@ -39,8 +39,8 @@ class CaptureEndView extends StatelessWidget {
           ],
         ),
         Positioned(
-          top: Spacing.spacing35,
-          right: Spacing.spacing15,
+          top: Spacing.xl,
+          right: Spacing.s,
           child: IconButton(
             onPressed: PlatformClose.instance.close,
             icon: const Icon(Icons.close),

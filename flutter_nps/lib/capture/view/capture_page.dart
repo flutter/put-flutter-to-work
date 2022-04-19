@@ -45,30 +45,29 @@ class CaptureView extends StatelessWidget {
       children: [
         Center(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: Spacing.spacing15),
+            padding: const EdgeInsets.symmetric(horizontal: Spacing.s),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: Spacing.spacing35),
+                const SizedBox(height: Spacing.xl),
                 const CircleAvatar(
-                  maxRadius: Spacing.spacing40,
-                  //themeing?
+                  maxRadius: Spacing.xxl,
                   backgroundColor: NpsColors.colorSecondary,
                 ),
-                const SizedBox(height: Spacing.spacing35),
+                const SizedBox(height: Spacing.xl),
                 Text(
                   context.l10n.captureTitle,
                   style: theme.textTheme.headline5
                       ?.copyWith(fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: Spacing.spacing5),
+                const SizedBox(height: Spacing.xxs),
                 Text(
                   context.l10n.captureMessage,
                   style: theme.textTheme.subtitle1
                       ?.copyWith(color: NpsColors.colorGrey2),
                 ),
-                const SizedBox(height: Spacing.spacing35),
+                const SizedBox(height: Spacing.xl),
                 CaptureScoreSelector(
                   maxScore: maxScore,
                   selectedIndex: selectedIndex,
@@ -76,12 +75,12 @@ class CaptureView extends StatelessWidget {
                       .read<CaptureCubit>()
                       .selectScore(score: index + 1),
                 ),
-                const SizedBox(height: Spacing.spacing15),
+                const SizedBox(height: Spacing.s),
                 CaptureScoreSelectorLabels(
                   maxLabel: context.l10n.captureMaxLabel,
                   minLabel: context.l10n.captureMinLabel,
                 ),
-                const SizedBox(height: Spacing.spacing35),
+                const SizedBox(height: Spacing.xl),
                 BlocSelector<CaptureCubit, CaptureCubitState, bool>(
                   selector: (state) => state.isScoreSelected,
                   builder: (context, isScoreSelected) {
@@ -92,12 +91,12 @@ class CaptureView extends StatelessWidget {
                         children: [
                           AnswerChips(
                             chips: chips,
-                            selectedChipsIndexes: selectedChipIndexes,
-                            chipToogleCallback: (index) => context
+                            selectedChipIndices: selectedChipIndexes,
+                            chipToggleCallback: (index) => context
                                 .read<CaptureCubit>()
                                 .chipToggled(index: index),
                           ),
-                          const SizedBox(height: Spacing.spacing30),
+                          const SizedBox(height: Spacing.lg),
                           SubmitButton(
                             buttonText: context.l10n.submit,
                             onPressed: context.select(
@@ -117,7 +116,7 @@ class CaptureView extends StatelessWidget {
                     );
                   },
                 ),
-                const SizedBox(height: Spacing.spacing15),
+                const SizedBox(height: Spacing.s),
               ],
             ),
           ),

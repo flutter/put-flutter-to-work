@@ -9,15 +9,15 @@ import '../../helpers/helpers.dart';
 void main() {
   group('AnswerChips', () {
     final chips = ['a', 'b', 'c'];
-    final selectedChipsIndexes = [0, 1];
+    final selectedChipIndices = [0, 1];
     testWidgets(
       'renders 3 chips',
-      (WidgetTester tester) async {
+      (tester) async {
         await tester.pumpApp(
           AnswerChips(
             chips: chips,
-            selectedChipsIndexes: selectedChipsIndexes,
-            chipToogleCallback: (_) {},
+            selectedChipIndices: selectedChipIndices,
+            chipToggleCallback: (_) {},
           ),
         );
 
@@ -27,13 +27,13 @@ void main() {
 
     testWidgets(
       'tap callback with first',
-      (WidgetTester tester) async {
+      (tester) async {
         final completer = Completer<int>();
         await tester.pumpApp(
           AnswerChips(
             chips: chips,
-            selectedChipsIndexes: selectedChipsIndexes,
-            chipToogleCallback: completer.complete,
+            selectedChipIndices: selectedChipIndices,
+            chipToggleCallback: completer.complete,
           ),
         );
 
@@ -46,13 +46,13 @@ void main() {
 
     testWidgets(
       'tap callback with last index',
-      (WidgetTester tester) async {
+      (tester) async {
         final completer = Completer<int>();
         await tester.pumpApp(
           AnswerChips(
             chips: chips,
-            selectedChipsIndexes: selectedChipsIndexes,
-            chipToogleCallback: completer.complete,
+            selectedChipIndices: selectedChipIndices,
+            chipToggleCallback: completer.complete,
           ),
         );
 

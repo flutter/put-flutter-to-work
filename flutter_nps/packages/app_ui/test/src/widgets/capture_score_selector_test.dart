@@ -12,7 +12,7 @@ void main() {
 
     testWidgets(
       'renders 3 chips',
-      (WidgetTester tester) async {
+      (tester) async {
         await tester.pumpApp(
           CaptureScoreSelector(
             maxScore: maxScore,
@@ -27,7 +27,7 @@ void main() {
 
     testWidgets(
       'tap callback with index 0',
-      (WidgetTester tester) async {
+      (tester) async {
         final completer = Completer<int>();
         await tester.pumpApp(
           CaptureScoreSelector(

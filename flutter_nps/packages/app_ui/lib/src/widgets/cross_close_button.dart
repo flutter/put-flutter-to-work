@@ -10,8 +10,8 @@ class CrossCloseButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        top: Spacing.spacing35,
-        right: Spacing.spacing15,
+        top: Spacing.xl,
+        right: Spacing.s,
       ),
       child: Align(
         alignment: Alignment.topRight,

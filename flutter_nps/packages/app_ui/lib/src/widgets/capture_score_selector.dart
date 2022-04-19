@@ -11,7 +11,7 @@ class CaptureScoreSelector extends StatelessWidget {
 
   final int maxScore;
   final int selectedIndex;
-  final Function(int) selectedCallback;
+  final void Function(int index) selectedCallback;
 
   @override
   Widget build(BuildContext context) {
@@ -44,14 +44,14 @@ class ScoreButton extends StatelessWidget {
 
   final int index;
   final bool isSelected;
-  final Function(int p1) selectedCallback;
+  final void Function(int index) selectedCallback;
   final ThemeData theme;
 
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 500),
-      height: Spacing.spacing55,
+      height: Spacing.huge,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: isSelected ? NpsColors.colorSecondary : NpsColors.colorGrey5,
@@ -64,9 +64,7 @@ class ScoreButton extends StatelessWidget {
           ),
           alignment: Alignment.center,
         ),
-        child:
-            //AnimatedDefaultTextStyle - verify if transitions
-            Text(
+        child: Text(
           (index + 1).toString(),
           style: theme.textTheme.subtitle1?.copyWith(
             color: isSelected ? NpsColors.colorWhite : NpsColors.colorPrimary1,

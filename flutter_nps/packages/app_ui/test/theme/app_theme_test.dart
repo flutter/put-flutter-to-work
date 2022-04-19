@@ -8,8 +8,7 @@ void main() {
     const textWidget = Text('test');
     const disabledButton = ElevatedButton(onPressed: null, child: textWidget);
     final enabledButton = ElevatedButton(onPressed: () {}, child: textWidget);
-    testWidgets('renders enabled and disabled style',
-        (WidgetTester tester) async {
+    testWidgets('renders enabled and disabled style', (tester) async {
       await tester.pumpApp(
         ListView(
           children: [disabledButton, enabledButton],

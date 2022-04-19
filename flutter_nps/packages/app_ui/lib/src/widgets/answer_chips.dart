@@ -5,13 +5,13 @@ class AnswerChips extends StatelessWidget {
   const AnswerChips({
     Key? key,
     required this.chips,
-    required this.selectedChipsIndexes,
-    required this.chipToogleCallback,
+    required this.selectedChipIndices,
+    required this.chipToggleCallback,
   }) : super(key: key);
 
   final List<String> chips;
-  final List<int> selectedChipsIndexes;
-  final Function(int) chipToogleCallback;
+  final List<int> selectedChipIndices;
+  final void Function(int) chipToggleCallback;
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +21,13 @@ class AnswerChips extends StatelessWidget {
       children: List<List<Widget>>.generate(
         chips.length,
         (index) {
-          final isSelected = selectedChipsIndexes.contains(index);
+          final isSelected = selectedChipIndices.contains(index);
           return <Widget>[
             ActionChip(
-              onPressed: () => chipToogleCallback(index),
+              onPressed: () => chipToggleCallback(index),
               padding: const EdgeInsets.symmetric(
-                horizontal: Spacing.spacing15,
-                vertical: Spacing.spacing15,
+                horizontal: Spacing.s,
+                vertical: Spacing.s,
               ),
               label: Text(
                 chips[index],
