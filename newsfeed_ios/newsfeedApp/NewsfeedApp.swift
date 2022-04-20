@@ -9,7 +9,7 @@ import SwiftUI
 
 class AppState: ObservableObject {
   static let shared = AppState()
-  @Published var flutterEngine = FlutterEngine(name: "your_flutter_engine")
+  @Published var flutterEngine = FlutterEngine(name: "flutter_nps_engine")
 
   init() {
     flutterEngine.run()
