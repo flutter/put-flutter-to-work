@@ -6,8 +6,7 @@ class NpsRepository {
   Future<void> sendCustomerSatisfaction({
     required CustomerSatisfaction scoreSubmit,
   }) {
-    // Here you can add your own code
-    // Add your own service to obtain customer satisfaction score
+    // Add custom implementation here to report customer satisfaction.
     return Future.value();
   }
 }
