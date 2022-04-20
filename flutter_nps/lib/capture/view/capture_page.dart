@@ -84,35 +84,42 @@ class CaptureView extends StatelessWidget {
                 BlocSelector<CaptureCubit, CaptureCubitState, bool>(
                   selector: (state) => state.isScoreSelected,
                   builder: (context, isScoreSelected) {
-                    return AnimatedOpacity(
-                      duration: const Duration(milliseconds: 1500),
-                      opacity: isScoreSelected ? 1.0 : 0.0,
-                      child: Column(
-                        children: [
-                          AnswerChips(
-                            chips: chips,
-                            selectedChipIndices: selectedChipIndexes,
-                            chipToggleCallback: (index) => context
-                                .read<CaptureCubit>()
-                                .chipToggled(index: index),
-                          ),
-                          const SizedBox(height: Spacing.lg),
-                          SubmitButton(
-                            buttonText: context.l10n.submit,
-                            onPressed: context.select(
-                              (CaptureCubit cubit) => cubit.state.canSubmit,
-                            )
-                                ? () {
-                                    context.read<CaptureCubit>().submitResult();
-                                    Navigator.pushReplacementNamed(
-                                      context,
-                                      CaptureEndPage.routeName,
-                                    );
-                                  }
-                                : null,
-                          ),
-                        ],
-                      ),
+                    return AnimatedSize(
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeInOut,
+                      child: !isScoreSelected
+                          ? const SizedBox.shrink()
+                          : SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  AnswerChips(
+                                    chips: chips,
+                                    selectedChipIndices: selectedChipIndexes,
+                                    chipToggleCallback: (index) => context
+                                        .read<CaptureCubit>()
+                                        .chipToggled(index: index),
+                                  ),
+                                  const SizedBox(height: Spacing.lg),
+                                  SubmitButton(
+                                    buttonText: context.l10n.submit,
+                                    onPressed: context.select(
+                                      (CaptureCubit cubit) =>
+                                          cubit.state.canSubmit,
+                                    )
+                                        ? () {
+                                            context
+                                                .read<CaptureCubit>()
+                                                .submitResult();
+                                            Navigator.pushReplacementNamed(
+                                              context,
+                                              CaptureEndPage.routeName,
+                                            );
+                                          }
+                                        : null,
+                                  ),
+                                ],
+                              ),
+                            ),
                     );
                   },
                 ),
