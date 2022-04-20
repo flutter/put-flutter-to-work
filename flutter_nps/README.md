@@ -14,8 +14,6 @@ Put Flutter to Work NPS (Net Promoter Score) module
 
 This Flutter module consists of a pop-up that allows customer to provide a satisfaction score. It can be run as a standalone application; however, its main purpose is to be embedded within existing native applications as a module.
 
-For instructions on integrating Flutter modules to your existing applications,
-see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app).
 
 Each native application uses a different system to embed a Flutter module. Follow links for a specific instruction:
 - [Android](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_android/README.md)
