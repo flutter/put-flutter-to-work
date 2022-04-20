@@ -21,7 +21,7 @@ Each native application uses a different system to embed a Flutter module. Follo
 - [Android](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_android/README.md)
 - [iOS](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_ios/README.md)
 - [Web](https://github.com/VGVentures/take-flutter-home/tree/main/newsfeed_angular/README.md).
-
+For more information on integrating Flutter modules to your existing applications, see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app).
 # Flutter improvements
 
 Feel free to fork and customize this repository. Below is a list of guidelines on usage of the tools that are already used in this project.
