@@ -44,7 +44,7 @@ and build app with:
 flutter build web
 ```
 
-### Embeding Flutter in Angular project
+### Embedding Flutter in Angular project
 
 For the Angular project to be able to discover the Flutter project, copy `/build/web` directory from the Flutter project and paste it into the `src` directory of the Angular project.
 
