@@ -1,5 +1,6 @@
 class CustomerSatisfaction {
   const CustomerSatisfaction({required this.score, required this.chipIndexes});
+
   final int score;
   final List<int> chipIndexes;
 
