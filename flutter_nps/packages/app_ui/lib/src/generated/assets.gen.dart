@@ -11,9 +11,8 @@ class $AssetsIconsGen {
   const $AssetsIconsGen();
 
   /// File path: assets/icons/check-circle.png
-  AssetGenImage get checkCircle => const AssetGenImage(
-        'assets/icons/check-circle.png',
-      );
+  AssetGenImage get checkCircle =>
+      const AssetGenImage('assets/icons/check-circle.png');
 
   /// File path: assets/icons/loving-emoji.png
   AssetGenImage get lovingEmoji =>
@@ -31,7 +30,7 @@ class Assets {
 }
 
 class AssetGenImage extends AssetImage {
-  const AssetGenImage(String assetName) : super(assetName);
+  const AssetGenImage(String assetName) : super(assetName, package: 'app_ui');
 
   Image image({
     Key? key,

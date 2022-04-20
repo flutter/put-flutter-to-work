@@ -8,6 +8,8 @@ environment:
   sdk: ">=2.16.0 <3.0.0"
 
 dependencies:
+  app_ui:
+    path: ./packages/app_ui
   bloc: ^8.0.2
   equatable: ^2.0.3
   flutter:
@@ -23,7 +25,6 @@ dependencies:
 
 dev_dependencies:
   bloc_test: ^9.0.2
-  build_runner: ^2.1.7
   flutter_test:
     sdk: flutter
   mocktail: ^0.3.0
@@ -32,8 +33,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
-  assets:
-    - assets/icons/
+
   module:
     androidX: true
     androidPackage: com.example.flutter_nps

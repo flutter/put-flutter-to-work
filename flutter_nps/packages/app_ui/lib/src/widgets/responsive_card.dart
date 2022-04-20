@@ -1,6 +1,5 @@
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_nps/breakpoints.dart';
-import 'package:flutter_nps/colors.dart';
 
 class ResponsiveCard extends StatelessWidget {
   const ResponsiveCard({Key? key, required this.child}) : super(key: key);
@@ -24,6 +23,7 @@ class ResponsiveCard extends StatelessWidget {
                 child: Center(
                   child: ConstrainedBox(
                     constraints: const BoxConstraints(
+                      minWidth: Breakpoints.small,
                       maxWidth: Breakpoints.small,
                       minHeight: Breakpoints.small,
                     ),
