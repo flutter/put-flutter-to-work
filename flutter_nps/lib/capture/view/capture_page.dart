@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_nps/capture/capture.dart';
 import 'package:flutter_nps/l10n/l10n.dart';
+import 'package:nps_repository/nps_repository.dart';
 import 'package:platform_close/platform_close.dart';
 
 class CapturePage extends StatelessWidget {
@@ -13,7 +14,9 @@ class CapturePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => CaptureCubit(),
+      create: (_) => CaptureCubit(
+        npsRepository: const NpsRepository(),
+      ),
       child: const ResponsiveCard(child: CaptureView()),
     );
   }
@@ -134,7 +137,7 @@ class CaptureView extends StatelessWidget {
             ),
           ),
         ),
-        CrossCloseButton(
+        AppCloseButton(
           onPressed: PlatformClose.instance.close,
         ),
       ],

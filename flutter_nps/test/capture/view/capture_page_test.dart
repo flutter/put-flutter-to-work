@@ -154,6 +154,8 @@ void main() {
         (tester) async {
       when(() => submitCaptureCubit.state)
           .thenReturn(const CaptureCubitState(score: 1, chipIndexes: [1]));
+      when(() => submitCaptureCubit.submitResult())
+          .thenAnswer((invocation) => Future.value());
 
       await tester.pumpApp(
         BlocProvider.value(

@@ -7,10 +7,10 @@ import 'package:flutter_test/flutter_test.dart';
 import '../../helpers/helpers.dart';
 
 void main() {
-  group('CrossCloseButton', () {
+  group('AppCloseButton', () {
     testWidgets('renders IconButton', (tester) async {
       final completer = Completer<void>();
-      await tester.pumpApp(CrossCloseButton(onPressed: completer.complete));
+      await tester.pumpApp(AppCloseButton(onPressed: completer.complete));
 
       await tester.tap(find.byType(IconButton));
 
