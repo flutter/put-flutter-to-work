@@ -16,4 +16,4 @@ The Flutter module is a shared module that can be embedded in each of the other 
 
 ## Workflows
 
-This repository uses GitHub Actions to provide code formatting, code linting and testing for each project included in this repository. For implementation of Github Workflows visit [this directory](https://github.com/VGVentures/take-flutter-home/tree/main/.github/workflows).
+This repository uses GitHub Actions to provide code formatting, code linting, and testing for each project included in this repository. For implementation of Github Workflows visit [this directory](https://github.com/VGVentures/take-flutter-home/tree/main/.github/workflows).
