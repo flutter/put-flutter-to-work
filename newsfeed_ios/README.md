@@ -1,15 +1,23 @@
+# Newsfeed iOS App
+
+This project contains sample iOS application that shows how to embed Flutter project into native iOS project.
+
+https://user-images.githubusercontent.com/17708132/163604266-3e640917-6860-4592-baa4-2376335a8fc3.mov
+
 ## Getting Started
 
-For instructions integrating Flutter modules to your existing applications,
+**Important:** For instructions on integrating Flutter modules into your existing applications,
 see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app).
 
-You must run `flutter build ios-framework` every time you make code changes in your Flutter module
+## Build
 
-When you change the Flutter plugin dependencies in flutter_nps/pubspec.yaml,
-`run flutter pub get`
-in your Flutter module directory to refresh the list of plugins read by the podhelper.rb script.
-Then, run
-`pod install` again from your application at /newsfeed_ios.
+You must run `flutter build ios-framework` every time you make code changes in your Flutter module.
+
+When you change the Flutter plugin dependencies in `flutter_nps/pubspec.yaml`, run `flutter pub get` in your Flutter module directory to refresh the list of plugins read by the podhelper.rb script.
+
+Then, run `pod install` again from your application at `newsfeed_ios/`.
+
+Open the xcworkspace in Xcode and run the app.
 
 ### Installing swift-format
 

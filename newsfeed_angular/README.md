@@ -1,15 +1,18 @@
-# Counter App Angular
+# Newsfeed Angular App
 
-This project contains sample Angular application that shows how to embed Flutter project into Angular (web-based) project.
+This project contains a sample Angular application that shows how to add a Flutter project into an Angular (web-based) project.
 
-## Setup
+https://user-images.githubusercontent.com/17708132/163605104-f21a539a-c4dc-4059-aca3-670f674ebcbb.mov
+
+## Getting Started
 
 To add existing Flutter Application into web-based project you need to build your Flutter project for web.
 
-### Building Flutter project for web
-To setup Flutter web project go check out the [Building a web application with Flutter](https://docs.flutter.dev/get-started/web)
+## Build
 
-To get the required web app build run:
+To set up a Flutter web project check out [building a web application with Flutter](https://docs.flutter.dev/get-started/web)
+
+To build the web app run:
 
 ```
 flutter build web
@@ -28,6 +31,7 @@ To allow generating Flutter web of Flutter module change entry in `.metadata`:
 ```
 
 Run:
+
 ```
 flutter create . --platforms web --org com.example.flutter_nps
 ```
@@ -40,13 +44,14 @@ and build app with:
 flutter build web
 ```
 
-### Embeding Flutter in Angular project
+### Embedding Flutter in Angular project
 
-For Angular project to be able to discover Flutter project copy `/build/web` directory from the project and paste it into `src` directory of Angular project. 
+For the Angular project to be able to discover the Flutter project, copy `/build/web` directory from the Flutter project and paste it into the `src` directory of the Angular project.
 
 In `src/web/index.html` change <base href="/"> to <base href="./">
 
 **Note**: Flutter files need to be added in `angular.json` for Angular to be able to discover them:
+
 ```
 ...
 "assets": [
@@ -58,6 +63,15 @@ In `src/web/index.html` change <base href="/"> to <base href="./">
 ```
 
 To display the Flutter application in Html use `<iframe></iframe>` tag with defined `src` pointing to the `index.html` file of your project with `src` folder as your root.
+
 ```
 <iframe src="./web/index.html"> </iframe>
 ```
+
+Move to your Angular project directory and run:
+
+`npm install` or `npm install --legacy-peed-deps` depending on your npm dependencies.
+
+Finally run:
+
+`ng serve`
