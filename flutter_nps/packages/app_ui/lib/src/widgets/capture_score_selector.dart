@@ -17,7 +17,6 @@ class CaptureScoreSelector extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: List.generate(
         maxScore,
         (index) {

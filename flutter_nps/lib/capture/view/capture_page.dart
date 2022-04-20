@@ -68,17 +68,23 @@ class CaptureView extends StatelessWidget {
                       ?.copyWith(color: NpsColors.colorGrey2),
                 ),
                 const SizedBox(height: Spacing.xl),
-                CaptureScoreSelector(
-                  maxScore: maxScore,
-                  selectedIndex: selectedIndex,
-                  selectedCallback: (index) => context
-                      .read<CaptureCubit>()
-                      .selectScore(score: index + 1),
-                ),
-                const SizedBox(height: Spacing.s),
-                CaptureScoreSelectorLabels(
-                  maxLabel: context.l10n.captureMaxLabel,
-                  minLabel: context.l10n.captureMinLabel,
+                IntrinsicWidth(
+                  child: Column(
+                    children: [
+                      CaptureScoreSelector(
+                        maxScore: maxScore,
+                        selectedIndex: selectedIndex,
+                        selectedCallback: (index) => context
+                            .read<CaptureCubit>()
+                            .selectScore(score: index + 1),
+                      ),
+                      const SizedBox(height: Spacing.s),
+                      CaptureScoreSelectorLabels(
+                        maxLabel: context.l10n.captureMaxLabel,
+                        minLabel: context.l10n.captureMinLabel,
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: Spacing.xl),
                 BlocSelector<CaptureCubit, CaptureCubitState, bool>(
