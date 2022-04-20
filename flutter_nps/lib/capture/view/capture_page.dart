@@ -121,7 +121,7 @@ class CaptureView extends StatelessWidget {
             ),
           ),
         ),
-        CrossCloseButton(
+        AppCloseButton(
           onPressed: PlatformClose.instance.close,
         ),
       ],
