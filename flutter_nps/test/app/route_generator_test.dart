@@ -21,6 +21,7 @@ void main() {
   setUpAll(() {
     registerFallbackValue(FakeRoute());
   });
+
   group('RouteGenerator', () {
     final navigatorObserver = MockNavigatorObserver();
 
