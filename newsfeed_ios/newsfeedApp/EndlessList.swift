@@ -35,7 +35,8 @@ struct EndlessList: View {
   }
 
   func openFlutterApp() {
-    let flutterViewController = FlutterViewController(project: nil, nibName: nil, bundle: nil)
+    let flutterViewController = FlutterViewController(
+      engine: AppState.shared.flutterEngine, nibName: nil, bundle: nil)
     flutterViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
     flutterViewController.isViewOpaque = false
 
