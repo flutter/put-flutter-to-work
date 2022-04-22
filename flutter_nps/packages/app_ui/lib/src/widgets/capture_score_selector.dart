@@ -16,18 +16,21 @@ class CaptureScoreSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: List.generate(
-        maxScore,
-        (index) {
-          return ScoreButton(
-            index: index,
-            isSelected: selectedIndex == index,
-            selectedCallback: selectedCallback,
-            theme: theme,
-          );
-        },
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: List.generate(
+          maxScore,
+          (index) {
+            return ScoreButton(
+              index: index,
+              isSelected: selectedIndex == index,
+              selectedCallback: selectedCallback,
+              theme: theme,
+            );
+          },
+        ),
       ),
     );
   }
