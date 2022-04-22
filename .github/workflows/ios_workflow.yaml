@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: flutter-ios
-          path: .ios/Flutter
+          path: flutter_nps/build/ios/framework
 
       - uses: actions/download-artifact@v3
         with:
