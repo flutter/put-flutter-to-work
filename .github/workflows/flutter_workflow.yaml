@@ -1,6 +1,10 @@
 name: flutter_nps_test
 
-on: [pull_request]
+on:
+  pull_request:
+    paths:
+      - .github/workflows/flutter_workflow.yaml
+      - flutter_nps/**
 
 jobs:
   build:

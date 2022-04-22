@@ -1,6 +1,10 @@
 name: Swift CI
 
-on: [pull_request]
+on:
+  pull_request:
+    paths:
+      - .github/workflows/ios_workflow.yaml
+      - newsfeed_ios/**
 
 defaults:
   run:

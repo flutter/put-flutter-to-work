@@ -1,6 +1,10 @@
 name: Angular CI
 
-on: [pull_request]
+on:
+  pull_request:
+    paths:
+      - .github/workflows/angular_workflow.yaml
+      - newsfeed_android/**
 
 defaults:
   run:
