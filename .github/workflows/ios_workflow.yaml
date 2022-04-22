@@ -32,12 +32,12 @@ jobs:
       - name: Create Flutter IOS artifact
         uses: actions/upload-artifact@v1
         with:
-          name: flutter-ios
+          name: ios-nps
           path: flutter_nps/build/ios/framework
 
       - uses: actions/download-artifact@v3
         with:
-          name: flutter-pods
+          name: ios-nps
           path: ~/ios_nps
 
       - name: List available Xcode versions
