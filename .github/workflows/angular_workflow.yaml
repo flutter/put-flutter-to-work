@@ -1,6 +1,14 @@
 name: Angular CI
 
-on: [pull_request]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/angular_workflow.yaml
+      - newsfeed_angular/**
 
 defaults:
   run:

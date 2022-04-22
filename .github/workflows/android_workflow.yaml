@@ -1,6 +1,14 @@
 name: Android CI
 
-on: [pull_request]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/android_workflow.yaml
+      - newsfeed_android/**
 
 defaults:
   run:

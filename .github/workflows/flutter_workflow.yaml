@@ -1,6 +1,14 @@
 name: flutter_nps_test
 
-on: [pull_request]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/flutter_workflow.yaml
+      - flutter_nps/**
 
 jobs:
   build:
