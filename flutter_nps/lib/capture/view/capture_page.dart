@@ -98,36 +98,23 @@ class CaptureView extends StatelessWidget {
                       curve: Curves.easeInOut,
                       child: !isScoreSelected
                           ? const SizedBox.shrink()
-                          : SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  AnswerChips(
-                                    chips: chips,
-                                    selectedChipIndices: selectedChipIndexes,
-                                    chipToggleCallback: (index) => context
-                                        .read<CaptureCubit>()
-                                        .chipToggled(index: index),
-                                  ),
-                                  const SizedBox(height: Spacing.lg),
-                                  SubmitButton(
-                                    buttonText: context.l10n.submit,
-                                    onPressed: context.select(
-                                      (CaptureCubit cubit) =>
-                                          cubit.state.canSubmit,
-                                    )
-                                        ? () {
-                                            context
-                                                .read<CaptureCubit>()
-                                                .submitResult();
-                                            Navigator.pushReplacementNamed(
-                                              context,
-                                              CaptureEndPage.routeName,
-                                            );
-                                          }
-                                        : null,
-                                  ),
-                                ],
+                          : ChipsPanel(
+                              chips: chips,
+                              selectedChipIndexes: selectedChipIndexes,
+                              buttonText: context.l10n.submit,
+                              canSubmit: context.select(
+                                (CaptureCubit cubit) => cubit.state.canSubmit,
                               ),
+                              chipToggleCallback: (index) => context
+                                  .read<CaptureCubit>()
+                                  .chipToggled(index: index),
+                              onSubmit: () {
+                                context.read<CaptureCubit>().submitResult();
+                                Navigator.pushReplacementNamed(
+                                  context,
+                                  CaptureEndPage.routeName,
+                                );
+                              },
                             ),
                     );
                   },
