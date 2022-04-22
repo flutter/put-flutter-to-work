@@ -8,7 +8,7 @@ on:
   pull_request:
     paths:
       - .github/workflows/angular_workflow.yaml
-      - newsfeed_android/**
+      - newsfeed_angular/**
 
 defaults:
   run:
