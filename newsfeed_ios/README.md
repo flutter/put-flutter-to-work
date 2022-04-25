@@ -9,6 +9,36 @@ https://user-images.githubusercontent.com/17708132/163604266-3e640917-6860-4592-
 **Important:** For instructions on integrating Flutter modules into your existing applications,
 see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app).
 
+## Import Flutter module to existing iOS app
+
+First download two artifacts from the [github repository Swift CI workflow ](https://github.com/VGVentures/take-flutter-home/actions/workflows/ios_workflow.yaml) and add them to your project at root directory.
+
+Add below configuration to your `Podfile` target (on instruction how to setup cocoapods visit [cocoapods installation guide](https://guides.cocoapods.org/using/using-cocoapods.html))
+
+```
+  flutter_application_path = './ios-podhelper'
+  load File.join(flutter_application_path, 'podhelper.rb')
+  install_all_flutter_pods(flutter_application_path)
+```
+
+In Xcode project settings > Build Settings > Linking > Runpath Search Paths add '$(PROJECT_DIR)/flutter-framework/Release'.
+
+Run `pod install` and `pod update`.
+
+Add opening of the Flutter app to your application as shown in [example](https://github.com/VGVentures/take-flutter-home/blob/2db086b6b708e301c6562ceab37d933de3bd4254/newsfeed_ios/newsfeedApp/EndlessList.swift#L37).
+
+### Troubleshooting
+
+#### Error: 'framework not found FlutterPluginRegistrant'
+
+Usually it's missing path, make sure you added '$(PROJECT_DIR)/flutter-framework/Release' to your Runpath Search Paths.
+
+and run `pod update`
+
+#### Error: 'building for iOS Simulator, but linking in dylib built for macOS... for architecture x86_64'
+
+In Xcode project set 'Excluded Architectures' to `arm64` than run `pod install`
+
 ## Build
 
 You must run `flutter build ios-framework` every time you make code changes in your Flutter module.
