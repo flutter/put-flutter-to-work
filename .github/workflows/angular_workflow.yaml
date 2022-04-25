@@ -51,7 +51,7 @@ jobs:
           flutter build web
           search="<base href=\"/\">""
           replacement="<base href=\"\./\">"
-          sed -i 's/search/replacement/' build/web/index.html
+          sed -i 's/$search/$replacement/' build/web/index.html
 
       - name: Create Flutter web project artifact
         uses: actions/upload-artifact@v1
