@@ -20,7 +20,7 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-    name: "build"
+    name: build / ${{ matrix.node-version }}
     steps:
       - uses: actions/checkout@v2
 
