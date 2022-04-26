@@ -1,5 +1,5 @@
 name: nps_repository
-description: A Very Good Project created by Very Good CLI.
+description: Repository to send Customer Score result
 version: 1.0.0+1
 publish_to: none
 
@@ -14,4 +14,3 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   mocktail: ^0.3.0
-  very_good_analysis: ^2.4.0
