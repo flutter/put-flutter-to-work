@@ -15,6 +15,7 @@ defaults:
     working-directory: ./newsfeed_angular
 jobs:
   build:
+    name: "build"
     runs-on: ubuntu-latest
 
     strategy:
