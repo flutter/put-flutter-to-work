@@ -49,9 +49,7 @@ jobs:
           flutter create . --platforms web --org com.example.flutter_nps
           rm test/widget_test.dart
           flutter build web
-          search='<base href="/">'
-          replacement='<base href="./">'
-          sed -i 's/$search/$replacement/' build/web/index.html
+          perl -i -pe's/<base href=\"\/\"/<base href=\"\.\/\"/g' index.html
 
       - name: Create Flutter web project artifact
         uses: actions/upload-artifact@v1
