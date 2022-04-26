@@ -13,7 +13,7 @@ class ResponsiveCard extends StatelessWidget {
         if (boxConstraints.maxWidth <= Breakpoints.small) {
           return Scaffold(
             backgroundColor: Theme.of(context).cardColor,
-            body: child,
+            body: SizedBox.expand(child: child),
           );
         } else {
           return Scaffold(
@@ -25,7 +25,6 @@ class ResponsiveCard extends StatelessWidget {
                     constraints: const BoxConstraints(
                       minWidth: Breakpoints.small,
                       maxWidth: Breakpoints.small,
-                      minHeight: Breakpoints.small,
                     ),
                     child: Card(
                       shape: RoundedRectangleBorder(

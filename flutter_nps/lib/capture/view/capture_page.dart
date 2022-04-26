@@ -71,51 +71,51 @@ class CaptureView extends StatelessWidget {
                       ?.copyWith(color: NpsColors.colorGrey2),
                 ),
                 const SizedBox(height: Spacing.xl),
-                CaptureScoreSelector(
-                  maxScore: maxScore,
-                  selectedIndex: selectedIndex,
-                  selectedCallback: (index) => context
-                      .read<CaptureCubit>()
-                      .selectScore(score: index + 1),
-                ),
-                const SizedBox(height: Spacing.s),
-                CaptureScoreSelectorLabels(
-                  maxLabel: context.l10n.captureMaxLabel,
-                  minLabel: context.l10n.captureMinLabel,
+                IntrinsicWidth(
+                  child: Column(
+                    children: [
+                      CaptureScoreSelector(
+                        maxScore: maxScore,
+                        selectedIndex: selectedIndex,
+                        selectedCallback: (index) => context
+                            .read<CaptureCubit>()
+                            .selectScore(score: index + 1),
+                      ),
+                      const SizedBox(height: Spacing.s),
+                      CaptureScoreSelectorLabels(
+                        maxLabel: context.l10n.captureMaxLabel,
+                        minLabel: context.l10n.captureMinLabel,
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: Spacing.xl),
                 BlocSelector<CaptureCubit, CaptureCubitState, bool>(
                   selector: (state) => state.isScoreSelected,
                   builder: (context, isScoreSelected) {
-                    return AnimatedOpacity(
-                      duration: const Duration(milliseconds: 1500),
-                      opacity: isScoreSelected ? 1.0 : 0.0,
-                      child: Column(
-                        children: [
-                          AnswerChips(
-                            chips: chips,
-                            selectedChipIndices: selectedChipIndexes,
-                            chipToggleCallback: (index) => context
-                                .read<CaptureCubit>()
-                                .chipToggled(index: index),
-                          ),
-                          const SizedBox(height: Spacing.lg),
-                          SubmitButton(
-                            buttonText: context.l10n.submit,
-                            onPressed: context.select(
-                              (CaptureCubit cubit) => cubit.state.canSubmit,
-                            )
-                                ? () {
-                                    context.read<CaptureCubit>().submitResult();
-                                    Navigator.pushReplacementNamed(
-                                      context,
-                                      CaptureEndPage.routeName,
-                                    );
-                                  }
-                                : null,
-                          ),
-                        ],
-                      ),
+                    return AnimatedSize(
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeInOut,
+                      child: !isScoreSelected
+                          ? const SizedBox.shrink()
+                          : ChipsPanel(
+                              chips: chips,
+                              selectedChipIndexes: selectedChipIndexes,
+                              buttonText: context.l10n.submit,
+                              canSubmit: context.select(
+                                (CaptureCubit cubit) => cubit.state.canSubmit,
+                              ),
+                              chipToggleCallback: (index) => context
+                                  .read<CaptureCubit>()
+                                  .chipToggled(index: index),
+                              onSubmit: () {
+                                context.read<CaptureCubit>().submitResult();
+                                Navigator.pushReplacementNamed(
+                                  context,
+                                  CaptureEndPage.routeName,
+                                );
+                              },
+                            ),
                     );
                   },
                 ),

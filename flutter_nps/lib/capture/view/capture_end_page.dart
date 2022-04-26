@@ -25,7 +25,9 @@ class CaptureEndView extends StatelessWidget {
       alignment: Alignment.center,
       children: [
         Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(height: Spacing.huge),
             Assets.icons.checkCircle.image(),
             const SizedBox(height: Spacing.xl),
             Text(
@@ -36,6 +38,7 @@ class CaptureEndView extends StatelessWidget {
               context.l10n.feedbackSubmittedMessage,
               style: Theme.of(context).textTheme.subtitle1,
             ),
+            const SizedBox(height: Spacing.xxhuge),
           ],
         ),
         Positioned(
