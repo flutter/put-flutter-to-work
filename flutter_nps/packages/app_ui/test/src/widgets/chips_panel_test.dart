@@ -32,7 +32,7 @@ void main() {
     );
 
     testWidgets(
-      'submits on button pressed',
+      'executes onSubmit when button pressed',
       (tester) async {
         final completer = Completer<void>();
         await tester.pumpApp(
