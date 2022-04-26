@@ -15,11 +15,11 @@ defaults:
     working-directory: ./newsfeed_android
 jobs:
   build:
-    name: "build"
     strategy:
       matrix:
         platform: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.platform }}
+    name: "build"
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v2

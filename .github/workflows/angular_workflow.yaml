@@ -15,13 +15,12 @@ defaults:
     working-directory: ./newsfeed_angular
 jobs:
   build:
-    name: "build"
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [16.x]
-
+    name: "build"
     steps:
       - uses: actions/checkout@v2
 
