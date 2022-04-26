@@ -10,5 +10,6 @@ export 'src/widgets/answer_chips.dart';
 export 'src/widgets/app_close_button.dart';
 export 'src/widgets/capture_score_selector.dart';
 export 'src/widgets/capture_score_selector_labels.dart';
+export 'src/widgets/chips_panel.dart';
 export 'src/widgets/responsive_card.dart';
 export 'src/widgets/submit_button.dart';
