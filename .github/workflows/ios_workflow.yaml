@@ -16,6 +16,7 @@ defaults:
 jobs:
   build:
     runs-on: macos-latest
+    name: "build"
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v2
