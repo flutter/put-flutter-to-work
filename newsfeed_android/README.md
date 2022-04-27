@@ -1,6 +1,6 @@
 # Newsfeed Android App
 
-This project contains a sample Android application that shows how to embed Flutter project into a native Android project.
+This project contains a sample Android application that shows you how to embed a Flutter module into a native Android project.
 
 https://user-images.githubusercontent.com/17708132/163604660-54458b7a-5bc1-454f-93cc-2705a625838c.mov
 
@@ -11,7 +11,7 @@ https://user-images.githubusercontent.com/17708132/163604660-54458b7a-5bc1-454f-
 
 ## Setup
 
-To easily import the Flutter project into an existing Android application, we need to build the Flutter module into a generic Android Archive (AAR). To create an Android AAR file from the Flutter module run:
+To easily import the Flutter module into an existing Android application, we need to build the Flutter module into a generic Android Archive (AAR). To create an Android AAR file from the Flutter module run:
 
 ```sh
 cd flutter_nps

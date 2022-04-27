@@ -6,7 +6,7 @@ https://user-images.githubusercontent.com/17708132/163605104-f21a539a-c4dc-4059-
 
 ## Getting Started
 
-To add existing Flutter Application into web-based project you need to build your Flutter project for web.
+To add an existing Flutter Application into a web-based project you need to build your Flutter project for web.
 
 ## Build
 
@@ -22,8 +22,8 @@ This generates the app, including the assets, and places the files into the `/bu
 
 #### Generate web for Flutter Module
 
-**Note**: Current version of Flutter doesn't support creating web project of Flutter module.
-To allow generating Flutter web of Flutter module change entry in `.metadata`:
+**Note**: The current version of Flutter doesn't support creating web projects for Flutter modules.
+To allow generating of a Flutter module web project, change this entry in `.metadata`:
 
 ```
 - project_type: module
@@ -36,15 +36,15 @@ Run:
 flutter create . --platforms web --org com.example.flutter_nps
 ```
 
-Remove automatically generated `widget_test.dart` file
+Remove the automatically generated `widget_test.dart` file
 
-and build app with:
+and build the app with:
 
 ```
 flutter build web
 ```
 
-### Embedding Flutter in Angular project
+### Embedding Flutter in an Angular project
 
 For the Angular project to be able to discover the Flutter project, copy `/build/web` directory from the Flutter project and paste it into the `src` directory of the Angular project.
 
@@ -62,7 +62,7 @@ In `src/web/index.html` change <base href="/"> to <base href="./">
 ...
 ```
 
-To display the Flutter application in Html use `<iframe></iframe>` tag with defined `src` pointing to the `index.html` file of your project with `src` folder as your root.
+To display the Flutter application in Html use `<iframe></iframe>` tag with a defined `src` pointing to the `index.html` file of your project with the `src` folder as your root.
 
 ```
 <iframe src="./web/index.html"> </iframe>
