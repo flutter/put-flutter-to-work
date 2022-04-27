@@ -19,6 +19,10 @@ jobs:
     name: "build"
     steps:
       - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+      - run: flutter --version
 
       - name: Use Node.js 16.x
         uses: actions/setup-node@v1
