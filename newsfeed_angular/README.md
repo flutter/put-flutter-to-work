@@ -8,6 +8,12 @@ https://user-images.githubusercontent.com/17708132/163605104-f21a539a-c4dc-4059-
 
 To add an existing Flutter Application into a web-based project you need to build your Flutter project for web.
 
+## Import Flutter module to existing Angular app
+
+To use already created Flutter module download an artifacts from the [github repository Archive workflow ](https://github.com/VGVentures/take-flutter-home/actions/workflows/archive_workflow.yaml) and add them to your project at root directory.
+
+If you want to make the changes in the project follow 'Build' instructions bellow.
+
 ## Build
 
 To set up a Flutter web project check out [building a web application with Flutter](https://docs.flutter.dev/get-started/web)
