@@ -4,13 +4,11 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-on:
-  push:
-    branches:
-      - main
+on: [pull_request]
 
 jobs:
   build:
+    runs-on: ubuntu-latest
     name: build
     steps:
       - uses: actions/checkout@v2
