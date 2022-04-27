@@ -1,6 +1,6 @@
 # Newsfeed Android App
 
-This project contains a sample Android application that shows how to embed Flutter project into a native Android project.
+This project contains a sample Android application that shows you how to embed a Flutter module into a native Android project.
 
 https://user-images.githubusercontent.com/17708132/163604660-54458b7a-5bc1-454f-93cc-2705a625838c.mov
 
@@ -8,9 +8,9 @@ https://user-images.githubusercontent.com/17708132/163604660-54458b7a-5bc1-454f-
 
 **Important:** For instructions on integrating Flutter modules into your existing applications, see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app).
 
-## Import Flutter module to your iOS app
+## Import a Flutter module into your Android app
 
-First download `flutter-aar` artifact from the [github repository Android CI workflow ](https://github.com/VGVentures/take-flutter-home/actions/workflows/android_workflow.yaml) and add folder to your project at root directory.
+First download the `flutter-aar` artifact from the [github repository Android CI workflow](https://github.com/VGVentures/take-flutter-home/actions/workflows/android_workflow.yaml) and add the folder to the root directory of your project.
 
 Update your `app/build.gradle` file with path of the imported artifact:
 
@@ -37,13 +37,13 @@ dependencies {
 }
 ```
 
-Add opening of the Flutter app to your application as shown in [example](https://github.com/VGVentures/take-flutter-home/blob/2db086b6b708e301c6562ceab37d933de3bd4254/newsfeed_android/app/src/main/java/com/example/newsfeed_android/MainActivity.kt#L93).
+Add the code needed to launch the Flutter app as shown in the [example](https://github.com/VGVentures/take-flutter-home/blob/2db086b6b708e301c6562ceab37d933de3bd4254/newsfeed_android/app/src/main/java/com/example/newsfeed_android/MainActivity.kt#L93).
 
 Run your Android project.
 
 ## Setup
 
-To easily import the Flutter project into an existing Android application, we need to build the Flutter module into a generic Android Archive (AAR). To create an Android AAR file from the Flutter module run:
+To easily import the Flutter module into an existing Android application, we need to build the Flutter module into a generic Android Archive (AAR). To create an Android AAR file from the Flutter module run:
 
 ```sh
 cd flutter_nps
