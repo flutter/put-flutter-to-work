@@ -37,7 +37,7 @@ dependencies {
 }
 ```
 
-Add opening of the Flutter app to your application as shown in [example](https://github.com/VGVentures/take-flutter-home/blob/2db086b6b708e301c6562ceab37d933de3bd4254/newsfeed_android/app/src/main/java/com/example/newsfeed_android/MainActivity.kt#L93).
+Add the code needed to launch the Flutter app as shown in the [example](https://github.com/VGVentures/take-flutter-home/blob/2db086b6b708e301c6562ceab37d933de3bd4254/newsfeed_android/app/src/main/java/com/example/newsfeed_android/MainActivity.kt#L93).
 
 Run your Android project.
 
