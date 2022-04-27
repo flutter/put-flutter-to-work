@@ -8,7 +8,7 @@ https://user-images.githubusercontent.com/17708132/163604660-54458b7a-5bc1-454f-
 
 **Important:** For instructions on integrating Flutter modules into your existing applications, see the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app).
 
-## Import Flutter module to your Android app
+## Import a Flutter module into your Android app
 
 First download `flutter-aar` artifact from the [github repository Android CI workflow ](https://github.com/VGVentures/take-flutter-home/actions/workflows/android_workflow.yaml) and add folder to your project at root directory.
 
