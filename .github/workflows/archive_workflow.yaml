@@ -33,7 +33,7 @@ jobs:
       - name: Convert module to app for web
         working-directory: flutter_nps
         run: |
-          sed -i 's/module/app/' .metadata
+          perl -i -pe's/module/app/g' index.html
           flutter create . --platforms web --org com.example.flutter_nps
           rm test/widget_test.dart
           flutter build web
