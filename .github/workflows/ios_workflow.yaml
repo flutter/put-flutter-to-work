@@ -30,18 +30,6 @@ jobs:
         working-directory: flutter_nps
         run: flutter build ios-framework
 
-      - name: Create Flutter Framework artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: flutter-framework
-          path: flutter_nps/build/ios/framework
-
-      - name: Create Flutter pod helper artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: ios-podhelper
-          path: flutter_nps/.ios/Flutter
-
       - name: List available Xcode versions
         run: ls /Applications | grep Xcode
 

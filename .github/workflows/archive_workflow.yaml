@@ -1,0 +1,61 @@
+name: Archive
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: build
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+      - run: flutter --version
+
+      - name: Build Flutter AAR file
+        working-directory: flutter_nps
+        run: flutter build aar
+
+      - name: Create Flutter AAR artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: flutter-aar
+          path: flutter_nps/build/host/outputs/repo
+
+      - name: Convert module to app for web
+        working-directory: flutter_nps
+        run: |
+          sed -i 's/module/app/' .metadata
+          flutter create . --platforms web --org com.example.flutter_nps
+          rm test/widget_test.dart
+          flutter build web
+          perl -i -pe's/<base href=\"\/\"/<base href=\"\.\/\"/g' index.html
+
+      - name: Create Flutter web project artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: flutter-web-project
+          path: flutter_nps/build/web
+
+      - name: Build Flutter Module for IOS
+        working-directory: flutter_nps
+        run: flutter build ios-framework
+
+      - name: Create Flutter Framework artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: flutter-framework
+          path: flutter_nps/build/ios/framework
+
+      - name: Create Flutter pod helper artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: ios-podhelper
+          path: flutter_nps/.ios/Flutter
