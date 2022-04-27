@@ -8,7 +8,7 @@ on: [pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     name: build
     steps:
       - uses: actions/checkout@v2
