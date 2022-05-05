@@ -37,7 +37,7 @@ import SwiftUI
 
     isLoadingPage = true
 
-    // Minic the network delay
+    // Mimic the network delay.
     do {
       try await Task.sleep(nanoseconds: 2_000_000_000)
     } catch {}

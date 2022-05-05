@@ -9,11 +9,9 @@ import SwiftUI
 
 class FlutterDependencies: ObservableObject {
   let npsFlutterEngine = FlutterEngine(name: "flutter_nps_engine")
-  // ...
-  // Add your other flutter engines here
 
   init() {
-    // Run the npsFlutterEngine when we launch the app, to ensure a smoother NPS experience. However this means app launch can take a longer time.
+    // Prepare a Flutter engine in advance.
     npsFlutterEngine.run()
   }
 }

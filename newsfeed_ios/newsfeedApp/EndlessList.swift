@@ -13,7 +13,7 @@ struct EndlessList: View {
 
   @StateObject var dataSource = ContentDataSource()
   @State var wasOpened = false
-  
+
   var body: some View {
     List {
       ForEach(dataSource.items, id: \.self) { item in
@@ -37,7 +37,7 @@ struct EndlessList: View {
   }
   
   func openFlutterApp() {
-    // Get the RootViewController
+    // Get the RootViewController.
     guard
       let windowScene = UIApplication.shared.connectedScenes
         .filter({ $0.activationState == .foregroundActive })
@@ -47,7 +47,7 @@ struct EndlessList: View {
       let rootViewController = window.rootViewController
     else { return }
     
-    // Create the FlutterViewController
+    // Create the FlutterViewController.
     let flutterViewController = FlutterViewController(
       engine: flutterDependencies.npsFlutterEngine,
       nibName: nil,
