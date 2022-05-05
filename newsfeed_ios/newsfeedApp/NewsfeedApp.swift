@@ -7,23 +7,25 @@ import Flutter
 import FlutterPluginRegistrant
 import SwiftUI
 
-class AppState: ObservableObject {
-  static let shared = AppState()
-  @Published var flutterEngine = FlutterEngine(name: "flutter_nps_engine")
+class FlutterDependencies: ObservableObject {
+  let npsFlutterEngine = FlutterEngine(name: "flutter_nps_engine")
 
   init() {
-    flutterEngine.run()
+    // Prepare a Flutter engine in advance.
+    npsFlutterEngine.run()
   }
 }
 
 @main
 struct NewsfeedApp: App {
 
-  @StateObject var appState = AppState.shared
+  // flutterDependencies will be injected using EnvironmentObject
+  @StateObject var flutterDependencies = FlutterDependencies()
 
   var body: some Scene {
     WindowGroup {
       ContentView()
+        .environmentObject(flutterDependencies)
     }
   }
 }

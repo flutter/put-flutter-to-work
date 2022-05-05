@@ -9,6 +9,8 @@ import UIKit
 
 struct EndlessList: View {
 
+  @EnvironmentObject var flutterDependencies: FlutterDependencies
+
   @StateObject var dataSource = ContentDataSource()
   @State var wasOpened = false
 
@@ -35,16 +37,22 @@ struct EndlessList: View {
   }
 
   func openFlutterApp() {
+    // Get the RootViewController.
+    guard
+      let windowScene = UIApplication.shared.connectedScenes
+        .first(where: { $0.activationState == .foregroundActive && $0 is UIWindowScene }) as? UIWindowScene,
+      let window = windowScene.windows.first(where: \.isKeyWindow),
+      let rootViewController = window.rootViewController
+    else { return }
+    
+    // Create the FlutterViewController.
     let flutterViewController = FlutterViewController(
-      engine: AppState.shared.flutterEngine, nibName: nil, bundle: nil)
-    flutterViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+      engine: flutterDependencies.npsFlutterEngine,
+      nibName: nil,
+      bundle: nil)
+    flutterViewController.modalPresentationStyle = .overCurrentContext
     flutterViewController.isViewOpaque = false
-
-    let keyWindow = UIApplication.shared.connectedScenes
-      .filter({ $0.activationState == .foregroundActive })
-      .compactMap({ $0 as? UIWindowScene })
-      .first?.windows
-      .filter({ $0.isKeyWindow }).first
-    keyWindow?.rootViewController?.present(flutterViewController, animated: true, completion: nil)
+    
+    rootViewController.present(flutterViewController, animated: true)
   }
 }

@@ -9,16 +9,10 @@ import SwiftUI
 
 @MainActor class ContentDataSource: ObservableObject {
 
-  @Published var items: [Int] = []
+  @Published var items: [Int] = Array(0...9)
   @Published var isLoadingPage = false
   private var currentPage = 1
   private var canLoadMorePages = true
-
-  init() {
-    for i in (0...9) {
-      items.append(i)
-    }
-  }
 
   func loadMoreContentIfNeeded(currentItem item: Int?) {
     guard let item = item else {
@@ -43,16 +37,13 @@ import SwiftUI
 
     isLoadingPage = true
 
+    // Mimic the network delay.
     do {
       try await Task.sleep(nanoseconds: 2_000_000_000)
     } catch {}
 
     canLoadMorePages = true
-    var cardNamesArray: [Int] = []
-    for i in items.count...items.count + 9 {
-      cardNamesArray.append(i)
-    }
-    items = items + cardNamesArray
+    items += Array(items.count...items.count+9)
     isLoadingPage = false
   }
 }
