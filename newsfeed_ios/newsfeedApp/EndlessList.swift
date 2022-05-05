@@ -35,7 +35,7 @@ struct EndlessList: View {
       }
     }
   }
-  
+
   func openFlutterApp() {
     // Get the RootViewController.
     guard
