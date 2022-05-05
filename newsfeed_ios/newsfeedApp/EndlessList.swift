@@ -40,10 +40,8 @@ struct EndlessList: View {
     // Get the RootViewController.
     guard
       let windowScene = UIApplication.shared.connectedScenes
-        .filter({ $0.activationState == .foregroundActive })
-        .compactMap({ $0 as? UIWindowScene })
-        .first,
-      let window = windowScene.windows.filter(\.isKeyWindow).first,
+        .first(where: { $0.activationState == .foregroundActive && $0 is UIWindowScene }) as? UIWindowScene,
+      let window = windowScene.windows.first(where: \.isKeyWindow),
       let rootViewController = window.rootViewController
     else { return }
     
