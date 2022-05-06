@@ -1,10 +1,12 @@
 # Put Flutter to Work 🏠
 
-This project is a demo intended to help people test drive Flutter by integrating
-into their existing applications. 
+Hello!
 
-Included here are a Flutter add-to-app module, which contains the UI and logic
-for displaying a popup to capture user feedback (a "net promoter score").
+This project is a demo intended to help people test drive Flutter by integrating
+it into their existing applications. 
+
+Included in this repo is a Flutter add-to-app module, which contains the UI and
+logic for displaying a popup to capture user feedback (a "net promoter score").
 Alongside the module are three newsfeed applications for iOS, Android, and web,
 built with SwiftUI, Kotlin, and Angular, respectively.
 
@@ -25,25 +27,27 @@ work!
 
 ### iOS
 
+Full instructions for adding a module to an existing iOS app are available in
+the add-to-app documentation at
+[flutter.dev](https://docs.flutter.dev/development/add-to-app), but you can find
+the short version for both Swift and Objective-C below.
+
 #### Link the Flutter module into your application
 
-* First, download a [recent framework build](latest-ios-url) of the Flutter
+* Download a [recent framework build][latest-ios-url] of the Flutter
   module from this repo.
 
-* Next, unzip the archive into the root of your project directory. It will
+* Unzip the archive into the root of your project directory. It will
   create a directory there called `flutter-framework` containing the compiled
   Flutter module.
 
-* Finally, add the `$(PROJECT_DIR)/flutter-framework/Release` to your Xcode
+* Add the `$(PROJECT_DIR)/flutter-framework/Release` to your Xcode
   project's Framework Search Paths.
 
 #### Update your app's code to show Flutter
 
-Once the Flutter module is linked into your application, you just need to fire
-up an instance of the Flutter engine and present the Flutter view controller.
-
-You can see full instructions for this in the add-to-app documentation at
-[flutter.dev](), but we'll include the short version here.
+Once the Flutter module is linked into your application, you're ready to fire up
+an instance of the Flutter engine and present the Flutter view controller.
 
 ##### Swift
 
@@ -65,7 +69,7 @@ class AppDelegate: FlutterAppDelegate {
 ```
 
 Then, in a ViewController class somewhere in your app, call these three lines of
-code:
+code to present the Flutter module's UI:
 
 ```swift
 let flutterEngine = (UIApplication.shared.delegate as! AppDelegate).flutterEngine
@@ -82,19 +86,19 @@ your app!
 
 In `AppDelegate.h`, add this import:
 
-```objective-c
+```objectivec
 @import Flutter;
 ```
 
 and this property to the AppDelegate interface:
 
-```objective-c
+```objectivec
 @property (nonatomic,strong) FlutterEngine *flutterEngine;
 ```
 
 Next, in `AppDelegate.m`, add these two lines to `didFinishLaunchingWithOptions`:
 
-```objective-c
+```objectivec
   self.flutterEngine = [[FlutterEngine alloc] initWithName:@"my flutter engine"];
   [self.flutterEngine run];
 ```
@@ -102,7 +106,7 @@ Next, in `AppDelegate.m`, add these two lines to `didFinishLaunchingWithOptions`
 Then, somewhere in a UIViewController class in your app, `@Import Flutter` and
 call these lines of code:
 
-```objective-c
+```objectivec
 FlutterEngine *flutterEngine =
     ((AppDelegate *)UIApplication.sharedApplication.delegate).flutterEngine;
 FlutterViewController *flutterViewController =
@@ -116,15 +120,18 @@ your app!
 
 ### Android
 
+Full instructions for adding a module to an existing Android app are available
+in the add-to-app documentation at
+[flutter.dev](https://docs.flutter.dev/development/add-to-app), but you can find
+the short version for both Kotlin and Java below.
+
 #### Import the Flutter module into your app's codebase
 
-First, download a [recent framework build](latest-android-url) of the Flutter
-module from this repo.
+First, download a [recent `aar` build][latest-android-url] of the Flutter module
+from this repo. Then, create a directory in the root of your project called
+`flutter` and unzip the archive into that directory.
 
-Next, create a directory in the root of your project called `flutter` and unzip
-the archive into that directory.
-
-Finally, add the following entries to the repositories and dependencies sections
+Next, add the following entries to the repositories and dependencies sections
 to your `app/build.gradle` file:
 
 ```groovy
@@ -148,11 +155,8 @@ dependencies {
 
 #### Update your app's code to show Flutter
 
-Once the Flutter module is linked into your application, you just need to fire
-up an instance of the Flutter engine and present the Flutter Activity.
-
-You can see full instructions for this in the add-to-app documentation at
-[flutter.dev](), but we'll include the short version here.
+Once the Flutter module is linked into your application, fire up an instance of
+the Flutter engine and present the Flutter Activity.
 
 ##### Kotlin
 
@@ -162,7 +166,7 @@ In your app's `Application` class, add a property for a Flutter engine:
 lateinit var flutterEngine : FlutterEngine
 ```
 
-Then, in `onCreate`, instantiate and cache a running Flutter engine with this
+In `onCreate`, instantiate and cache a running Flutter engine with this
 code:
 
 ```kotlin
@@ -203,7 +207,7 @@ In your app's `Application` class, add a property for a Flutter engine:
 public FlutterEngine flutterEngine;
 ```
 
-Then, in `onCreate`, instantiate and cache a running Flutter engine with this
+In `onCreate`, instantiate and cache a running Flutter engine with this
 code:
 
 ```java
@@ -247,7 +251,7 @@ your content (Firebase Hosting, nginx, etc.).
 It's not possible to cover all of the possibilities here, but the basic approach
 is roughly the same for any of them:
 
-* Download a [recent web build](latest-web-url) of the Flutter module from this
+* Download a [recent web build][latest-web-url] of the Flutter module from this
   repo.
 
 * Unzip the archive into a folder somewhere within your project's source tree
@@ -276,13 +280,11 @@ Next, change `<base href="/">` to `<base href="./">` in
 Then update `angular.json` to include the new files:
 
 ```json
-...
 "assets": [
     "src/favicon.ico",
     "src/assets",
     "src/web-project-flutter"
 ],
-...
 ```
 
 Add an iframe
