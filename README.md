@@ -96,7 +96,8 @@ and this property to the AppDelegate interface:
 @property (nonatomic,strong) FlutterEngine *flutterEngine;
 ```
 
-Next, in `AppDelegate.m`, add these two lines to `didFinishLaunchingWithOptions`:
+Next, in `AppDelegate.m`, add these two lines to
+`didFinishLaunchingWithOptions`:
 
 ```objectivec
   self.flutterEngine = [[FlutterEngine alloc] initWithName:@"my flutter engine"];
@@ -275,7 +276,7 @@ First, download a [recent web build](latest-web-url) of the Flutter module and
 unzip it into the `src` directory of your project.
 
 Next, change `<base href="/">` to `<base href="./">` in 
-`src/web-project-flutter/index.html`
+`src/web-project-flutter/index.html`.
 
 Then update `angular.json` to include the new files:
 
