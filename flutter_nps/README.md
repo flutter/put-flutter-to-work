@@ -1,7 +1,6 @@
 # Flutter NPS module
 
 ![coverage][coverage_badge]
-[![License: MIT][license_badge]][license_link]
 
 Put Flutter to Work NPS (Net Promoter Score) module
 
