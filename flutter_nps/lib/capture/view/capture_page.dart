@@ -36,13 +36,13 @@ class CaptureView extends StatelessWidget {
       (CaptureCubit cubit) => cubit.state.chipIndexes,
     );
     final chips = [
-      context.l10n.mediumText,
-      context.l10n.mediumText,
-      context.l10n.mediumText,
-      context.l10n.veryLongText,
-      context.l10n.mediumText,
-      context.l10n.shortText,
-      context.l10n.veryLongText,
+      context.l10n.bugFreeResponse,
+      context.l10n.simpleResponse,
+      context.l10n.funResponse,
+      context.l10n.quickResponse,
+      context.l10n.greatUIResponse,
+      context.l10n.responsiveResponse,
+      context.l10n.friendlyResponse,
     ];
     return Stack(
       children: [

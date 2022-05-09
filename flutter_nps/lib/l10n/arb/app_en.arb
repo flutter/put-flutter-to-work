@@ -28,16 +28,32 @@
     "@feedbackSubmittedMessage": {
         "description": "Message displayed on submit of feedback"
     },
-    "shortText": "Short",
-    "@shortText": {
-        "description": "Text displaying short"
+    "quickResponse": "Quick",
+    "@quickResponse": {
+        "description": "Quick chip"
     },
-    "mediumText": "Medium",
-    "@mediumText": {
-        "description": "Text displaying medium"
+    "greatUIResponse": "Great UI",
+    "@greatUIResponse": {
+        "description": "Great UI chip"
     },
-    "veryLongText": "Very very long text",
-    "@veryLongText": {
-        "description": "Text displaying Very very long text"
+    "friendlyResponse": "Friendly",
+    "@friendlyResponse": {
+        "description": "Friendly chip"
+    },
+    "funResponse": "Fun!",
+    "@funResponse": {
+        "description": "Fun chip"
+    },
+    "responsiveResponse": "Responsive",
+    "@responsiveResponse": {
+        "description": "Responsive chip"
+    },
+    "simpleResponse": "Simple",
+    "@simpleResponse": {
+        "description": "Simple chip"
+    },
+    "bugFreeResponse": "Bug-Free",
+    "@bugFreeResponse": {
+        "description": "Bug-free chip"
     }
 }
