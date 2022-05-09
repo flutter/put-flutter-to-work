@@ -41,7 +41,7 @@ the short version for both Swift and Objective-C below.
   create a directory there called `flutter-framework` containing the compiled
   Flutter module.
 
-* Open the `flutter-framework/Release` directory, and drag `App.xcframework` and
+* Open the `flutter-framework/Release` directory and drag `App.xcframework` and
   `Flutter.xcframework` to the **General > Frameworks, Libraries, and Embedded
   Content** section of your app target in Xcode.
 
@@ -140,7 +140,7 @@ to your `app/build.gradle` file:
 repositories {
   // Add these two maven entries.
   maven {
-    url '../Flutter'
+    url '../flutter'
   }
   maven {
     url 'https://storage.googleapis.com/download.flutter.io'
