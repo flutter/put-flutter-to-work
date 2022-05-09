@@ -41,8 +41,9 @@ the short version for both Swift and Objective-C below.
   create a directory there called `flutter-framework` containing the compiled
   Flutter module.
 
-* Add the `$(PROJECT_DIR)/flutter-framework/Release` to your Xcode
-  project's Framework Search Paths.
+* Open the `flutter-framework/Release` directory, and drag `App.xcframework` and
+  `Flutter.xcframework` to the **General > Frameworks, Libraries, and Embedded
+  Content** section of your app target in Xcode.
 
 #### Update your app's code to show Flutter
 
@@ -104,7 +105,7 @@ Next, in `AppDelegate.m`, add these two lines to
   [self.flutterEngine run];
 ```
 
-Then, somewhere in a UIViewController class in your app, `@Import Flutter` and
+Then, somewhere in a UIViewController class in your app, `@import Flutter` and
 call these lines of code:
 
 ```objectivec
