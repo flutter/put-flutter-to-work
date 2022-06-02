@@ -10,6 +10,9 @@ on:
       - .github/workflows/ios_workflow.yaml
       - newsfeed_ios/**
 
+# Declare default permissions as read only.
+permissions: read-all
+
 defaults:
   run:
     working-directory: ./newsfeed_ios
@@ -18,8 +21,8 @@ jobs:
     runs-on: macos-latest
     name: build
     steps:
-      - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v2
+      - uses: actions/checkout@d171c3b028d844f2bf14e9fdec0c58114451e4bf
+      - uses: subosito/flutter-action@a93e024dfea2add254640576989cf8e6507ee7f9
         with:
           channel: "stable"
 

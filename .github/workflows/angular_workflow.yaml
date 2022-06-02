@@ -10,6 +10,9 @@ on:
       - .github/workflows/angular_workflow.yaml
       - newsfeed_angular/**
 
+# Declare default permissions as read only.
+permissions: read-all
+
 defaults:
   run:
     working-directory: ./newsfeed_angular
@@ -18,14 +21,14 @@ jobs:
     runs-on: ubuntu-latest
     name: "build"
     steps:
-      - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v2
+      - uses: actions/checkout@d171c3b028d844f2bf14e9fdec0c58114451e4bf
+      - uses: subosito/flutter-action@a93e024dfea2add254640576989cf8e6507ee7f9
         with:
           channel: "stable"
       - run: flutter --version
 
       - name: Use Node.js 16.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@f1f314fca9dfce2769ece7d933488f076716723e
         with:
           node-version: 16.x
 

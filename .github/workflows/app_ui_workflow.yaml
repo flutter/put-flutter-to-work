@@ -10,6 +10,9 @@ on:
       - .github/workflows/app_ui_workflow.yaml
       - flutter_nps/packages/app_ui/**
 
+# Declare default permissions as read only.
+permissions: read-all
+
 jobs:
   build:
     name: build
