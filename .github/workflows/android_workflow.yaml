@@ -10,6 +10,9 @@ on:
       - .github/workflows/android_workflow.yaml
       - newsfeed_android/**
 
+# Declare default permissions as read only.
+permissions: read-all
+
 defaults:
   run:
     working-directory: ./newsfeed_android
@@ -21,8 +24,8 @@ jobs:
     runs-on: ${{ matrix.platform }}
     name: build / ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v2
+      - uses: actions/checkout@d171c3b028d844f2bf14e9fdec0c58114451e4bf
+      - uses: subosito/flutter-action@a93e024dfea2add254640576989cf8e6507ee7f9
         with:
           channel: "stable"
       - run: flutter --version
@@ -32,7 +35,7 @@ jobs:
         run: flutter build aar
 
       - name: Set up JDK 1.8
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@e54a62b3df9364d4b4c1c29c7225e57fe605d7dd
         with:
           java-version: "17"
 
@@ -45,7 +48,7 @@ jobs:
         continue-on-error: false
 
       - name: Run Checkstyle
-        uses: dbelyaev/action-checkstyle@v0.5.1
+        uses: dbelyaev/action-checkstyle@0e996d232da40c6601a9914f8ddf81d68b129265
         if: matrix.platform == 'ubuntu-latest'
         with:
           github_token: ${{ secrets.github_token }}
@@ -58,7 +61,7 @@ jobs:
 
       - name: Run Android Instrumented tests
         if: matrix.platform == 'macos-latest'
-        uses: reactivecircus/android-emulator-runner@v2
+        uses: reactivecircus/android-emulator-runner@1735d7833f399c726fa4636ed2fd58e02fe170d8
         with:
           working-directory: ./newsfeed_android
           api-level: 29

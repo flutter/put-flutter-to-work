@@ -10,6 +10,9 @@ on:
       - .github/workflows/nps_repository_workflow.yaml
       - flutter_nps/packages/nps_repository/**
 
+# Declare default permissions as read only.
+permissions: read-all
+
 jobs:
   build:
     name: build

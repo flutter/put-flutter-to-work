@@ -10,6 +10,9 @@ on:
       - .github/workflows/platform_close_workflow.yaml
       - flutter_nps/packages/platform_close/**
 
+# Declare default permissions as read only.
+permissions: read-all
+
 jobs:
   build:
     name: build
