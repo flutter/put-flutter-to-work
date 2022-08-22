@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:ci": "ng build --prod ",
+    "build:ci": "ng build --configuration production",
     "test:ci": "ng test --watch=false --browsers=ChromeHeadlessCustom",
     "format:fix": "pretty-quick --staged",
     "precommit": "run-s format:fix lint",
