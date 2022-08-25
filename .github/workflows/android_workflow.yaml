@@ -24,8 +24,8 @@ jobs:
     runs-on: ${{ matrix.platform }}
     name: build / ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout@d171c3b028d844f2bf14e9fdec0c58114451e4bf
-      - uses: subosito/flutter-action@a93e024dfea2add254640576989cf8e6507ee7f9
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+      - uses: subosito/flutter-action@9d48f4efd5460d7013af812069d08b23f37aed20
         with:
           channel: "stable"
       - run: flutter --version
@@ -35,7 +35,7 @@ jobs:
         run: flutter build aar
 
       - name: Set up JDK 1.8
-        uses: actions/setup-java@e54a62b3df9364d4b4c1c29c7225e57fe605d7dd
+        uses: actions/setup-java@2c7a4878f5d120bd643426d54ae1209b29cc01a3
         with:
           java-version: "17"
 
