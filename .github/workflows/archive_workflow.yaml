@@ -29,6 +29,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@d854b6da19cdadd9a010605529e522c2393ebd38
         with:
+          distribution: "zulu"
           java-version: "17"
 
       - name: Build Flutter AAR file
