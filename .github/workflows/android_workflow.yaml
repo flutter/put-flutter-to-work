@@ -34,7 +34,7 @@ jobs:
         working-directory: flutter_nps
         run: flutter build aar
 
-      - name: Set up JDK 1.8
+      - name: Set up JDK
         uses: actions/setup-java@d854b6da19cdadd9a010605529e522c2393ebd38
         with:
           java-version: "17"
