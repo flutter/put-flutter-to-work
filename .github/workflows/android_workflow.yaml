@@ -62,7 +62,7 @@ jobs:
 
       - name: Run Android Instrumented tests
         if: matrix.platform == 'macos-latest'
-        uses: reactivecircus/android-emulator-runner@d7b53ddc6e44254e1f4cf4a6ad67345837027a66
+        uses: reactivecircus/android-emulator-runner@50986b1464923454c95e261820bc626f38490ec0
         with:
           working-directory: ./newsfeed_android
           api-level: 29
