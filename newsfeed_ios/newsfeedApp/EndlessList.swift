@@ -9,7 +9,7 @@ import UIKit
 
 struct EndlessList: View {
 
-  @EnvironmentObject var flutterDependencies: FlutterDependencies
+  @EnvironmentObject var appDelegate: AppDelegate
 
   @StateObject var dataSource = ContentDataSource()
   @State var wasOpened = false
@@ -44,10 +44,10 @@ struct EndlessList: View {
       let window = windowScene.windows.first(where: \.isKeyWindow),
       let rootViewController = window.rootViewController
     else { return }
-    
+
     // Create the FlutterViewController.
     let flutterViewController = FlutterViewController(
-      engine: flutterDependencies.npsFlutterEngine,
+      engine: appDelegate.npsflutterEngine,
       nibName: nil,
       bundle: nil)
     flutterViewController.modalPresentationStyle = .overCurrentContext

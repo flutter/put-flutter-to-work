@@ -28,6 +28,8 @@
 		2BC5344C27E4ACD900F96DE0 /* ContentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC5344B27E4ACD900F96DE0 /* ContentDataSource.swift */; };
 		2BF9EC0427CCF8270073EC0F /* ContentDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B77B50127AAC75900D1FED3 /* ContentDataSourceTests.swift */; };
 		6818A4AE27D07FDAF25C2F32 /* Pods_newsfeed_app_newsfeed_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A74904E552238DAA5FAA5BB9 /* Pods_newsfeed_app_newsfeed_appUITests.framework */; };
+		E04EA876292426330082E823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04EA875292426330082E823 /* AppDelegate.swift */; };
+		E04EA877292426330082E823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04EA875292426330082E823 /* AppDelegate.swift */; };
 		E135FF6AE50E74BFC3949C4E /* Pods_newsfeed_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AD93262FAA5A524BADB6B69 /* Pods_newsfeed_app.framework */; };
 		F1C9C74A0306F8597DCF0CB6 /* Pods_newsfeed_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0E7B80C9F6CF8DEEB7F191 /* Pods_newsfeed_appTests.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +73,7 @@
 		9C1DC2F0F5335A685F3793E3 /* Pods-newsfeed_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsfeed_app.release.xcconfig"; path = "Target Support Files/Pods-newsfeed_app/Pods-newsfeed_app.release.xcconfig"; sourceTree = "<group>"; };
 		A74904E552238DAA5FAA5BB9 /* Pods_newsfeed_app_newsfeed_appUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newsfeed_app_newsfeed_appUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76569E510B937F40A7C6EBD /* Pods-newsfeed_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsfeed_appTests.debug.xcconfig"; path = "Target Support Files/Pods-newsfeed_appTests/Pods-newsfeed_appTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E04EA875292426330082E823 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE0E7B80C9F6CF8DEEB7F191 /* Pods_newsfeed_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newsfeed_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE5FE2EA3735E2BA88BB2B7 /* Pods-newsfeed_app-newsfeed_appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsfeed_app-newsfeed_appUITests.debug.xcconfig"; path = "Target Support Files/Pods-newsfeed_app-newsfeed_appUITests/Pods-newsfeed_app-newsfeed_appUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +144,7 @@
 		2B77B4EF27AAC75800D1FED3 /* newsfeedApp */ = {
 			isa = PBXGroup;
 			children = (
+				E04EA875292426330082E823 /* AppDelegate.swift */,
 				2B77B4F027AAC75800D1FED3 /* NewsfeedApp.swift */,
 				2B77B4F227AAC75800D1FED3 /* ContentView.swift */,
 				2B77B4F427AAC75900D1FED3 /* Assets.xcassets */,
@@ -201,7 +205,7 @@
 				2B77B4EA27AAC75800D1FED3 /* Frameworks */,
 				2B77B4EB27AAC75800D1FED3 /* Resources */,
 				2B75521227E8C85400E53ED8 /* ShellScript */,
-				A1EE9DF10C06AB93119AAC6F /* [CP] Embed Pods Frameworks */,
+				209882D65B190924E4848965 /* [CP-User] Embed Flutter Build flutter_nps Script */,
 			);
 			buildRules = (
 			);
@@ -221,7 +225,7 @@
 				2B77B4F927AAC75900D1FED3 /* Sources */,
 				2B77B4FA27AAC75900D1FED3 /* Frameworks */,
 				2B77B4FB27AAC75900D1FED3 /* Resources */,
-				74C1B30C563CB4ADD4CC7D1F /* [CP] Embed Pods Frameworks */,
+				1CC0A80171C50D0FF0C7F42A /* [CP-User] Embed Flutter Build flutter_nps Script */,
 			);
 			buildRules = (
 			);
@@ -242,7 +246,7 @@
 				2B77B50327AAC75900D1FED3 /* Sources */,
 				2B77B50427AAC75900D1FED3 /* Frameworks */,
 				2B77B50527AAC75900D1FED3 /* Resources */,
-				33867FF0658D6342F33390B7 /* [CP] Embed Pods Frameworks */,
+				EF124D9E3D886021CEDF827D /* [CP-User] Embed Flutter Build flutter_nps Script */,
 			);
 			buildRules = (
 			);
@@ -328,6 +332,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1CC0A80171C50D0FF0C7F42A /* [CP-User] Embed Flutter Build flutter_nps Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Embed Flutter Build flutter_nps Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../flutter_nps/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh embed_and_thin";
+		};
+		209882D65B190924E4848965 /* [CP-User] Embed Flutter Build flutter_nps Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Embed Flutter Build flutter_nps Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../flutter_nps/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh embed_and_thin";
+		};
 		2B75521227E8C85400E53ED8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -344,23 +368,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swift-format >/dev/null; then\n    swift-format -m format -i -r ${PROJECT_DIR}\n    swift-format -m lint -r ${PROJECT_DIR}\n    exit 0\nelse\n    echo \"warning: swift-format not installed\"\nfi\n";
-		};
-		33867FF0658D6342F33390B7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-newsfeed_app-newsfeed_appUITests/Pods-newsfeed_app-newsfeed_appUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-newsfeed_app-newsfeed_appUITests/Pods-newsfeed_app-newsfeed_appUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-newsfeed_app-newsfeed_appUITests/Pods-newsfeed_app-newsfeed_appUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		3F73995D8172EDC4A3638C23 /* [CP-User] Run Flutter Build flutter_nps Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -404,23 +411,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		74C1B30C563CB4ADD4CC7D1F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-newsfeed_appTests/Pods-newsfeed_appTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-newsfeed_appTests/Pods-newsfeed_appTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-newsfeed_appTests/Pods-newsfeed_appTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8BC551D7ABFC903A493D2D34 /* [CP-User] Run Flutter Build flutter_nps Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -453,23 +443,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A1EE9DF10C06AB93119AAC6F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-newsfeed_app/Pods-newsfeed_app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-newsfeed_app/Pods-newsfeed_app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-newsfeed_app/Pods-newsfeed_app-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CFD69496155DE1C288D2072C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -492,6 +465,16 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EF124D9E3D886021CEDF827D /* [CP-User] Embed Flutter Build flutter_nps Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Embed Flutter Build flutter_nps Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../flutter_nps/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh embed_and_thin";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -499,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04EA876292426330082E823 /* AppDelegate.swift in Sources */,
 				2BC5344C27E4ACD900F96DE0 /* ContentDataSource.swift in Sources */,
 				2BC5344A27E4AC9E00F96DE0 /* EndlessList.swift in Sources */,
 				2B77B4F327AAC75800D1FED3 /* ContentView.swift in Sources */,
@@ -520,6 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04EA877292426330082E823 /* AppDelegate.swift in Sources */,
 				2B75521B27F3294E00E53ED8 /* NewsfeedApp.swift in Sources */,
 				2B75521527F328F300E53ED8 /* EndlessList.swift in Sources */,
 				2B75521627F328F300E53ED8 /* ContentDataSource.swift in Sources */,

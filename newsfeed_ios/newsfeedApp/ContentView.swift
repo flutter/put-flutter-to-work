@@ -35,6 +35,12 @@ struct ContentView: View {
 struct ContentViewPreviews: PreviewProvider {
   static var previews: some View {
     ContentView()
-      .environmentObject(FlutterDependencies())
+      .environmentObject(mockAppDelegate)
+  }
+
+  private static var mockAppDelegate: AppDelegate {
+    let delegate = AppDelegate()
+    delegate.npsflutterEngine.run()
+    return delegate
   }
 }
