@@ -10,7 +10,7 @@ class AppTheme {
         scaffoldBackgroundColor: NpsColors.colorWhite,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            primary: NpsColors.colorSecondary,
+            backgroundColor: NpsColors.colorSecondary,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
             ),
