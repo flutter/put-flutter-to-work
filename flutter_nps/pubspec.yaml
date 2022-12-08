@@ -1,30 +1,31 @@
 name: flutter_nps
-description: A new flutter module project.
+description: A new Flutter module project.
 
 version: 1.0.0+1
 publish_to: none
 
 environment:
-  sdk: ">=2.16.0 <3.0.0"
+  sdk: '>=2.18.5 <3.0.0'
 
 dependencies:
   app_ui:
-    path: ./packages/app_ui
-  bloc: ^8.0.2
-  equatable: ^2.0.3
+    path: packages/app_ui
+  bloc: ^8.1.0
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.0.1
+  flutter_bloc: ^8.1.1
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
   nps_repository:
-    path: ./packages/nps_repository
+    path: packages/nps_repository
   platform_close:
-    path: ./packages/platform_close
+    path: packages/platform_close
 
 dev_dependencies:
-  bloc_test: ^9.0.2
+  bloc_test: ^9.1.0
+  flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
   mocktail: ^0.3.0
