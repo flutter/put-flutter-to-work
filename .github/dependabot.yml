@@ -2,8 +2,25 @@
 # https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
 version: 2
+enable-beta-ecosystems: true
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "flutter_nps"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "flutter_nps/packages/app_ui"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "flutter_nps/packages/nps_repository"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "flutter_nps/packages/platform_close"
     schedule:
       interval: "daily"
