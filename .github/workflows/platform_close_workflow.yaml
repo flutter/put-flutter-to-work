@@ -21,4 +21,3 @@ jobs:
       working_directory: "flutter_nps/packages/platform_close"
       coverage_excludes: "*.g.dart lib/gen/*.gen.dart"
       flutter_channel: stable
-      flutter_version: 2.10.0
