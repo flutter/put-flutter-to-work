@@ -26,4 +26,5 @@
 **/doc/api/
 .dart_tool/
 .packages
+pubspec.lock
 build/
