@@ -37,7 +37,7 @@ jobs:
         run: ls /Applications | grep Xcode
 
       - name: Select Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_13.2.app && /usr/bin/xcodebuild -version
+        run: sudo xcode-select -switch /Applications/Xcode_13.3.app && /usr/bin/xcodebuild -version
 
       - name: Install Dependencies
         run: pod install
@@ -47,7 +47,7 @@ jobs:
           set HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK
           set HOMEBREW_NO_INSTALL_UPGRADE
           # Version 0.50500.0
-          curl https://raw.githubusercontent.com/Homebrew/homebrew-core/4f0edc5d74cdfa84822102a4f69f70a39561dea5/Formula/swift-format.rb > swift-format.rb
+          curl https://raw.githubusercontent.com/Homebrew/homebrew-core/6cd75ae58182ef70f6a701eadee7c673f39bcf20/Formula/swift-format.rb > swift-format.rb
           brew install swift-format.rb
 
       - name: Swift lint
