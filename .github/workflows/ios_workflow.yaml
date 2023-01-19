@@ -46,7 +46,7 @@ jobs:
         run: |
           git clone https://github.com/apple/swift-format.git
           cd swift-format
-          git checkout "tags/0.50500.x"
+          git checkout "tags/0.50500.0"
           swift build -c release
           cd ../
 
