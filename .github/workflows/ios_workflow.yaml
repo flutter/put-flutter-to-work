@@ -44,11 +44,11 @@ jobs:
 
       - name: Install swift-format
         run: |
-          set HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK
-          set HOMEBREW_NO_INSTALL_UPGRADE
-          # Version 0.50500.0
-          curl https://raw.githubusercontent.com/Homebrew/homebrew-core/4f0edc5d74cdfa84822102a4f69f70a39561dea5/Formula/swift-format.rb > swift-format.rb
-          brew install swift-format.rb
+          git clone https://github.com/apple/swift-format.git
+          cd swift-format
+          git checkout "tags/0.50500.x"
+          swift build -c release
+          cd ../
 
       - name: Swift lint
         run: swift format lint -r .
