@@ -47,7 +47,9 @@ jobs:
         with:
           repository: apple/swift-format
           ref: tags/0.50500.0
-        run:
+
+      - name: Build swift-format
+        run: |
           pushd "${GITHUB_WORKSPACE}/swift-format"
           swift build -c release
           echo "${GITHUB_WORKSPACE}/swift-format/.build/release/swift-format" >> $GITHUB_PATH
