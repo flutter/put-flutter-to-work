@@ -24,7 +24,7 @@ jobs:
       - run: flutter --version
 
       - name: Set up JDK
-        uses: actions/setup-java@1df8dbefe2a8cbc99770194893dd902763bee34b
+        uses: actions/setup-java@3f07048e3d294f56e9b90ac5ea2c6f74e9ad0f98
         with:
           distribution: "zulu"
           java-version: "17"
