@@ -24,4 +24,5 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   };
 
   Bloc.observer = AppBlocObserver();
+  runApp(await builder());
 }

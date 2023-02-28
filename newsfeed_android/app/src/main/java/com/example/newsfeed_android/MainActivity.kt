@@ -41,14 +41,14 @@ class MainActivity : AppCompatActivity() {
                 if (linearLayoutManager != null &&
                     linearLayoutManager.findLastCompletelyVisibleItemPosition() == (rowsArrayList.size - 1)) {
                     isLoading = true
-                    loadMore()
+                    loadMore(binding.recyclerView)
                 }
             }
         })
         binding.recyclerView.addOnScrollListener(loadMoreCallback)
     }
 
-    private fun initAdapter( binding: ActivityMainBinding) {
+    private fun initAdapter(binding: ActivityMainBinding) {
         recyclerViewAdapter = RecyclerViewAdapter(rowsArrayList)
         binding.recyclerView.layoutManager = LinearLayoutManager(applicationContext)
         binding.recyclerView.adapter = recyclerViewAdapter
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadMore() {
+    private fun loadMore(recyclerView: RecyclerView) {
         if(rowsArrayList.size in 19..29){
             runFlutterNPS()
         }
@@ -69,7 +69,9 @@ class MainActivity : AppCompatActivity() {
                 fakeRequest()
                 rowsArrayList.removeAt(rowsArrayList.size - 1)
                 val scrollPosition = rowsArrayList.size
-                recyclerViewAdapter?.notifyItemRemoved(scrollPosition)
+                recyclerView.post {
+                    recyclerViewAdapter?.notifyItemRemoved(scrollPosition)
+                }
 
                 var currentSize = rowsArrayList.size
                 val nextLimit = currentSize + 10
@@ -78,7 +80,9 @@ class MainActivity : AppCompatActivity() {
                     currentSize++
                 }
                 isLoading = false
-                recyclerViewAdapter?.notifyItemRangeInserted(nextLimit - 10,10)
+                recyclerView.post {
+                    recyclerViewAdapter?.notifyItemRangeInserted(nextLimit - 10,10)
+                }
             }
         }
     }
