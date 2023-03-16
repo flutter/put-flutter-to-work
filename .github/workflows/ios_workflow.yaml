@@ -21,7 +21,7 @@ jobs:
     runs-on: macos-latest
     name: build
     steps:
-      - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8
+      - uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f
       - uses: subosito/flutter-action@dbf1fa04f4d2e52c33185153d06cdb5443aa189d
         with:
           channel: "stable"
