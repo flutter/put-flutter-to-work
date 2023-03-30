@@ -1,4 +1,5 @@
 package com.example.newsfeed_android
+
 import android.os.Bundle
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
@@ -39,50 +40,52 @@ class MainActivity : AppCompatActivity() {
             val linearLayoutManager = binding.recyclerView.layoutManager as LinearLayoutManager?
             if (!isLoading) {
                 if (linearLayoutManager != null &&
-                    linearLayoutManager.findLastCompletelyVisibleItemPosition() == (rowsArrayList.size - 1)) {
+                    linearLayoutManager.findLastCompletelyVisibleItemPosition() == (rowsArrayList.size - 1)
+                ) {
                     isLoading = true
-                    loadMore()
+                    loadMore(binding.recyclerView)
                 }
             }
         })
         binding.recyclerView.addOnScrollListener(loadMoreCallback)
     }
 
-    private fun initAdapter( binding: ActivityMainBinding) {
+    private fun initAdapter(binding: ActivityMainBinding) {
         recyclerViewAdapter = RecyclerViewAdapter(rowsArrayList)
         binding.recyclerView.layoutManager = LinearLayoutManager(applicationContext)
         binding.recyclerView.adapter = recyclerViewAdapter
     }
 
-    private fun populateData(list: ArrayList<String> ) {
+    private fun populateData(list: ArrayList<String>) {
         for (i in 0..20) {
             list.add(ROW_ITEM_NAME)
         }
     }
 
-    private fun loadMore() {
-        if(rowsArrayList.size in 19..29){
+    private fun loadMore(recyclerView: RecyclerView) {
+        if (rowsArrayList.size in 19..29) {
             runFlutterNPS()
         }
         runBlocking {
             launch {
                 fakeRequest()
-                rowsArrayList.removeAt(rowsArrayList.size - 1)
-                val scrollPosition = rowsArrayList.size
-                recyclerViewAdapter?.notifyItemRemoved(scrollPosition)
+                recyclerView.post {
+                    rowsArrayList.removeAt(rowsArrayList.size - 1)
+                    val scrollPosition = rowsArrayList.size
+                    recyclerViewAdapter?.notifyItemRemoved(scrollPosition)
 
-                var currentSize = rowsArrayList.size
-                val nextLimit = currentSize + 10
-                while (currentSize - 1 < nextLimit) {
-                    rowsArrayList.add(ROW_ITEM_NAME)
-                    currentSize++
+                    var currentSize = rowsArrayList.size
+                    val nextLimit = currentSize + 10
+                    while (currentSize - 1 < nextLimit) {
+                        rowsArrayList.add(ROW_ITEM_NAME)
+                        currentSize++
+                    }
+                    isLoading = false
+                    recyclerViewAdapter?.notifyItemRangeInserted(nextLimit - 10, 10)
                 }
-                isLoading = false
-                recyclerViewAdapter?.notifyItemRangeInserted(nextLimit - 10,10)
             }
         }
     }
-
 
 
     private suspend fun fakeRequest(): Boolean {
@@ -112,7 +115,8 @@ class MainActivity : AppCompatActivity() {
             .put(FLUTTER_ENGINE_NAME, flutterEngine)
     }
 
-    internal class LoadMoreOnScrollListener(private var callback: () -> Unit) : RecyclerView.OnScrollListener() {
+    internal class LoadMoreOnScrollListener(private var callback: () -> Unit) :
+        RecyclerView.OnScrollListener() {
         override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
             super.onScrolled(recyclerView, dx, dy)
             callback()
