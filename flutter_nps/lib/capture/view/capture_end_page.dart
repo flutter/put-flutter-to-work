@@ -32,11 +32,11 @@ class CaptureEndView extends StatelessWidget {
             const SizedBox(height: Spacing.xl),
             Text(
               context.l10n.thankYou,
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             Text(
               context.l10n.feedbackSubmittedMessage,
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: Spacing.xxhuge),
           ],

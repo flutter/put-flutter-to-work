@@ -60,14 +60,14 @@ class CaptureView extends StatelessWidget {
                 const SizedBox(height: Spacing.xl),
                 Text(
                   context.l10n.captureTitle,
-                  style: theme.textTheme.headline5
+                  style: theme.textTheme.headlineSmall
                       ?.copyWith(fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: Spacing.xxs),
                 Text(
                   context.l10n.captureMessage,
-                  style: theme.textTheme.subtitle1
+                  style: theme.textTheme.titleMedium
                       ?.copyWith(color: NpsColors.colorGrey2),
                 ),
                 const SizedBox(height: Spacing.xl),
