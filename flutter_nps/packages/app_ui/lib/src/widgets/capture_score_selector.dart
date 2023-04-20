@@ -69,7 +69,7 @@ class ScoreButton extends StatelessWidget {
           alignment: Alignment.center,
         ),
         child: AnimatedDefaultTextStyle(
-          style: theme.textTheme.subtitle1?.copyWith(
+          style: theme.textTheme.titleMedium?.copyWith(
                 color:
                     isSelected ? NpsColors.colorWhite : NpsColors.colorPrimary1,
               ) ??

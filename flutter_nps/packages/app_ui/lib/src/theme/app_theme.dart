@@ -28,9 +28,9 @@ class AppTheme {
           ),
         ),
         textTheme: const TextTheme(
-          headline5: NpsStyles.headline5,
-          subtitle1: NpsStyles.subtitle1,
-          bodyText2: NpsStyles.link,
+          headlineSmall: NpsStyles.headline5,
+          titleMedium: NpsStyles.subtitle1,
+          bodyMedium: NpsStyles.link,
         ),
       );
 }
