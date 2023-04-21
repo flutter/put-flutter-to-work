@@ -27,6 +27,7 @@ class ResponsiveCard extends StatelessWidget {
                       maxWidth: Breakpoints.small,
                     ),
                     child: Card(
+                      surfaceTintColor: Theme.of(context).cardColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(32),
                       ),

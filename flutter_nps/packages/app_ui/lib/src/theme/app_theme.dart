@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   ThemeData get theme => ThemeData(
+        useMaterial3: true,
         colorScheme: ColorScheme.fromSwatch(
           accentColor: NpsColors.colorSecondary,
           backgroundColor: NpsColors.colorWhite,
@@ -11,6 +12,7 @@ class AppTheme {
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: NpsColors.colorSecondary,
+            foregroundColor: NpsColors.colorWhite,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24),
             ),
