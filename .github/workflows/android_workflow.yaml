@@ -49,7 +49,7 @@ jobs:
         continue-on-error: false
 
       - name: Run Checkstyle
-        uses: dbelyaev/action-checkstyle@7c239378e799e1fcbf2f236131563fec4f61b998
+        uses: dbelyaev/action-checkstyle@844730ed763cd2b0026f9730c6fe03eb022881ae
         if: matrix.platform == 'ubuntu-latest'
         with:
           github_token: ${{ secrets.github_token }}
