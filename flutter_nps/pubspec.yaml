@@ -17,7 +17,7 @@ dependencies:
   flutter_bloc: ^8.1.1
   flutter_localizations:
     sdk: flutter
-  intl: ^0.17.0
+  intl: any
   nps_repository:
     path: packages/nps_repository
   platform_close:
