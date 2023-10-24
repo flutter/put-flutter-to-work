@@ -28,7 +28,7 @@ jobs:
       - run: flutter --version
 
       - name: Use Node.js 16.x
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7
+        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
         with:
           node-version: 16.x
 
