@@ -18,7 +18,7 @@ jobs:
     name: build
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
-      - uses: subosito/flutter-action@cc97e1648fff6ca5cc647fa67f47e70f7895510b
+      - uses: subosito/flutter-action@2783a3f08e1baf891508463f8c6653c258246225
         with:
           channel: "stable"
       - run: flutter --version
