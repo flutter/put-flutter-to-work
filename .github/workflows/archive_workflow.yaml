@@ -34,7 +34,7 @@ jobs:
         run: flutter build aar
 
       - name: Create Flutter AAR artifact
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392
         with:
           name: flutter-aar
           path: flutter_nps/build/host/outputs/repo
@@ -49,7 +49,7 @@ jobs:
           perl -i -pe's/<base href=\"\/\"/<base href=\"\.\/\"/g' index.html
 
       - name: Create Flutter web project artifact
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392
         with:
           name: flutter-web-project
           path: flutter_nps/build/web
@@ -59,13 +59,13 @@ jobs:
         run: flutter build ios-framework
 
       - name: Create Flutter Framework artifact
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392
         with:
           name: flutter-framework
           path: flutter_nps/build/ios/framework
 
       - name: Create Flutter pod helper artifact
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392
         with:
           name: ios-podhelper
           path: flutter_nps/.ios/Flutter
