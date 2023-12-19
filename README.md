@@ -1,5 +1,15 @@
 # Put Flutter to Work 🏠
 
+> [!NOTE]
+> This repository is archived.
+> Its examples and guidelines are not guaranteed to
+> be up-to-date after Flutter 3.13,
+> but might still be a useful reference.
+> 
+> To learn more about embedding Flutter in an existing app,
+> please visit Flutter's
+> [Add to app documentation](https://docs.flutter.dev/add-to-app).
+
 Hello!
 
 This project is a demo intended to help people test drive Flutter by integrating
